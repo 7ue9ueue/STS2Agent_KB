@@ -1,0 +1,181 @@
+card_id,name,type,runs_in_final_deck,pct_runs_in_final_deck,total_final_copies,avg_copies_when_present,upgraded_final_copies,pct_final_copies_upgraded
+POMMEL_STRIKE,Pommel Strike,Attack,125,77.6,223,1.78,170,76.2
+BLOODLETTING,Bloodletting,Skill,120,74.5,165,1.38,89,53.9
+SHRUG_IT_OFF,Shrug It Off,Skill,109,67.7,181,1.66,68,37.6
+TRUE_GRIT,True Grit,Skill,75,46.6,94,1.25,82,87.2
+BATTLE_TRANCE,Battle Trance,Skill,74,46.0,95,1.28,53,55.8
+BURNING_PACT,Burning Pact,Skill,70,43.5,79,1.13,43,54.4
+TREMBLE,Tremble,Skill,69,42.9,86,1.25,28,32.6
+UPPERCUT,Uppercut,Attack,67,41.6,76,1.13,61,80.3
+DOMINATE,Dominate,Skill,67,41.6,81,1.21,34,42.0
+HEADBUTT,Headbutt,Attack,67,41.6,76,1.13,27,35.5
+BLOOD_WALL,Blood Wall,Skill,64,39.8,79,1.23,26,32.9
+COLOSSUS,Colossus,Skill,62,38.5,87,1.4,25,28.7
+FEEL_NO_PAIN,Feel No Pain,Power,56,34.8,74,1.32,39,52.7
+TAUNT,Taunt,Skill,56,34.8,63,1.12,37,58.7
+ARMAMENTS,Armaments,Skill,56,34.8,64,1.14,59,92.2
+VICIOUS,Vicious,Power,50,31.1,66,1.32,54,81.8
+OFFERING,Offering,Skill,47,29.2,55,1.17,22,40.0
+EVIL_EYE,Evil Eye,Skill,46,28.6,58,1.26,17,29.3
+FLAME_BARRIER,Flame Barrier,Skill,46,28.6,49,1.07,30,61.2
+EXPECT_A_FIGHT,Expect A Fight,Skill,45,28.0,56,1.24,41,73.2
+MOLTEN_FIST,Molten Fist,Attack,43,26.7,54,1.26,8,14.8
+THUNDERCLAP,Thunderclap,Attack,40,24.8,45,1.12,18,40.0
+ANGER,Anger,Attack,40,24.8,44,1.1,21,47.7
+PYRE,Pyre,Power,40,24.8,42,1.05,34,81.0
+FORGOTTEN_RITUAL,Forgotten Ritual,Skill,38,23.6,46,1.21,19,41.3
+SECOND_WIND,Second Wind,Skill,36,22.4,38,1.06,12,31.6
+ASHEN_STRIKE,Ashen Strike,Attack,36,22.4,49,1.36,20,40.8
+CRIMSON_MANTLE,Crimson Mantle,Power,36,22.4,43,1.19,25,58.1
+FIEND_FIRE,Fiend Fire,Attack,36,22.4,39,1.08,15,38.5
+INFERNO,Inferno,Power,33,20.5,37,1.12,17,45.9
+RAGE,Rage,Skill,29,18.0,33,1.14,19,57.6
+PERFECTED_STRIKE,Perfected Strike,Attack,29,18.0,55,1.9,19,34.5
+UNMOVABLE,Unmovable,Power,29,18.0,35,1.21,23,65.7
+STOKE,Stoke,Skill,28,17.4,32,1.14,30,93.8
+STAMPEDE,Stampede,Power,27,16.8,28,1.04,23,82.1
+IMPERVIOUS,Impervious,Skill,27,16.8,33,1.22,4,12.1
+PILLAGE,Pillage,Attack,27,16.8,32,1.19,17,53.1
+RUPTURE,Rupture,Power,25,15.5,33,1.32,24,72.7
+UNRELENTING,Unrelenting,Attack,25,15.5,29,1.16,12,41.4
+BREAKTHROUGH,Breakthrough,Attack,24,14.9,26,1.08,15,57.7
+FIGHT_ME,Fight Me,Attack,24,14.9,27,1.12,18,66.7
+THRASH,Thrash,Attack,24,14.9,25,1.04,7,28.0
+STOMP,Stomp,Attack,24,14.9,24,1.0,6,25.0
+DRUM_OF_BATTLE,Drum Of Battle,Power,24,14.9,30,1.25,11,36.7
+STONE_ARMOR,Stone Armor,Power,24,14.9,162,6.75,146,90.1
+MAD_SCIENCE,Mad Science,Attack,23,14.3,25,1.09,2,8.0
+INFLAME,Inflame,Power,22,13.7,25,1.14,12,48.0
+CASCADE,Cascade X,Skill,22,13.7,28,1.27,16,57.1
+DARK_EMBRACE,Dark Embrace,Power,22,13.7,26,1.18,20,76.9
+CRUELTY,Cruelty,Power,21,13.0,24,1.14,21,87.5
+IRON_WAVE,Iron Wave,Attack,21,13.0,25,1.19,12,48.0
+HOWL_FROM_BEYOND,Howl From Beyond,Attack,20,12.4,20,1.0,7,35.0
+SPITE,Spite,Attack,20,12.4,27,1.35,9,33.3
+TWIN_STRIKE,Twin Strike,Attack,20,12.4,25,1.25,15,60.0
+BULLY,Bully,Attack,20,12.4,20,1.0,7,35.0
+BLUDGEON,Bludgeon,Attack,19,11.8,22,1.16,15,68.2
+BODY_SLAM,Body Slam,Attack,19,11.8,27,1.42,21,77.8
+BREAK,Break,Attack,19,11.8,20,1.05,13,65.0
+HELLRAISER,Hellraiser,Power,18,11.2,18,1.0,12,66.7
+WHIRLWIND,Whirlwind X,Attack,18,11.2,21,1.17,16,76.2
+FEED,Feed,Attack,17,10.6,18,1.06,5,27.8
+MANGLE,Mangle,Attack,17,10.6,17,1.0,11,64.7
+PACTS_END,Pacts End,Attack,17,10.6,17,1.0,7,41.2
+SWORD_BOOMERANG,Sword Boomerang,Attack,17,10.6,21,1.24,10,47.6
+BRAND,Brand,Skill,17,10.6,18,1.06,11,61.1
+TEAR_ASUNDER,Tear Asunder,Attack,17,10.6,18,1.06,4,22.2
+AGGRESSION,Aggression,Power,17,10.6,20,1.18,5,25.0
+JUGGLING,Juggling,Power,17,10.6,18,1.06,8,44.4
+DISMANTLE,Dismantle,Attack,16,9.9,17,1.06,5,29.4
+NOT_YET,Not Yet,Skill,16,9.9,17,1.06,4,23.5
+SHOCKWAVE,Shockwave,Skill,15,9.3,16,1.07,10,62.5
+HAVOC,Havoc,Skill,15,9.3,18,1.2,11,61.1
+HEMOKINESIS,Hemokinesis,Attack,14,8.7,14,1.0,5,35.7
+FINESSE,Finesse,Skill,14,8.7,14,1.0,4,28.6
+EXTERMINATE,Exterminate,Attack,13,8.1,14,1.08,2,14.3
+DEMON_FORM,Demon Form,Power,13,8.1,13,1.0,8,61.5
+INFERNAL_BLADE,Infernal Blade,Skill,13,8.1,13,1.0,6,46.2
+BARRICADE,Barricade,Power,13,8.1,13,1.0,9,69.2
+CINDER,Cinder,Attack,13,8.1,13,1.0,6,46.2
+CONFLAGRATION,Conflagration,Attack,12,7.5,13,1.08,1,7.7
+ONE_TWO_PUNCH,One Two Punch,Skill,11,6.8,11,1.0,7,63.6
+FLASH_OF_STEEL,Flash Of Steel,Attack,10,6.2,11,1.1,1,9.1
+AUTOMATION,Automation,Power,10,6.2,13,1.3,5,38.5
+BRIGHTEST_FLAME,Brightest Flame,Skill,9,5.6,10,1.11,9,90.0
+ULTIMATE_DEFEND,Ultimate Defend,Skill,9,5.6,9,1.0,2,22.2
+ULTIMATE_STRIKE,Ultimate Strike,Attack,9,5.6,12,1.33,5,41.7
+RAMPAGE,Rampage,Attack,9,5.6,9,1.0,5,55.6
+WISH,Wish,Skill,9,5.6,27,3.0,3,11.1
+SETUP_STRIKE,Setup Strike,Attack,9,5.6,10,1.11,3,30.0
+PROWESS,Prowess,Power,8,5.0,9,1.12,7,77.8
+EQUILIBRIUM,Equilibrium,Skill,8,5.0,9,1.12,3,33.3
+APOTHEOSIS,Apotheosis,Skill,8,5.0,8,1.0,6,75.0
+JUGGERNAUT,Juggernaut,Power,7,4.3,8,1.14,3,37.5
+OMNISLICE,Omnislice,Attack,6,3.7,6,1.0,1,16.7
+THRUMMING_HATCHET,Thrumming Hatchet,Attack,6,3.7,6,1.0,1,16.7
+FASTEN,Fasten,Power,6,3.7,8,1.33,6,75.0
+DRAMATIC_ENTRANCE,Dramatic Entrance,Attack,6,3.7,7,1.17,1,14.3
+MASTER_OF_STRATEGY,Master Of Strategy,Skill,6,3.7,9,1.5,1,11.1
+DARK_SHACKLES,Dark Shackles,Skill,5,3.1,5,1.0,0,0.0
+APPARITION,Apparition,Skill,5,3.1,18,3.6,9,50.0
+PANIC_BUTTON,Panic Button,Skill,4,2.5,4,1.0,0,0.0
+METAMORPHOSIS,Metamorphosis,Skill,4,2.5,5,1.25,1,20.0
+SPLASH,Splash,Skill,4,2.5,4,1.0,4,100.0
+TORIC_TOUGHNESS,Toric Toughness,Skill,4,2.5,4,1.0,2,50.0
+DISCOVERY,Discovery,Skill,4,2.5,4,1.0,4,100.0
+SQUASH,Squash,Attack,4,2.5,5,1.25,2,40.0
+PRODUCTION,Production,Skill,3,1.9,3,1.0,2,66.7
+HIDDEN_GEM,Hidden Gem,Skill,3,1.9,3,1.0,1,33.3
+PURITY,Purity,Skill,3,1.9,3,1.0,1,33.3
+JACK_OF_ALL_TRADES,Jack Of All Trades,Skill,3,1.9,3,1.0,1,33.3
+PROLONG,Prolong,Skill,3,1.9,4,1.33,1,25.0
+SECRET_WEAPON,Secret Weapon,Skill,3,1.9,3,1.0,1,33.3
+SEEKER_STRIKE,Seeker Strike,Attack,3,1.9,3,1.0,1,33.3
+SCRAWL,Scrawl,Skill,3,1.9,3,1.0,1,33.3
+DEFY,Defy,Skill,3,1.9,3,1.0,1,33.3
+BOLAS,Bolas,Attack,3,1.9,3,1.0,1,33.3
+RELAX,Relax,Skill,3,1.9,6,2.0,4,66.7
+BEAT_DOWN,Beat Down,Skill,2,1.2,2,1.0,1,50.0
+VOLLEY,Volley X,Attack,2,1.2,2,1.0,1,50.0
+THE_BOMB,The Bomb,Skill,2,1.2,2,1.0,1,50.0
+FISTICUFFS,Fisticuffs,Attack,2,1.2,2,1.0,0,0.0
+BACKFLIP,Backflip,Skill,2,1.2,2,1.0,1,50.0
+STRATAGEM,Stratagem,Power,2,1.2,2,1.0,2,100.0
+CORRUPTION,Corruption,Power,2,1.2,2,1.0,2,100.0
+PUTREFY,Putrefy,Skill,2,1.2,2,1.0,0,0.0
+THINKING_AHEAD,Thinking Ahead,Skill,2,1.2,2,1.0,0,0.0
+PRIMAL_FORCE,Primal Force,Skill,2,1.2,2,1.0,1,50.0
+ECHO_FORM,Echo Form,Power,2,1.2,2,1.0,1,50.0
+BULK_UP,Bulk Up,Power,2,1.2,2,1.0,1,50.0
+ROLLING_BOULDER,Rolling Boulder,Power,2,1.2,2,1.0,1,50.0
+PECK,Peck,Attack,2,1.2,2,1.0,1,50.0
+NEOWS_FURY,Neows Fury,Attack,2,1.2,2,1.0,1,50.0
+FEEDING_FRENZY,Feeding Frenzy,Skill,1,0.6,1,1.0,1,100.0
+PIERCING_WAIL,Piercing Wail,Skill,1,0.6,1,1.0,0,0.0
+ADRENALINE,Adrenaline,Skill,1,0.6,1,1.0,0,0.0
+VOID_FORM,Void Form,Power,1,0.6,1,1.0,1,100.0
+PALE_BLUE_DOT,Pale Blue Dot,Power,1,0.6,1,1.0,0,0.0
+COLLISION_COURSE,Collision Course,Attack,1,0.6,1,1.0,0,0.0
+JACKPOT,Jackpot,Attack,1,0.6,1,1.0,1,100.0
+GOLD_AXE,Gold Axe,Attack,1,0.6,1,1.0,0,0.0
+FERAL,Feral,Power,1,0.6,1,1.0,1,100.0
+CONQUEROR,Conqueror,Skill,1,0.6,1,1.0,0,0.0
+BORROWED_TIME,Borrowed Time,Skill,1,0.6,1,1.0,1,100.0
+GRAVEBLAST,Graveblast,Attack,1,0.6,1,1.0,1,100.0
+GO_FOR_THE_EYES,Go For The Eyes,Attack,1,0.6,1,1.0,0,0.0
+DELAY,Delay,Skill,1,0.6,1,1.0,0,0.0
+BULWARK,Bulwark,Skill,1,0.6,1,1.0,0,0.0
+MANIFEST_AUTHORITY,Manifest Authority,Skill,1,0.6,1,1.0,1,100.0
+GRAVE_WARDEN,Grave Warden,Skill,1,0.6,2,2.0,0,0.0
+BOOT_SEQUENCE,Boot Sequence,Skill,1,0.6,1,1.0,0,0.0
+BOOST_AWAY,Boost Away,Skill,1,0.6,1,1.0,0,0.0
+PANACHE,Panache,Power,1,0.6,1,1.0,0,0.0
+ESCAPE_PLAN,Escape Plan,Skill,1,0.6,1,1.0,1,100.0
+ASSASSINATE,Assassinate,Attack,1,0.6,1,1.0,1,100.0
+CATASTROPHE,Catastrophe,Skill,1,0.6,1,1.0,1,100.0
+SECRET_TECHNIQUE,Secret Technique,Skill,1,0.6,1,1.0,0,0.0
+WISP,Wisp,Skill,1,0.6,1,1.0,0,0.0
+SHARED_FATE,Shared Fate,Skill,1,0.6,1,1.0,0,0.0
+ENLIGHTENMENT,Enlightenment,Skill,1,0.6,2,2.0,0,0.0
+MAUL,Maul,Attack,1,0.6,5,5.0,0,0.0
+GUNK_UP,Gunk Up,Attack,1,0.6,1,1.0,0,0.0
+ETERNAL_ARMOR,Eternal Armor,Power,1,0.6,1,1.0,0,0.0
+SPECTRUM_SHIFT,Spectrum Shift,Power,1,0.6,1,1.0,1,100.0
+PREP_TIME,Prep Time,Power,1,0.6,1,1.0,1,100.0
+ALCHEMIZE,Alchemize,Skill,1,0.6,1,1.0,1,100.0
+UNDEATH,Undeath,Skill,1,0.6,1,1.0,0,0.0
+LEAP,Leap,Skill,1,0.6,1,1.0,1,100.0
+NULL,Null,Attack,1,0.6,1,1.0,1,100.0
+PREDATOR,Predator,Attack,1,0.6,1,1.0,0,0.0
+STORM_OF_STEEL,Storm Of Steel,Skill,1,0.6,1,1.0,1,100.0
+GLACIER,Glacier,Skill,1,0.6,1,1.0,0,0.0
+SUPERCRITICAL,Supercritical,Skill,1,0.6,1,1.0,1,100.0
+TURBO,Turbo,Skill,1,0.6,1,1.0,1,100.0
+BYRD_SWOOP,Byrd Swoop,Attack,1,0.6,1,1.0,0,0.0
+CALAMITY,Calamity,Power,1,0.6,1,1.0,0,0.0
+WELL_LAID_PLANS,Well Laid Plans,Power,1,0.6,1,1.0,1,100.0
+NIGHTMARE,Nightmare,Skill,1,0.6,1,1.0,0,0.0
+HELIX_DRILL,Helix Drill,Attack,1,0.6,1,1.0,0,0.0
+SOW,Sow,Attack,1,0.6,1,1.0,0,0.0
+CALL_OF_THE_VOID,Call Of The Void,Power,1,0.6,1,1.0,0,0.0

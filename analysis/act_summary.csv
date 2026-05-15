@@ -1,0 +1,4 @@
+act,runs,avg_visible_deck_after_act,median_visible_deck_after_act,p25_visible_deck_after_act,p75_visible_deck_after_act,min_visible_deck_after_act,max_visible_deck_after_act,avg_known_final_cards_acquired_by_act,avg_visible_cards_added_in_act,avg_damage_in_act,avg_turns_in_act,avg_combats_in_act,avg_elites_in_act,avg_rests_in_act,avg_smiths_in_act,avg_heals_in_act,smith_to_heal_ratio,avg_relics_in_act,avg_potions_in_act
+1,161,18.77,19,18.0,20.0,15,28,14.98,7.77,120.1,41.7,8.49,2.34,3.27,2.5,0.83,3.01,5.23,3.7
+2,161,24.41,24,22.0,26.0,17,36,20.61,5.64,125.3,36.2,7.76,2.32,3.07,2.09,1.02,2.04,6.06,3.44
+3,161,27.98,27,25.0,31.0,19,41,24.17,3.57,135.8,39.8,7.82,1.76,2.69,1.75,0.87,2.01,6.08,3

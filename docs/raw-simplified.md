@@ -29,11 +29,11 @@ Every JSON response includes:
 |---|---|---|
 | `menu` | Main menu or menu submenu, no run in progress | `menu_select` |
 | `unknown` | Unrecognized room or null state | None |
-| `monster` / `elite` / `boss` | In combat | `play_card`, `use_potion`, `end_turn` |
+| `monster` / `elite` / `boss` | In combat | `play_card`, `use_potion`, `end_turn`, `save_and_quit` |
 | `hand_select` | In-combat card selection (exhaust, discard, upgrade) | `combat_select_card`, `combat_confirm_selection` |
 | `rewards` | Rewards screen (post-combat or event-triggered) | `claim_reward`, `proceed` |
 | `card_reward` | Pick a card to add to deck | `select_card_reward`, `skip_card_reward` |
-| `map` | Map navigation | `choose_map_node` |
+| `map` | Map navigation | `choose_map_node`, `save_and_quit` |
 | `event` | Event or Ancient encounter | `choose_event_option`, `advance_dialogue` |
 | `rest_site` | Rest site | `choose_rest_option`, `proceed` |
 | `shop` | Shop (auto-opens inventory) | `shop_purchase`, `proceed` |
@@ -47,6 +47,7 @@ Every JSON response includes:
 | `overlay` | Unhandled overlay (catch-all, prevents soft-lock) | None (manual interaction needed) |
 
 **Note:** `use_potion` and `discard_potion` work during any state where potions are accessible (combat, map, events, etc.).
+**Note:** `save_and_quit` is a run-control action and can be used from normal singleplayer run states where the top-bar pause button is available.
 
 ## POST — Actions
 
@@ -57,6 +58,12 @@ All POST requests use JSON body with `"action"` field. All responses include `{ 
 | Action | Parameters | When to Use |
 |---|---|---|
 | `menu_select` | `option`: string, `seed`?: string | Choose an advertised menu option. Options are case-insensitive. Submenus include `back` where visible, including `profile_select` options `profile_1`, `profile_2`, `profile_3`, and `back`. Blocking popups expose normalized button labels such as `ignore` or `back`. `game_over` supports `main_menu` only; `continue` returns an error. Supplying `seed` in unsupported contexts such as standard singleplayer character select returns an error and does not start a run. If Timeline has pending obtained epochs that require manual reveal, it may appear in `blocked_options`; selecting `timeline` returns `manual_action_required: true` with `pending_epoch_ids` instead of opening Timeline. |
+
+### Run Control
+
+| Action | Parameters | When to Use |
+|---|---|---|
+| `save_and_quit` | _(none)_ | Save the current singleplayer run through the game's pause-menu Save and Quit flow and return to the main menu. `save_quit` is accepted as an alias. If the response says the pause menu was opened, retry after a short delay so the save button is visible. |
 
 ### Profiles
 

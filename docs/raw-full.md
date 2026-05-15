@@ -748,6 +748,8 @@ Prevents soft-locks when an unrecognized overlay is active.
 }
 ```
 
+`save_and_quit` is a run-control action and can be used from normal singleplayer run states where the top-bar pause button is available.
+
 ---
 
 ## Profiles
@@ -833,6 +835,20 @@ Select an option from the main menu, a menu submenu, profile select, character s
 
 `game_over` advertises only `main_menu`. `continue` is not actionable on that screen and returns an error.
 If `timeline` is blocked by pending obtained epochs, `menu_select` returns an error with `manual_action_required: true` and `pending_epoch_ids` instead of opening Timeline.
+
+---
+
+### `save_and_quit`
+
+Save the current singleplayer run through the game's pause-menu Save and Quit flow and return to the main menu.
+
+```json
+{ "action": "save_and_quit" }
+```
+
+`save_quit` is accepted as an alias.
+
+This action is singleplayer-only. It first clicks an already-visible Save and Quit button if the pause screen is open; otherwise it clicks the top-bar pause button and retries once. If the pause screen opens asynchronously, the response asks the caller to retry after a short delay.
 
 ---
 

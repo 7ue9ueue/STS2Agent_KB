@@ -1,0 +1,1760 @@
+{
+  "id": "d62f204c3c21ace525506f774af239d9de4b149b1779f3371319ce03a233591d",
+  "url": "https://sts2.fun/run/d62f204c3c21ace525506f774af239d9de4b149b1779f3371319ce03a233591d",
+  "source": "sts2.fun",
+  "fetched_at": "2026-04-29T15:07:26.031482+00:00",
+  "discovered": {
+    "source_player": "stalwart-snake",
+    "date": "Apr 26, 2026",
+    "character": "Ironclad",
+    "ascension": 10,
+    "result": "WIN",
+    "floors": 51,
+    "listed_deck_size": 24,
+    "duration": "34 min",
+    "killed_by": "",
+    "url": "https://sts2.fun/run/d62f204c3c21ace525506f774af239d9de4b149b1779f3371319ce03a233591d"
+  },
+  "title": "Ironclad — A10 WIN",
+  "player": "Loreance",
+  "character": "Ironclad",
+  "ascension": 10,
+  "result": "WIN",
+  "date": "Apr 26, 2026",
+  "summary_stats": {
+    "Floors": "51",
+    "Duration": "34 min",
+    "Final HP": "29/93",
+    "Total Damage": "411",
+    "Deck Size": "24",
+    "Final Gold": "318",
+    "Elites Killed": "7",
+    "Campfires (2 Heal, 8 Smith)": "10"
+  },
+  "floors": [
+    {
+      "floor": 1,
+      "act": 1,
+      "node_type": "ancient",
+      "encounter": "Neow",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 64,
+        "max": 80,
+        "delta": 64
+      },
+      "gold": {
+        "current": 99,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Hefty Tablet",
+        "cards": [],
+        "relics": [
+          {
+            "id": "HEFTY_TABLET",
+            "name": "Hefty Tablet"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 2,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Fuzzy Wurm Crawler (Weak)",
+      "turns": 4,
+      "damage_taken": 9,
+      "hp": {
+        "current": 61,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 106,
+        "delta": 7
+      },
+      "rewards": {
+        "text": "Hemokinesis",
+        "cards": [
+          {
+            "id": "HEMOKINESIS",
+            "name": "Hemokinesis",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 3,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Byrdonis Nest",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 68,
+        "max": 87,
+        "delta": 7
+      },
+      "gold": {
+        "current": 106,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 4,
+      "act": 1,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 68,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 55,
+        "delta": -51
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 5,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Slimes (Weak)",
+      "turns": 4,
+      "damage_taken": 12,
+      "hp": {
+        "current": 62,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 65,
+        "delta": 10
+      },
+      "rewards": {
+        "text": "Pommel Strike",
+        "cards": [
+          {
+            "id": "POMMEL_STRIKE",
+            "name": "Pommel Strike",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 6,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Shrinker Beetle (Weak)",
+      "turns": 2,
+      "damage_taken": 2,
+      "hp": {
+        "current": 66,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 79,
+        "delta": 14
+      },
+      "rewards": {
+        "text": "Rupture Powdered Demise",
+        "cards": [
+          {
+            "id": "RUPTURE",
+            "name": "Rupture",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Powdered Demise"
+        ]
+      }
+    },
+    {
+      "floor": 7,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Phrog Parasite (Elite)",
+      "turns": 8,
+      "damage_taken": 46,
+      "hp": {
+        "current": 26,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 112,
+        "delta": 33
+      },
+      "rewards": {
+        "text": "True Grit Gorget Block Potion",
+        "cards": [
+          {
+            "id": "TRUE_GRIT",
+            "name": "True Grit",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "GORGET",
+            "name": "Gorget"
+          }
+        ],
+        "other": [
+          "Block Potion"
+        ]
+      }
+    },
+    {
+      "floor": 8,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 52,
+        "max": 87,
+        "delta": 26
+      },
+      "gold": {
+        "current": 112,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Heal",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Heal"
+        ]
+      }
+    },
+    {
+      "floor": 9,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Bygone Effigy (Elite)",
+      "turns": 5,
+      "damage_taken": 35,
+      "hp": {
+        "current": 23,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 142,
+        "delta": 30
+      },
+      "rewards": {
+        "text": "Planisphere",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PLANISPHERE",
+            "name": "Planisphere"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 10,
+      "act": 1,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 23,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 176,
+        "delta": 34
+      },
+      "rewards": {
+        "text": "Pocketwatch",
+        "cards": [],
+        "relics": [
+          {
+            "id": "POCKETWATCH",
+            "name": "Pocketwatch"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 11,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 49,
+        "max": 87,
+        "delta": 26
+      },
+      "gold": {
+        "current": 176,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Heal",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Heal"
+        ]
+      }
+    },
+    {
+      "floor": 12,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Nibbits (Normal)",
+      "turns": 5,
+      "damage_taken": 17,
+      "hp": {
+        "current": 43,
+        "max": 87,
+        "delta": 11
+      },
+      "gold": {
+        "current": 189,
+        "delta": 13
+      },
+      "rewards": {
+        "text": "Flame Barrier Liquid Memories",
+        "cards": [
+          {
+            "id": "FLAME_BARRIER",
+            "name": "Flame Barrier",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Liquid Memories"
+        ]
+      }
+    },
+    {
+      "floor": 13,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Luminous Choir",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 48,
+        "max": 87,
+        "delta": 5
+      },
+      "gold": {
+        "current": 189,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 14,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Wood Carvings",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 53,
+        "max": 87,
+        "delta": 5
+      },
+      "gold": {
+        "current": 189,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 15,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Byrdonis (Elite)",
+      "turns": 4,
+      "damage_taken": 12,
+      "hp": {
+        "current": 47,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 217,
+        "delta": 28
+      },
+      "rewards": {
+        "text": "Drum Of Battle Nunchaku",
+        "cards": [
+          {
+            "id": "DRUM_OF_BATTLE",
+            "name": "Drum Of Battle",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "NUNCHAKU",
+            "name": "Nunchaku"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 16,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 47,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 217,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Rupture",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Rupture"
+        ]
+      }
+    },
+    {
+      "floor": 17,
+      "act": 1,
+      "node_type": "boss",
+      "encounter": "Ceremonial Beast (Boss)",
+      "turns": 9,
+      "damage_taken": 31,
+      "hp": {
+        "current": 22,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 292,
+        "delta": 75
+      },
+      "rewards": {
+        "text": "Conflagration",
+        "cards": [
+          {
+            "id": "CONFLAGRATION",
+            "name": "Conflagration",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 18,
+      "act": 2,
+      "node_type": "ancient",
+      "encounter": "Tezcatara",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 74,
+        "max": 87,
+        "delta": 52
+      },
+      "gold": {
+        "current": 292,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Golden Compass",
+        "cards": [],
+        "relics": [
+          {
+            "id": "GOLDEN_COMPASS",
+            "name": "Golden Compass"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 19,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Bowlbugs (Weak)",
+      "turns": 3,
+      "damage_taken": 15,
+      "hp": {
+        "current": 65,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 305,
+        "delta": 13
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 20,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Field Of Man Sized Holes",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 70,
+        "max": 87,
+        "delta": 5
+      },
+      "gold": {
+        "current": 305,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 21,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Thieving Hopper (Weak)",
+      "turns": 4,
+      "damage_taken": 29,
+      "hp": {
+        "current": 47,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 320,
+        "delta": 15
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 22,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 47,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 320,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Pommel Strike",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Pommel Strike"
+        ]
+      }
+    },
+    {
+      "floor": 23,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Louse Progenitor (Normal)",
+      "turns": 4,
+      "damage_taken": 16,
+      "hp": {
+        "current": 42,
+        "max": 92,
+        "delta": 11
+      },
+      "gold": {
+        "current": 332,
+        "delta": 12
+      },
+      "rewards": {
+        "text": "Fruit Juice",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Fruit Juice"
+        ]
+      }
+    },
+    {
+      "floor": 24,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 42,
+        "max": 92,
+        "delta": null
+      },
+      "gold": {
+        "current": 332,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Bloodletting",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Bloodletting"
+        ]
+      }
+    },
+    {
+      "floor": 25,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Fake Merchant",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 56,
+        "max": 92,
+        "delta": 14
+      },
+      "gold": {
+        "current": 142,
+        "delta": -190
+      },
+      "rewards": {
+        "text": "Fake Blood Vial , Fake Anchor , Fake Happy Flower , Fake Lees Waffle",
+        "cards": [],
+        "relics": [
+          {
+            "id": "FAKE_BLOOD_VIAL",
+            "name": "Fake Blood Vial"
+          },
+          {
+            "id": "FAKE_ANCHOR",
+            "name": "Fake Anchor"
+          },
+          {
+            "id": "FAKE_HAPPY_FLOWER",
+            "name": "Fake Happy Flower"
+          },
+          {
+            "id": "FAKE_LEES_WAFFLE",
+            "name": "Fake Lees Waffle"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 26,
+      "act": 2,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 56,
+        "max": 92,
+        "delta": null
+      },
+      "gold": {
+        "current": 180,
+        "delta": 38
+      },
+      "rewards": {
+        "text": "Shovel",
+        "cards": [],
+        "relics": [
+          {
+            "id": "SHOVEL",
+            "name": "Shovel"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 27,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Tea Master",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 61,
+        "max": 92,
+        "delta": 5
+      },
+      "gold": {
+        "current": 130,
+        "delta": -50
+      },
+      "rewards": {
+        "text": "Bone Tea",
+        "cards": [],
+        "relics": [
+          {
+            "id": "BONE_TEA",
+            "name": "Bone Tea"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 28,
+      "act": 2,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 61,
+        "max": 92,
+        "delta": null
+      },
+      "gold": {
+        "current": 161,
+        "delta": 31
+      },
+      "rewards": {
+        "text": "Ice Cream",
+        "cards": [],
+        "relics": [
+          {
+            "id": "ICE_CREAM",
+            "name": "Ice Cream"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 29,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Self Help Book",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 66,
+        "max": 92,
+        "delta": 5
+      },
+      "gold": {
+        "current": 161,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 30,
+      "act": 2,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 66,
+        "max": 92,
+        "delta": null
+      },
+      "gold": {
+        "current": 22,
+        "delta": -139
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 31,
+      "act": 2,
+      "node_type": "elite",
+      "encounter": "Decimillipede (Elite)",
+      "turns": 4,
+      "damage_taken": 33,
+      "hp": {
+        "current": 40,
+        "max": 92,
+        "delta": 7
+      },
+      "gold": {
+        "current": 54,
+        "delta": 32
+      },
+      "rewards": {
+        "text": "Pommel Strike Tuning Fork Energy Potion",
+        "cards": [
+          {
+            "id": "POMMEL_STRIKE",
+            "name": "Pommel Strike",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "TUNING_FORK",
+            "name": "Tuning Fork"
+          }
+        ],
+        "other": [
+          "Energy Potion"
+        ]
+      }
+    },
+    {
+      "floor": 32,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 40,
+        "max": 92,
+        "delta": null
+      },
+      "gold": {
+        "current": 54,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Pommel Strike",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Pommel Strike"
+        ]
+      }
+    },
+    {
+      "floor": 33,
+      "act": 2,
+      "node_type": "elite",
+      "encounter": "Entomancer (Elite)",
+      "turns": 4,
+      "damage_taken": 5,
+      "hp": {
+        "current": 42,
+        "max": 92,
+        "delta": 7
+      },
+      "gold": {
+        "current": 82,
+        "delta": 28
+      },
+      "rewards": {
+        "text": "Rage Ornamental Fan Explosive Ampoule",
+        "cards": [
+          {
+            "id": "RAGE",
+            "name": "Rage",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "ORNAMENTAL_FAN",
+            "name": "Ornamental Fan"
+          }
+        ],
+        "other": [
+          "Explosive Ampoule"
+        ]
+      }
+    },
+    {
+      "floor": 34,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 42,
+        "max": 92,
+        "delta": null
+      },
+      "gold": {
+        "current": 82,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Uppercut",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Uppercut"
+        ]
+      }
+    },
+    {
+      "floor": 35,
+      "act": 2,
+      "node_type": "boss",
+      "encounter": "Knowledge Demon (Boss)",
+      "turns": 7,
+      "damage_taken": 18,
+      "hp": {
+        "current": 31,
+        "max": 92,
+        "delta": 7
+      },
+      "gold": {
+        "current": 157,
+        "delta": 75
+      },
+      "rewards": {
+        "text": "Hellraiser Skill Potion",
+        "cards": [
+          {
+            "id": "HELLRAISER",
+            "name": "Hellraiser",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Skill Potion"
+        ]
+      }
+    },
+    {
+      "floor": 36,
+      "act": 3,
+      "node_type": "ancient",
+      "encounter": "Darv",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 79,
+        "max": 92,
+        "delta": 48
+      },
+      "gold": {
+        "current": 157,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Black Star",
+        "cards": [],
+        "relics": [
+          {
+            "id": "BLACK_STAR",
+            "name": "Black Star"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 37,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Scrolls Of Biting (Weak)",
+      "turns": 3,
+      "damage_taken": 14,
+      "hp": {
+        "current": 72,
+        "max": 86,
+        "delta": 7
+      },
+      "gold": {
+        "current": 169,
+        "delta": 12
+      },
+      "rewards": {
+        "text": "Burning Pact Power Potion",
+        "cards": [
+          {
+            "id": "BURNING_PACT",
+            "name": "Burning Pact",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Power Potion"
+        ]
+      }
+    },
+    {
+      "floor": 38,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Round Tea Party",
+      "turns": null,
+      "damage_taken": 11,
+      "hp": {
+        "current": 66,
+        "max": 86,
+        "delta": 5
+      },
+      "gold": {
+        "current": 169,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Vexing Puzzlebox",
+        "cards": [],
+        "relics": [
+          {
+            "id": "VEXING_PUZZLEBOX",
+            "name": "Vexing Puzzlebox"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 39,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Potion Courier",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 71,
+        "max": 86,
+        "delta": 5
+      },
+      "gold": {
+        "current": 169,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 40,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Turret Operator (Weak)",
+      "turns": 4,
+      "damage_taken": 17,
+      "hp": {
+        "current": 66,
+        "max": 86,
+        "delta": 12
+      },
+      "gold": {
+        "current": 183,
+        "delta": 14
+      },
+      "rewards": {
+        "text": "Skill Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Skill Potion"
+        ]
+      }
+    },
+    {
+      "floor": 41,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Ranwid The Elder",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 78,
+        "max": 93,
+        "delta": 12
+      },
+      "gold": {
+        "current": 183,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Gambling Chip , Strawberry",
+        "cards": [],
+        "relics": [
+          {
+            "id": "GAMBLING_CHIP",
+            "name": "Gambling Chip"
+          },
+          {
+            "id": "STRAWBERRY",
+            "name": "Strawberry"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 42,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 78,
+        "max": 93,
+        "delta": null
+      },
+      "gold": {
+        "current": 183,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: True Grit",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: True Grit"
+        ]
+      }
+    },
+    {
+      "floor": 43,
+      "act": 3,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 78,
+        "max": 93,
+        "delta": null
+      },
+      "gold": {
+        "current": 216,
+        "delta": 33
+      },
+      "rewards": {
+        "text": "Ripple Basin",
+        "cards": [],
+        "relics": [
+          {
+            "id": "RIPPLE_BASIN",
+            "name": "Ripple Basin"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 44,
+      "act": 3,
+      "node_type": "elite",
+      "encounter": "Mecha Knight (Elite)",
+      "turns": 7,
+      "damage_taken": 7,
+      "hp": {
+        "current": 78,
+        "max": 93,
+        "delta": 7
+      },
+      "gold": {
+        "current": 245,
+        "delta": 29
+      },
+      "rewards": {
+        "text": "Red Skull , Lizard Tail Attack Potion",
+        "cards": [],
+        "relics": [
+          {
+            "id": "RED_SKULL",
+            "name": "Red Skull"
+          },
+          {
+            "id": "LIZARD_TAIL",
+            "name": "Lizard Tail"
+          }
+        ],
+        "other": [
+          "Attack Potion"
+        ]
+      }
+    },
+    {
+      "floor": 45,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 78,
+        "max": 93,
+        "delta": null
+      },
+      "gold": {
+        "current": 245,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Hellraiser",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Hellraiser"
+        ]
+      }
+    },
+    {
+      "floor": 46,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Construct Menagerie (Normal)",
+      "turns": 3,
+      "damage_taken": 5,
+      "hp": {
+        "current": 80,
+        "max": 93,
+        "delta": 7
+      },
+      "gold": {
+        "current": 257,
+        "delta": 12
+      },
+      "rewards": {
+        "text": "Dexterity Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Dexterity Potion"
+        ]
+      }
+    },
+    {
+      "floor": 47,
+      "act": 3,
+      "node_type": "elite",
+      "encounter": "Knights (Elite)",
+      "turns": 4,
+      "damage_taken": 9,
+      "hp": {
+        "current": 78,
+        "max": 93,
+        "delta": 7
+      },
+      "gold": {
+        "current": 283,
+        "delta": 26
+      },
+      "rewards": {
+        "text": "Pyre Oddly Smooth Stone , Captains Wheel",
+        "cards": [
+          {
+            "id": "PYRE",
+            "name": "Pyre",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "ODDLY_SMOOTH_STONE",
+            "name": "Oddly Smooth Stone"
+          },
+          {
+            "id": "CAPTAINS_WHEEL",
+            "name": "Captains Wheel"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 48,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 83,
+        "max": 93,
+        "delta": 5
+      },
+      "gold": {
+        "current": 318,
+        "delta": 35
+      },
+      "rewards": {
+        "text": "Red Mask",
+        "cards": [],
+        "relics": [
+          {
+            "id": "RED_MASK",
+            "name": "Red Mask"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 49,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 83,
+        "max": 93,
+        "delta": null
+      },
+      "gold": {
+        "current": 318,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Pyre",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Pyre"
+        ]
+      }
+    },
+    {
+      "floor": 50,
+      "act": 3,
+      "node_type": "boss",
+      "encounter": "Test Subject (Boss)",
+      "turns": 9,
+      "damage_taken": 20,
+      "hp": {
+        "current": 70,
+        "max": 93,
+        "delta": 7
+      },
+      "gold": {
+        "current": 318,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 51,
+      "act": 3,
+      "node_type": "boss",
+      "encounter": "Doormaker (Boss)",
+      "turns": 9,
+      "damage_taken": 48,
+      "hp": {
+        "current": 29,
+        "max": 93,
+        "delta": 7
+      },
+      "gold": {
+        "current": 318,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    }
+  ],
+  "relics": [
+    {
+      "id": "BURNING_BLOOD",
+      "name": "Burning Blood",
+      "floor": 1
+    },
+    {
+      "id": "HEFTY_TABLET",
+      "name": "Hefty Tablet",
+      "floor": 1
+    },
+    {
+      "id": "GORGET",
+      "name": "Gorget",
+      "floor": 7
+    },
+    {
+      "id": "PLANISPHERE",
+      "name": "Planisphere",
+      "floor": 9
+    },
+    {
+      "id": "POCKETWATCH",
+      "name": "Pocketwatch",
+      "floor": 10
+    },
+    {
+      "id": "NUNCHAKU",
+      "name": "Nunchaku",
+      "floor": 15
+    },
+    {
+      "id": "GOLDEN_COMPASS",
+      "name": "Golden Compass",
+      "floor": 18
+    },
+    {
+      "id": "FAKE_BLOOD_VIAL",
+      "name": "Blood Vial???",
+      "floor": 25
+    },
+    {
+      "id": "FAKE_ANCHOR",
+      "name": "Anchor???",
+      "floor": 25
+    },
+    {
+      "id": "FAKE_HAPPY_FLOWER",
+      "name": "Happy Flower???",
+      "floor": 25
+    },
+    {
+      "id": "FAKE_LEES_WAFFLE",
+      "name": "Lee's Waffle???",
+      "floor": 25
+    },
+    {
+      "id": "BONE_TEA",
+      "name": "Bone Tea",
+      "floor": 27
+    },
+    {
+      "id": "ICE_CREAM",
+      "name": "Ice Cream",
+      "floor": 28
+    },
+    {
+      "id": "TUNING_FORK",
+      "name": "Tuning Fork",
+      "floor": 31
+    },
+    {
+      "id": "ORNAMENTAL_FAN",
+      "name": "Ornamental Fan",
+      "floor": 33
+    },
+    {
+      "id": "BLACK_STAR",
+      "name": "Black Star",
+      "floor": 36
+    },
+    {
+      "id": "VEXING_PUZZLEBOX",
+      "name": "Vexing Puzzlebox",
+      "floor": 38
+    },
+    {
+      "id": "GAMBLING_CHIP",
+      "name": "Gambling Chip",
+      "floor": 41
+    },
+    {
+      "id": "STRAWBERRY",
+      "name": "Strawberry",
+      "floor": 41
+    },
+    {
+      "id": "RIPPLE_BASIN",
+      "name": "Ripple Basin",
+      "floor": 43
+    },
+    {
+      "id": "RED_SKULL",
+      "name": "Red Skull",
+      "floor": 44
+    },
+    {
+      "id": "LIZARD_TAIL",
+      "name": "Lizard Tail",
+      "floor": 44
+    },
+    {
+      "id": "ODDLY_SMOOTH_STONE",
+      "name": "Oddly Smooth Stone",
+      "floor": 47
+    },
+    {
+      "id": "CAPTAINS_WHEEL",
+      "name": "Captain's Wheel",
+      "floor": 47
+    },
+    {
+      "id": "RED_MASK",
+      "name": "Red Mask",
+      "floor": 48
+    }
+  ],
+  "final_deck": [
+    {
+      "id": "DRUM_OF_BATTLE",
+      "name": "Drum Of Battle",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Power"
+    },
+    {
+      "id": "HELLRAISER",
+      "name": "Hellraiser+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Power"
+    },
+    {
+      "id": "PYRE",
+      "name": "Pyre+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Power"
+    },
+    {
+      "id": "RUPTURE",
+      "name": "Rupture+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "BLOODLETTING",
+      "name": "Bloodletting+",
+      "upgraded": true,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "BURNING_PACT",
+      "name": "Burning Pact",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "FLAME_BARRIER",
+      "name": "Flame Barrier",
+      "upgraded": false,
+      "cost": "2",
+      "type": "Skill"
+    },
+    {
+      "id": "RAGE",
+      "name": "Rage",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "TRUE_GRIT",
+      "name": "True Grit+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "BASH",
+      "name": "Bash",
+      "upgraded": false,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "CONFLAGRATION",
+      "name": "Conflagration",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "HEMOKINESIS",
+      "name": "Hemokinesis",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "MANGLE",
+      "name": "Mangle",
+      "upgraded": false,
+      "cost": "3",
+      "type": "Attack"
+    },
+    {
+      "id": "POMMEL_STRIKE",
+      "name": "Pommel Strike+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "POMMEL_STRIKE",
+      "name": "Pommel Strike+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "UPPERCUT",
+      "name": "Uppercut+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "ASCENDERS_BANE",
+      "name": "Ascenders Bane ?",
+      "upgraded": false,
+      "cost": null,
+      "type": "Curse"
+    },
+    {
+      "id": "SPORE_MIND",
+      "name": "Spore Mind",
+      "upgraded": false,
+      "cost": null,
+      "type": "Curse"
+    }
+  ],
+  "derived": {
+    "floor_count": 51,
+    "final_deck_entries": 24,
+    "final_deck_cards_counted": 24,
+    "relic_count": 25,
+    "bosses": [
+      "Ceremonial Beast (Boss)",
+      "Knowledge Demon (Boss)",
+      "Test Subject (Boss)",
+      "Doormaker (Boss)"
+    ],
+    "elites": [
+      "Phrog Parasite (Elite)",
+      "Bygone Effigy (Elite)",
+      "Byrdonis (Elite)",
+      "Decimillipede (Elite)",
+      "Entomancer (Elite)",
+      "Mecha Knight (Elite)",
+      "Knights (Elite)"
+    ]
+  }
+}

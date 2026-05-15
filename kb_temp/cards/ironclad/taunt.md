@@ -1,0 +1,60 @@
+---
+title: Taunt
+sources: [https://spire-codex.com/api/cards/TAUNT]
+character: Ironclad
+type: Skill
+rarity: Uncommon
+cost: 1
+target: AnyEnemy
+keywords: []
+api_tags: []
+wiki_stub: false
+---
+
+# Taunt
+
+## Sources
+
+- https://spire-codex.com/api/cards/TAUNT
+
+## Card Text
+
+- Cost: 1
+- Type/Rarity: Skill / Uncommon
+- Target: AnyEnemy
+- Base: Gain 7 Block. Apply 1 Vulnerable.
+- Upgraded: Gain 8 Block. Apply 2 Vulnerable.
+
+## Structured Fields
+
+| Field | Value |
+|---|---|
+| ID | TAUNT |
+| Color | ironclad |
+| Type key | Skill |
+| Rarity key | Uncommon |
+| Target | AnyEnemy |
+| Keywords | `[]` |
+| API tags | `[]` |
+
+## Numeric Fields
+
+| Field | Value |
+|---|---|
+| Damage | — |
+| Block | 7 |
+| Hit count | — |
+| Cards drawn | — |
+| Energy gain | — |
+| HP loss | — |
+| Powers applied | `[{"amount": 1, "power": "Vulnerable", "power_key": "Vulnerable"}]` |
+
+## Upgrade And Generation Data
+
+| Field | Value |
+|---|---|
+| Spawns cards | — |
+| Vars | `{"Block": 7, "Vulnerable": 1, "VulnerablePower": 1}` |
+| Upgrade | `{"block": "+1", "vulnerable": "+1"}` |
+| Can be generated in combat | — |
+| Compendium order | 54 |

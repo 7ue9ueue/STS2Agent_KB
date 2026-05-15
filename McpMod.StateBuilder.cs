@@ -1355,17 +1355,21 @@ public static partial class McpMod
         foreach (var pt in map.GetAllMapPoints())
             nodes.Add(BuildMapNode(pt));
 
-        // Boss
-        nodes.Add(BuildMapNode(map.BossMapPoint));
+        // Boss nodes include the known encounter identity shown by the game map.
+        var bossNode = BuildBossMapNode(map.BossMapPoint, GetBossEncounter(runState, false), GetBossIconInfo(false));
+        nodes.Add(bossNode);
+
+        var bosses = new List<Dictionary<string, object?>> { bossNode };
         if (map.SecondBossMapPoint != null)
-            nodes.Add(BuildMapNode(map.SecondBossMapPoint));
+        {
+            var secondBossNode = BuildBossMapNode(map.SecondBossMapPoint, GetBossEncounter(runState, true), GetBossIconInfo(true));
+            nodes.Add(secondBossNode);
+            bosses.Add(secondBossNode);
+        }
 
         state["nodes"] = nodes;
-        state["boss"] = new Dictionary<string, object?>
-        {
-            ["col"] = map.BossMapPoint.coord.col,
-            ["row"] = map.BossMapPoint.coord.row
-        };
+        state["boss"] = bossNode;
+        state["bosses"] = bosses;
 
         return state;
     }
@@ -1382,6 +1386,134 @@ public static partial class McpMod
                 .Select(c => new List<int> { c.coord.col, c.coord.row })
                 .ToList()
         };
+    }
+
+    private static object? GetBossEncounter(RunState runState, bool secondBoss)
+    {
+        var map = runState.Map;
+        var encounterState = GetInstancePropertyValue(runState, "EncounterState");
+        string primaryName = secondBoss ? "SecondBoss" : "Boss";
+        string encounterName = secondBoss ? "SecondBossEncounter" : "BossEncounter";
+        string pointName = secondBoss ? "SecondBossPoint" : "BossPoint";
+
+        return GetInstancePropertyValue(map, primaryName)
+            ?? GetInstancePropertyValue(encounterState, encounterName)
+            ?? GetInstancePropertyValue(encounterState, primaryName)
+            ?? GetInstancePropertyValue(GetInstancePropertyValue(map, pointName), "Encounter")
+            ?? GetInstancePropertyValue(GetInstancePropertyValue(map, pointName), encounterName);
+    }
+
+    private static Dictionary<string, object?> BuildBossMapNode(
+        MapPoint pt,
+        object? boss,
+        Dictionary<string, object?>? iconInfo)
+    {
+        var node = BuildMapNode(pt);
+        var bossId = boss != null ? GetModelIdEntry(boss) : null;
+        var bossName = boss != null
+            ? SafeGetText(() =>
+                GetInstancePropertyValue(boss, "Title")
+                ?? GetInstancePropertyValue(boss, "Name"))
+            : null;
+
+        if (string.IsNullOrWhiteSpace(bossId))
+            bossId = iconInfo?.GetValueOrDefault("boss_id")?.ToString();
+        if (string.IsNullOrWhiteSpace(bossName))
+            bossName = iconInfo?.GetValueOrDefault("boss_name")?.ToString();
+
+        if (!string.IsNullOrWhiteSpace(bossId))
+            node["boss_id"] = bossId;
+        if (!string.IsNullOrWhiteSpace(bossName))
+            node["boss_name"] = bossName;
+        if (iconInfo?.TryGetValue("boss_icon", out var iconPath) == true && iconPath != null)
+            node["boss_icon"] = iconPath;
+
+        return node;
+    }
+
+    private static Dictionary<string, object?>? GetBossIconInfo(bool secondBoss)
+    {
+        var tree = (Godot.Engine.GetMainLoop()) as SceneTree;
+        if (tree?.Root == null)
+            return null;
+
+        var topBarBossIcon = FindAll<Node>(tree.Root)
+            .FirstOrDefault(n => n.GetType().Name == "NTopBarBossIcon");
+        if (topBarBossIcon == null)
+            return null;
+
+        var fieldName = secondBoss ? "_secondBossIcon" : "_bossIcon";
+        if (GetInstancePropertyValue(topBarBossIcon, fieldName) is not TextureRect icon || icon.Texture == null)
+            return null;
+
+        return BuildBossInfoFromIconPath(icon.Texture.ResourcePath);
+    }
+
+    private static Dictionary<string, object?>? BuildBossInfoFromIconPath(string? resourcePath)
+    {
+        if (string.IsNullOrWhiteSpace(resourcePath))
+            return null;
+
+        var fileName = System.IO.Path.GetFileNameWithoutExtension(resourcePath);
+        if (string.IsNullOrWhiteSpace(fileName))
+            return null;
+
+        var slug = fileName;
+        if (slug.EndsWith("_outline", StringComparison.OrdinalIgnoreCase))
+            slug = slug[..^"_outline".Length];
+        if (slug.EndsWith("_boss", StringComparison.OrdinalIgnoreCase))
+            slug = slug[..^"_boss".Length];
+
+        if (string.IsNullOrWhiteSpace(slug))
+            return null;
+
+        return new Dictionary<string, object?>
+        {
+            ["boss_id"] = slug.ToUpperInvariant(),
+            ["boss_name"] = BossNameFromSlug(slug),
+            ["boss_icon"] = resourcePath
+        };
+    }
+
+    private static string BossNameFromSlug(string slug)
+    {
+        var words = slug.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        return string.Join(" ", words.Select(w => char.ToUpperInvariant(w[0]) + w[1..].ToLowerInvariant()));
+    }
+
+    private static object? GetInstancePropertyValue(object? source, string propertyName)
+    {
+        if (source == null)
+            return null;
+
+        const System.Reflection.BindingFlags Flags =
+            System.Reflection.BindingFlags.Instance |
+            System.Reflection.BindingFlags.Public |
+            System.Reflection.BindingFlags.NonPublic;
+
+        for (var type = source.GetType(); type != null; type = type.BaseType)
+        {
+            var property = type.GetProperty(propertyName, Flags);
+            if (property != null)
+                return property.GetValue(source);
+
+            var field = type.GetField(propertyName, Flags)
+                ?? type.GetField($"<{propertyName}>k__BackingField", Flags);
+            if (field != null)
+                return field.GetValue(source);
+        }
+
+        return null;
+    }
+
+    private static string? GetModelIdEntry(object? source)
+    {
+        var id =
+            GetInstancePropertyValue(source, "Id")
+            ?? GetInstancePropertyValue(source, "EncounterId")
+            ?? GetInstancePropertyValue(source, "BossId");
+
+        return GetInstancePropertyValue(id, "Entry")?.ToString() ?? id?.ToString();
     }
 
     private static Dictionary<string, object?> BuildRewardsState(NRewardsScreen rewardsScreen, RunState runState)

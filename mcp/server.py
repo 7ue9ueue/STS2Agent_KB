@@ -175,6 +175,19 @@ async def menu_select(option: str, seed: str | None = None) -> str:
 
 
 @mcp.tool()
+async def save_and_quit() -> str:
+    """Save the current singleplayer run and return to the main menu.
+
+    Uses the game's in-run pause menu Save and Quit control. If the pause menu
+    has to be opened asynchronously, call the tool again after a short delay.
+    """
+    try:
+        return await _post({"action": "save_and_quit"})
+    except Exception as e:
+        return _handle_error(e)
+
+
+@mcp.tool()
 async def get_profile() -> str:
     """Get the current profile's persistent progress summary.
 

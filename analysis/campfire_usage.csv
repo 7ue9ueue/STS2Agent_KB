@@ -1,0 +1,4 @@
+act,rest_nodes,smith_actions,heal_actions,smiths_per_run,heals_per_run,smith_share_of_actions,heal_share_of_actions
+1,527,403,134,2.5,0.83,75.0,25.0
+2,494,337,165,2.09,1.02,67.1,32.9
+3,433,282,140,1.75,0.87,66.8,33.2

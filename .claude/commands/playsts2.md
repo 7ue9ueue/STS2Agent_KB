@@ -4,6 +4,7 @@ Play Slay the Spire 2 using the MCP tools (`mcp__sts2__*`). Your goal is to play
 1. Read `AGENTS.md` for general strategy and MCP calling tips.
 2. Read `GUIDE.md` for hero-specific strategies. If the current hero isn't covered, adapt and add notes after boss fights.
 3. Call `get_game_state(format="markdown")` to see the current state and begin playing.
+4. **Create `history/run<N>_strategy.md` after Neow** as your live in-run memory (archetype plan, deck holes, threat watch, potion plan, open questions). Update it after every major decision; read it before every decision. See `AGENTS.md` → "In-Run Strategy File" for the required sections. This is the working memory for THIS run — distinct from `kb/` (persistent facts) and `history/run<N>.md` (append-only decision log).
 
 ## Gameplay Loop
 - **Map**: Evaluate paths. Prefer elites when healthy, rest sites before bosses.

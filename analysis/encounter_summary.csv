@@ -1,0 +1,82 @@
+encounter,runs,avg_damage,median_damage,avg_turns,median_turns
+Waterfall Giant (Boss),31,39.4,38,10.1,10
+Kaiser Crab (Boss),44,38.9,36.5,7.1,7.0
+Vantom (Boss),22,36.1,39.0,8,8.0
+The Kin (Boss),24,35.9,33.0,8.1,8.0
+Test Subject (Boss),115,34.9,31,8.9,8
+Doormaker (Boss),100,31.3,29.5,7.3,7.0
+Queen (Boss),107,30.6,25.5,7.0,7
+Knowledge Demon (Boss),62,30.4,29,6.7,6.0
+The Insatiable (Boss),55,28.9,27,6.7,7
+Ceremonial Beast (Boss),23,26.5,27.5,7.8,8
+Soul Fysh (Boss),31,25.5,22,8.9,8
+Skulking Colony (Elite),64,24.1,22.0,6.5,6.0
+Lagavulin Matriarch (Boss),30,23.5,25.0,8.3,8.0
+Decimillipede (Elite),121,22.7,20.5,4.5,4.0
+Byrdonis (Elite),53,21.5,20,3.8,4
+Mecha Knight (Elite),94,20.6,16.5,5.6,5.0
+Soul Nexus (Elite),95,20.5,18.0,4.5,4
+Entomancer (Elite),120,20.1,18.0,4.6,4
+Infested Prisms (Elite),121,19.2,16,4.7,5.0
+Bygone Effigy (Elite),56,19.0,18,4.2,4.0
+Terror Eel (Elite),68,18.9,15,5.8,6.0
+Vine Shambler (Normal),7,17.9,15,4.7,5
+Phantasmal Gardeners (Elite),77,17.8,15.0,5.3,5
+Knights (Elite),93,17.6,15,4.5,4
+Phrog Parasite (Elite),47,15.9,13.0,5.7,5.0
+Slithering Strangler (Normal),11,15.4,18,3.6,4
+Nibbits (Normal),15,15.3,12.0,4.5,5
+Hunter Killer (Normal),41,14.9,13,4.0,4
+Snapping Jaxfruit (Normal),12,14.6,15.5,4.4,5.0
+Slumbering Beetle (Normal),32,14.3,12.0,5.6,5.0
+Inklets (Normal),12,14.3,11,4,4.0
+Construct Menagerie (Normal),44,14.1,9,4.1,4.0
+Ruby Raiders (Normal),13,13.8,11.0,4.2,4
+Frog Knight (Normal),25,13.5,11,4.7,4
+Chompers (Normal),50,13.3,11,5.1,5.0
+Owl Magistrate (Normal),34,13.3,11,4.4,4.0
+Spiny Toad (Normal),36,12.6,10.5,4,4.0
+Tunneler (Normal),9,12.1,11.0,5,5
+Gremlin Merc (Normal),24,11.8,11,5.0,5.0
+Louse Progenitor (Normal),37,11.6,10,4.9,5
+Slimed Berserker (Normal),43,11.5,10.0,5.4,5
+Turret Operator (Weak),114,11.3,10,3.6,4.0
+Mytes (Normal),42,11.2,9.0,4.6,5.0
+Fossil Stalker (Normal),20,11.1,11,3.1,3.0
+Overgrowth Crawlers,11,11.1,10,5.5,5
+Flyconid (Normal),10,11.1,11.0,3.9,4.0
+Thieving Hopper (Weak),87,11,10.0,3.6,4
+The Lost And Forgotten (Normal),41,10.9,9,4.4,4
+Living Fog (Normal),24,10.7,9.0,4.5,5.0
+Bowlbugs (Normal),28,10.5,10,4.1,4.0
+The Obscura (Normal),39,10.2,7,4.8,4
+Seapunk (Normal),16,10,6,4.4,4.0
+Devoted Sculptor (Weak),107,9.9,7,3.9,4
+Exoskeletons (Normal),41,9.7,8.5,3.9,4
+Axebots (Normal),38,9.6,7.0,5.7,6.0
+Bowlbugs (Weak),75,9.2,8.0,3.7,4
+Haunted Ship (Normal),20,8.9,8,4.0,4.0
+Punch Construct (Normal),13,8.9,8,4.5,4
+Globe Head (Normal),35,8.7,7,3.7,4
+Scrolls Of Biting (Normal),33,8.7,4.5,3.3,3
+Fabricator (Normal),43,8.6,7.5,3.3,3
+Slimes (Normal),12,8.6,8.0,4.5,4.5
+Ovicopter (Normal),38,8.2,7,4.0,4.0
+Two Tailed Rats (Normal),19,8.1,8.5,3.9,4
+Tunneler (Weak),73,8,7.0,4.2,4
+Sludge Spinner (Weak),74,7.9,7.5,3.9,4.0
+Seapunk (Weak),70,7.9,8.0,4.1,4.0
+Toadpoles (Weak),67,7.7,7,4.2,4
+Exoskeletons (Weak),87,7.5,6,3.9,4
+Nibbits (Weak),51,7.5,7,3.6,4
+Scrolls Of Biting (Weak),98,7.4,6.0,2.7,3.0
+Sewer Clam (Normal),20,7.4,6.5,4.7,5.0
+Fogmog (Normal),19,7.3,5,3.8,4
+Cultists (Normal),24,7.2,5.0,4.1,4.0
+Corpse Slugs (Weak),64,7.1,6,4.0,4.0
+Mawler (Normal),12,7.1,6.5,3.8,4.0
+Shrinker Beetle (Weak),58,6.9,6,3.4,3.0
+Slimes (Weak),49,6.7,6.5,4.2,4
+Cubex Construct (Normal),17,6.7,5,3.6,4
+Fuzzy Wurm Crawler (Weak),48,6.6,6.5,4.0,4.0
+Corpse Slugs (Normal),16,6.2,5.0,4.1,4.0

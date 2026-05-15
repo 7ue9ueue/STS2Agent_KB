@@ -1,0 +1,1702 @@
+{
+  "id": "781f7cd7d8aebcd2557733bed13443c2c7babd0c64c64b4127c1021de2793443",
+  "url": "https://sts2.fun/run/781f7cd7d8aebcd2557733bed13443c2c7babd0c64c64b4127c1021de2793443",
+  "source": "sts2.fun",
+  "fetched_at": "2026-04-29T15:07:30.737517+00:00",
+  "discovered": {
+    "source_player": "icy-lurker",
+    "date": "Apr 02, 2026",
+    "character": "Ironclad",
+    "ascension": 10,
+    "result": "WIN",
+    "floors": 49,
+    "listed_deck_size": 26,
+    "duration": "59 min",
+    "killed_by": "",
+    "url": "https://sts2.fun/run/781f7cd7d8aebcd2557733bed13443c2c7babd0c64c64b4127c1021de2793443"
+  },
+  "title": "Ironclad — A10 WIN",
+  "player": "icy-lurker",
+  "character": "Ironclad",
+  "ascension": 10,
+  "result": "WIN",
+  "date": "Apr 02, 2026",
+  "summary_stats": {
+    "Floors": "49",
+    "Duration": "59 min",
+    "Final HP": "14/102",
+    "Total Damage": "413",
+    "Deck Size": "26",
+    "Final Gold": "49",
+    "Elites Killed": "6",
+    "Campfires (6 Smith, 2 Heal)": "8"
+  },
+  "floors": [
+    {
+      "floor": 1,
+      "act": 1,
+      "node_type": "ancient",
+      "encounter": "Neow",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 64,
+        "max": 80,
+        "delta": 64
+      },
+      "gold": {
+        "current": 249,
+        "delta": 150
+      },
+      "rewards": {
+        "text": "Golden Pearl",
+        "cards": [],
+        "relics": [
+          {
+            "id": "GOLDEN_PEARL",
+            "name": "Golden Pearl"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 2,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Fuzzy Wurm Crawler (Weak)",
+      "turns": 4,
+      "damage_taken": 9,
+      "hp": {
+        "current": 61,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 264,
+        "delta": 15
+      },
+      "rewards": {
+        "text": "Bloodletting",
+        "cards": [
+          {
+            "id": "BLOODLETTING",
+            "name": "Bloodletting",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 3,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Slimes (Weak)",
+      "turns": 6,
+      "damage_taken": null,
+      "hp": {
+        "current": 67,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 272,
+        "delta": 8
+      },
+      "rewards": {
+        "text": "Second Wind Duplicator",
+        "cards": [
+          {
+            "id": "SECOND_WIND",
+            "name": "Second Wind",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Duplicator"
+        ]
+      }
+    },
+    {
+      "floor": 4,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Tea Master",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 67,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 272,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Tea Of Discourtesy",
+        "cards": [],
+        "relics": [
+          {
+            "id": "TEA_OF_DISCOURTESY",
+            "name": "Tea Of Discourtesy"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 5,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Shrinker Beetle (Weak)",
+      "turns": 4,
+      "damage_taken": 14,
+      "hp": {
+        "current": 59,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 283,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 6,
+      "act": 1,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 59,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 34,
+        "delta": -249
+      },
+      "rewards": {
+        "text": "Red Skull",
+        "cards": [],
+        "relics": [
+          {
+            "id": "RED_SKULL",
+            "name": "Red Skull"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 7,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Wellspring",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 59,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 34,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 8,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 59,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 34,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 9,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 59,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 34,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Uppercut",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Uppercut"
+        ]
+      }
+    },
+    {
+      "floor": 10,
+      "act": 1,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 59,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 65,
+        "delta": 31
+      },
+      "rewards": {
+        "text": "Ornamental Fan",
+        "cards": [],
+        "relics": [
+          {
+            "id": "ORNAMENTAL_FAN",
+            "name": "Ornamental Fan"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 11,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Cubex Construct (Normal)",
+      "turns": 5,
+      "damage_taken": 21,
+      "hp": {
+        "current": 44,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 73,
+        "delta": 8
+      },
+      "rewards": {
+        "text": "Stone Armor Powdered Demise",
+        "cards": [
+          {
+            "id": "STONE_ARMOR",
+            "name": "Stone Armor",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Powdered Demise"
+        ]
+      }
+    },
+    {
+      "floor": 12,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Bygone Effigy (Elite)",
+      "turns": 4,
+      "damage_taken": 14,
+      "hp": {
+        "current": 43,
+        "max": 87,
+        "delta": 13
+      },
+      "gold": {
+        "current": 100,
+        "delta": 27
+      },
+      "rewards": {
+        "text": "Feel No Pain Strawberry",
+        "cards": [
+          {
+            "id": "FEEL_NO_PAIN",
+            "name": "Feel No Pain",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "STRAWBERRY",
+            "name": "Strawberry"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 13,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Snapping Jaxfruit (Normal)",
+      "turns": 5,
+      "damage_taken": 21,
+      "hp": {
+        "current": 28,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 107,
+        "delta": 7
+      },
+      "rewards": {
+        "text": "Primal Force Blood Potion",
+        "cards": [
+          {
+            "id": "PRIMAL_FORCE",
+            "name": "Primal Force",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Blood Potion"
+        ]
+      }
+    },
+    {
+      "floor": 14,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Byrdonis (Elite)",
+      "turns": 3,
+      "damage_taken": 17,
+      "hp": {
+        "current": 34,
+        "max": 87,
+        "delta": 23
+      },
+      "gold": {
+        "current": 435,
+        "delta": 328
+      },
+      "rewards": {
+        "text": "Armaments Old Coin Explosive Ampoule",
+        "cards": [
+          {
+            "id": "ARMAMENTS",
+            "name": "Armaments",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "OLD_COIN",
+            "name": "Old Coin"
+          }
+        ],
+        "other": [
+          "Explosive Ampoule"
+        ]
+      }
+    },
+    {
+      "floor": 15,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Nibbits (Normal)",
+      "turns": 6,
+      "damage_taken": null,
+      "hp": {
+        "current": 40,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 446,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 16,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 40,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 446,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Armaments",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Armaments"
+        ]
+      }
+    },
+    {
+      "floor": 17,
+      "act": 1,
+      "node_type": "boss",
+      "encounter": "Ceremonial Beast (Boss)",
+      "turns": 8,
+      "damage_taken": 24,
+      "hp": {
+        "current": 22,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 521,
+        "delta": 75
+      },
+      "rewards": {
+        "text": "Pacts End",
+        "cards": [
+          {
+            "id": "PACTS_END",
+            "name": "Pacts End",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 18,
+      "act": 2,
+      "node_type": "ancient",
+      "encounter": "Orobas",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 74,
+        "max": 87,
+        "delta": 52
+      },
+      "gold": {
+        "current": 521,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Archaic Tooth",
+        "cards": [],
+        "relics": [
+          {
+            "id": "ARCHAIC_TOOTH",
+            "name": "Archaic Tooth"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 19,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Thieving Hopper (Weak)",
+      "turns": 5,
+      "damage_taken": 17,
+      "hp": {
+        "current": 63,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 521,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Pommel Strike Flex Potion",
+        "cards": [
+          {
+            "id": "POMMEL_STRIKE",
+            "name": "Pommel Strike",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Flex Potion"
+        ]
+      }
+    },
+    {
+      "floor": 20,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Lost Wisp",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 63,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 521,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Lost Wisp",
+        "cards": [],
+        "relics": [
+          {
+            "id": "LOST_WISP",
+            "name": "Lost Wisp"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 21,
+      "act": 2,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 63,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 5,
+        "delta": -516
+      },
+      "rewards": {
+        "text": "Oddly Smooth Stone",
+        "cards": [],
+        "relics": [
+          {
+            "id": "ODDLY_SMOOTH_STONE",
+            "name": "Oddly Smooth Stone"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 22,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Amalgamator",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 63,
+        "max": 87,
+        "delta": null
+      },
+      "gold": {
+        "current": 5,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 23,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Exoskeletons (Weak)",
+      "turns": 5,
+      "damage_taken": 3,
+      "hp": {
+        "current": 66,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 13,
+        "delta": 8
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 24,
+      "act": 2,
+      "node_type": "elite",
+      "encounter": "Decimillipede (Elite)",
+      "turns": 4,
+      "damage_taken": 34,
+      "hp": {
+        "current": 38,
+        "max": 87,
+        "delta": 6
+      },
+      "gold": {
+        "current": 40,
+        "delta": 27
+      },
+      "rewards": {
+        "text": "Stone Armor Bronze Scales Fruit Juice",
+        "cards": [
+          {
+            "id": "STONE_ARMOR",
+            "name": "Stone Armor",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "BRONZE_SCALES",
+            "name": "Bronze Scales"
+          }
+        ],
+        "other": [
+          "Fruit Juice"
+        ]
+      }
+    },
+    {
+      "floor": 25,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Chompers (Normal)",
+      "turns": 4,
+      "damage_taken": 5,
+      "hp": {
+        "current": 44,
+        "max": 92,
+        "delta": 11
+      },
+      "gold": {
+        "current": 51,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "Power Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Power Potion"
+        ]
+      }
+    },
+    {
+      "floor": 26,
+      "act": 2,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 54,
+        "max": 102,
+        "delta": 10
+      },
+      "gold": {
+        "current": 84,
+        "delta": 33
+      },
+      "rewards": {
+        "text": "Pear",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PEAR",
+            "name": "Pear"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 27,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 54,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 84,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Break",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Break"
+        ]
+      }
+    },
+    {
+      "floor": 28,
+      "act": 2,
+      "node_type": "elite",
+      "encounter": "Entomancer (Elite)",
+      "turns": 5,
+      "damage_taken": 17,
+      "hp": {
+        "current": 43,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 111,
+        "delta": 27
+      },
+      "rewards": {
+        "text": "Molten Fist Potion Belt Power Potion",
+        "cards": [
+          {
+            "id": "MOLTEN_FIST",
+            "name": "Molten Fist",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "POTION_BELT",
+            "name": "Potion Belt"
+          }
+        ],
+        "other": [
+          "Power Potion"
+        ]
+      }
+    },
+    {
+      "floor": 29,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 73,
+        "max": 102,
+        "delta": 30
+      },
+      "gold": {
+        "current": 111,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Heal",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Heal"
+        ]
+      }
+    },
+    {
+      "floor": 30,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Slumbering Beetle (Normal)",
+      "turns": 5,
+      "damage_taken": 9,
+      "hp": {
+        "current": 70,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 122,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 31,
+      "act": 2,
+      "node_type": "elite",
+      "encounter": "Infested Prisms (Elite)",
+      "turns": 4,
+      "damage_taken": 25,
+      "hp": {
+        "current": 51,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 155,
+        "delta": 33
+      },
+      "rewards": {
+        "text": "Rage Lantern",
+        "cards": [
+          {
+            "id": "RAGE",
+            "name": "Rage",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "LANTERN",
+            "name": "Lantern"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 32,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 51,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 155,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Pommel Strike",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Pommel Strike"
+        ]
+      }
+    },
+    {
+      "floor": 33,
+      "act": 2,
+      "node_type": "boss",
+      "encounter": "The Insatiable (Boss)",
+      "turns": 7,
+      "damage_taken": 48,
+      "hp": {
+        "current": 9,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 230,
+        "delta": 75
+      },
+      "rewards": {
+        "text": "Hellraiser Explosive Ampoule",
+        "cards": [
+          {
+            "id": "HELLRAISER",
+            "name": "Hellraiser",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Explosive Ampoule"
+        ]
+      }
+    },
+    {
+      "floor": 34,
+      "act": 3,
+      "node_type": "ancient",
+      "encounter": "Nonupeipe",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 83,
+        "max": 102,
+        "delta": 74
+      },
+      "gold": {
+        "current": 1229,
+        "delta": 999
+      },
+      "rewards": {
+        "text": "Signet Ring",
+        "cards": [],
+        "relics": [
+          {
+            "id": "SIGNET_RING",
+            "name": "Signet Ring"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 35,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Scrolls Of Biting (Weak)",
+      "turns": 2,
+      "damage_taken": null,
+      "hp": {
+        "current": 89,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 1244,
+        "delta": 15
+      },
+      "rewards": {
+        "text": "Shrug It Off Dexterity Potion",
+        "cards": [
+          {
+            "id": "SHRUG_IT_OFF",
+            "name": "Shrug It Off",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Dexterity Potion"
+        ]
+      }
+    },
+    {
+      "floor": 36,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Reflections",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 89,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 1244,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 37,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Devoted Sculptor (Weak)",
+      "turns": 5,
+      "damage_taken": 30,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 1258,
+        "delta": 14
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 38,
+      "act": 3,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 458,
+        "delta": -800
+      },
+      "rewards": {
+        "text": "Wing Charm , Bellows",
+        "cards": [],
+        "relics": [
+          {
+            "id": "WING_CHARM",
+            "name": "Wing Charm"
+          },
+          {
+            "id": "BELLOWS",
+            "name": "Bellows"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 39,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Potion Courier",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 458,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Foul Potion , Foul Potion , Foul Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Foul Potion"
+        ]
+      }
+    },
+    {
+      "floor": 40,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 458,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Armaments",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Armaments"
+        ]
+      }
+    },
+    {
+      "floor": 41,
+      "act": 3,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 496,
+        "delta": 38
+      },
+      "rewards": {
+        "text": "Bag Of Marbles",
+        "cards": [],
+        "relics": [
+          {
+            "id": "BAG_OF_MARBLES",
+            "name": "Bag Of Marbles"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 42,
+      "act": 3,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 9,
+        "delta": -787
+      },
+      "rewards": {
+        "text": "Stone Cracker , Gremlin Horn Vulnerable Potion , Gigantification Potion , Explosive Ampoule",
+        "cards": [],
+        "relics": [
+          {
+            "id": "STONE_CRACKER",
+            "name": "Stone Cracker"
+          },
+          {
+            "id": "GREMLIN_HORN",
+            "name": "Gremlin Horn"
+          }
+        ],
+        "other": [
+          "Vulnerable Potion",
+          "Gigantification Potion",
+          "Explosive Ampoule"
+        ]
+      }
+    },
+    {
+      "floor": 43,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 65,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 9,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Break",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Break"
+        ]
+      }
+    },
+    {
+      "floor": 44,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Axebots (Normal)",
+      "turns": 5,
+      "damage_taken": null,
+      "hp": {
+        "current": 71,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 20,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "Distilled Chaos",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Distilled Chaos"
+        ]
+      }
+    },
+    {
+      "floor": 45,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 71,
+        "max": 102,
+        "delta": null
+      },
+      "gold": {
+        "current": 20,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 46,
+      "act": 3,
+      "node_type": "elite",
+      "encounter": "Soul Nexus (Elite)",
+      "turns": 6,
+      "damage_taken": 29,
+      "hp": {
+        "current": 48,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 49,
+        "delta": 29
+      },
+      "rewards": {
+        "text": "Burning Pact Centennial Puzzle Touch Of Insanity",
+        "cards": [
+          {
+            "id": "BURNING_PACT",
+            "name": "Burning Pact",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "CENTENNIAL_PUZZLE",
+            "name": "Centennial Puzzle"
+          }
+        ],
+        "other": [
+          "Touch Of Insanity"
+        ]
+      }
+    },
+    {
+      "floor": 47,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 78,
+        "max": 102,
+        "delta": 30
+      },
+      "gold": {
+        "current": 49,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Heal",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Heal"
+        ]
+      }
+    },
+    {
+      "floor": 48,
+      "act": 3,
+      "node_type": "boss",
+      "encounter": "Test Subject (Boss)",
+      "turns": 10,
+      "damage_taken": 39,
+      "hp": {
+        "current": 45,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 49,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 49,
+      "act": 3,
+      "node_type": "boss",
+      "encounter": "Queen (Boss)",
+      "turns": 10,
+      "damage_taken": 37,
+      "hp": {
+        "current": 14,
+        "max": 102,
+        "delta": 6
+      },
+      "gold": {
+        "current": 49,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    }
+  ],
+  "relics": [
+    {
+      "id": "BURNING_BLOOD",
+      "name": "Burning Blood",
+      "floor": 1
+    },
+    {
+      "id": "GOLDEN_PEARL",
+      "name": "Golden Pearl",
+      "floor": 1
+    },
+    {
+      "id": "TEA_OF_DISCOURTESY",
+      "name": "Tea of Discourtesy",
+      "floor": 4
+    },
+    {
+      "id": "RED_SKULL",
+      "name": "Red Skull",
+      "floor": 6
+    },
+    {
+      "id": "ORNAMENTAL_FAN",
+      "name": "Ornamental Fan",
+      "floor": 10
+    },
+    {
+      "id": "STRAWBERRY",
+      "name": "Strawberry",
+      "floor": 12
+    },
+    {
+      "id": "OLD_COIN",
+      "name": "Old Coin",
+      "floor": 14
+    },
+    {
+      "id": "ARCHAIC_TOOTH",
+      "name": "Archaic Tooth",
+      "floor": 18
+    },
+    {
+      "id": "LOST_WISP",
+      "name": "Lost Wisp",
+      "floor": 20
+    },
+    {
+      "id": "ODDLY_SMOOTH_STONE",
+      "name": "Oddly Smooth Stone",
+      "floor": 21
+    },
+    {
+      "id": "BRONZE_SCALES",
+      "name": "Bronze Scales",
+      "floor": 24
+    },
+    {
+      "id": "PEAR",
+      "name": "Pear",
+      "floor": 26
+    },
+    {
+      "id": "POTION_BELT",
+      "name": "Potion Belt",
+      "floor": 28
+    },
+    {
+      "id": "LANTERN",
+      "name": "Lantern",
+      "floor": 31
+    },
+    {
+      "id": "SIGNET_RING",
+      "name": "Signet Ring",
+      "floor": 34
+    },
+    {
+      "id": "WING_CHARM",
+      "name": "Wing Charm",
+      "floor": 38
+    },
+    {
+      "id": "BELLOWS",
+      "name": "Bellows",
+      "floor": 38
+    },
+    {
+      "id": "BAG_OF_MARBLES",
+      "name": "Bag of Marbles",
+      "floor": 41
+    },
+    {
+      "id": "STONE_CRACKER",
+      "name": "Stone Cracker",
+      "floor": 42
+    },
+    {
+      "id": "GREMLIN_HORN",
+      "name": "Gremlin Horn",
+      "floor": 42
+    },
+    {
+      "id": "CENTENNIAL_PUZZLE",
+      "name": "Centennial Puzzle",
+      "floor": 46
+    }
+  ],
+  "final_deck": [
+    {
+      "id": "FEEL_NO_PAIN",
+      "name": "Feel No Pain",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "HELLRAISER",
+      "name": "Hellraiser",
+      "upgraded": false,
+      "cost": "2",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "ARMAMENTS",
+      "name": "Armaments+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "BLOODLETTING",
+      "name": "Bloodletting",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "BURNING_PACT",
+      "name": "Burning Pact",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DOMINATE",
+      "name": "Dominate",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "PRIMAL_FORCE",
+      "name": "Primal Force",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "RAGE",
+      "name": "Rage",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "SHRUG_IT_OFF",
+      "name": "Shrug It Off",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "THINKING_AHEAD",
+      "name": "Thinking Ahead",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "TREMBLE",
+      "name": "Tremble",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "BOLAS",
+      "name": "Bolas+",
+      "upgraded": true,
+      "cost": "0",
+      "type": "Attack"
+    },
+    {
+      "id": "BREAK",
+      "name": "Break+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "MOLTEN_FIST",
+      "name": "Molten Fist+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "PACTS_END",
+      "name": "Pacts End",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Attack"
+    },
+    {
+      "id": "POMMEL_STRIKE",
+      "name": "Pommel Strike+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "ULTIMATE_STRIKE",
+      "name": "Ultimate Strike",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "UPPERCUT",
+      "name": "Uppercut+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "ASCENDERS_BANE",
+      "name": "Ascenders Bane ?",
+      "upgraded": false,
+      "cost": null,
+      "type": "Curse"
+    }
+  ],
+  "derived": {
+    "floor_count": 49,
+    "final_deck_entries": 26,
+    "final_deck_cards_counted": 26,
+    "relic_count": 21,
+    "bosses": [
+      "Ceremonial Beast (Boss)",
+      "The Insatiable (Boss)",
+      "Test Subject (Boss)",
+      "Queen (Boss)"
+    ],
+    "elites": [
+      "Bygone Effigy (Elite)",
+      "Byrdonis (Elite)",
+      "Decimillipede (Elite)",
+      "Entomancer (Elite)",
+      "Infested Prisms (Elite)",
+      "Soul Nexus (Elite)"
+    ]
+  }
+}

@@ -1,0 +1,2118 @@
+{
+  "id": "4014b177845d7e67cd9c43f5725e0cd5ed58ea038d890cff8b0ac75e6b168e6b",
+  "url": "https://sts2.fun/run/4014b177845d7e67cd9c43f5725e0cd5ed58ea038d890cff8b0ac75e6b168e6b",
+  "source": "sts2.fun",
+  "fetched_at": "2026-04-29T15:07:39.685015+00:00",
+  "discovered": {
+    "source_player": "loyal-reaper",
+    "date": "Apr 12, 2026",
+    "character": "Ironclad",
+    "ascension": 10,
+    "result": "WIN",
+    "floors": 49,
+    "listed_deck_size": 91,
+    "duration": "65 min",
+    "killed_by": "",
+    "url": "https://sts2.fun/run/4014b177845d7e67cd9c43f5725e0cd5ed58ea038d890cff8b0ac75e6b168e6b"
+  },
+  "title": "Ironclad — A10 WIN",
+  "player": "Cykachu Cykachunovitch",
+  "character": "Ironclad",
+  "ascension": 10,
+  "result": "WIN",
+  "date": "Apr 12, 2026",
+  "summary_stats": {
+    "Floors": "49",
+    "Duration": "65 min",
+    "Final HP": "207/207",
+    "Total Damage": "385",
+    "Deck Size": "91",
+    "Final Gold": "655",
+    "Elites Killed": "5",
+    "Campfires (3 Smith, 6 Clone, 1 Heal)": "10"
+  },
+  "floors": [
+    {
+      "floor": 1,
+      "act": 1,
+      "node_type": "ancient",
+      "encounter": "Neow",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 64,
+        "max": 80,
+        "delta": 64
+      },
+      "gold": {
+        "current": 99,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Phial Holster Energy Potion , Flex Potion",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PHIAL_HOLSTER",
+            "name": "Phial Holster"
+          }
+        ],
+        "other": [
+          "Energy Potion",
+          "Flex Potion"
+        ]
+      }
+    },
+    {
+      "floor": 2,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Toadpoles (Weak)",
+      "turns": 6,
+      "damage_taken": 5,
+      "hp": {
+        "current": 65,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 112,
+        "delta": 13
+      },
+      "rewards": {
+        "text": "Hemokinesis",
+        "cards": [
+          {
+            "id": "HEMOKINESIS",
+            "name": "Hemokinesis",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 3,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Sludge Spinner (Weak)",
+      "turns": 4,
+      "damage_taken": 4,
+      "hp": {
+        "current": 67,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 122,
+        "delta": 10
+      },
+      "rewards": {
+        "text": "Uppercut",
+        "cards": [
+          {
+            "id": "UPPERCUT",
+            "name": "Uppercut",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 4,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Corpse Slugs (Weak)",
+      "turns": 4,
+      "damage_taken": 2,
+      "hp": {
+        "current": 71,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 129,
+        "delta": 7
+      },
+      "rewards": {
+        "text": "Rage",
+        "cards": [
+          {
+            "id": "RAGE",
+            "name": "Rage",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 5,
+      "act": 1,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 71,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 42,
+        "delta": -87
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 6,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Sewer Clam (Normal)",
+      "turns": 5,
+      "damage_taken": 2,
+      "hp": {
+        "current": 75,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 56,
+        "delta": 14
+      },
+      "rewards": {
+        "text": "Armaments Skill Potion",
+        "cards": [
+          {
+            "id": "ARMAMENTS",
+            "name": "Armaments",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Skill Potion"
+        ]
+      }
+    },
+    {
+      "floor": 7,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Terror Eel (Elite)",
+      "turns": 9,
+      "damage_taken": 53,
+      "hp": {
+        "current": 41,
+        "max": 80,
+        "delta": 19
+      },
+      "gold": {
+        "current": 99,
+        "delta": 43
+      },
+      "rewards": {
+        "text": "Stomp Lucky Fysh Beetle Juice",
+        "cards": [
+          {
+            "id": "STOMP",
+            "name": "Stomp",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "LUCKY_FYSH",
+            "name": "Lucky Fysh"
+          }
+        ],
+        "other": [
+          "Beetle Juice"
+        ]
+      }
+    },
+    {
+      "floor": 8,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 41,
+        "max": 80,
+        "delta": null
+      },
+      "gold": {
+        "current": 99,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Stone Armor",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Stone Armor"
+        ]
+      }
+    },
+    {
+      "floor": 9,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Skulking Colony (Elite)",
+      "turns": 7,
+      "damage_taken": 13,
+      "hp": {
+        "current": 34,
+        "max": 80,
+        "delta": 6
+      },
+      "gold": {
+        "current": 147,
+        "delta": 48
+      },
+      "rewards": {
+        "text": "Taunt Anchor",
+        "cards": [
+          {
+            "id": "TAUNT",
+            "name": "Taunt",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "ANCHOR",
+            "name": "Anchor"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 10,
+      "act": 1,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 44,
+        "max": 90,
+        "delta": 10
+      },
+      "gold": {
+        "current": 178,
+        "delta": 31
+      },
+      "rewards": {
+        "text": "Pear",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PEAR",
+            "name": "Pear"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 11,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Corpse Slugs (Normal)",
+      "turns": 4,
+      "damage_taken": null,
+      "hp": {
+        "current": 50,
+        "max": 90,
+        "delta": 6
+      },
+      "gold": {
+        "current": 201,
+        "delta": 23
+      },
+      "rewards": {
+        "text": "Unrelenting",
+        "cards": [
+          {
+            "id": "UNRELENTING",
+            "name": "Unrelenting",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 12,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 50,
+        "max": 90,
+        "delta": null
+      },
+      "gold": {
+        "current": 201,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: Uppercut",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: Uppercut"
+        ]
+      }
+    },
+    {
+      "floor": 13,
+      "act": 1,
+      "node_type": "elite",
+      "encounter": "Phantasmal Gardeners (Elite)",
+      "turns": 11,
+      "damage_taken": 24,
+      "hp": {
+        "current": 32,
+        "max": 90,
+        "delta": 6
+      },
+      "gold": {
+        "current": 228,
+        "delta": 27
+      },
+      "rewards": {
+        "text": "Happy Flower Fruit Juice",
+        "cards": [],
+        "relics": [
+          {
+            "id": "HAPPY_FLOWER",
+            "name": "Happy Flower"
+          }
+        ],
+        "other": [
+          "Fruit Juice"
+        ]
+      }
+    },
+    {
+      "floor": 14,
+      "act": 1,
+      "node_type": "monster",
+      "encounter": "Gremlin Merc (Normal)",
+      "turns": 3,
+      "damage_taken": 2,
+      "hp": {
+        "current": 36,
+        "max": 90,
+        "delta": 6
+      },
+      "gold": {
+        "current": 254,
+        "delta": 26
+      },
+      "rewards": {
+        "text": "True Grit Block Potion",
+        "cards": [
+          {
+            "id": "TRUE_GRIT",
+            "name": "True Grit",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Block Potion"
+        ]
+      }
+    },
+    {
+      "floor": 15,
+      "act": 1,
+      "node_type": "unknown",
+      "encounter": "Self Help Book",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 36,
+        "max": 90,
+        "delta": null
+      },
+      "gold": {
+        "current": 254,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 16,
+      "act": 1,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 41,
+        "max": 95,
+        "delta": 5
+      },
+      "gold": {
+        "current": 254,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Smith: True Grit",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Smith: True Grit"
+        ]
+      }
+    },
+    {
+      "floor": 17,
+      "act": 1,
+      "node_type": "boss",
+      "encounter": "Soul Fysh (Boss)",
+      "turns": 13,
+      "damage_taken": 38,
+      "hp": {
+        "current": 9,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 344,
+        "delta": 90
+      },
+      "rewards": {
+        "text": "Juggernaut",
+        "cards": [
+          {
+            "id": "JUGGERNAUT",
+            "name": "Juggernaut",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 18,
+      "act": 2,
+      "node_type": "ancient",
+      "encounter": "Pael",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 77,
+        "max": 95,
+        "delta": 68
+      },
+      "gold": {
+        "current": 344,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Paels Growth",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PAELS_GROWTH",
+            "name": "Paels Growth"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 19,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Thieving Hopper (Weak)",
+      "turns": 6,
+      "damage_taken": 10,
+      "hp": {
+        "current": 73,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 371,
+        "delta": 27
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 20,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "Brain Leech",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 73,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 386,
+        "delta": 15
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 21,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Exoskeletons (Weak)",
+      "turns": 6,
+      "damage_taken": 8,
+      "hp": {
+        "current": 71,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 397,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 22,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Mytes (Normal)",
+      "turns": 7,
+      "damage_taken": 30,
+      "hp": {
+        "current": 47,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 421,
+        "delta": 24
+      },
+      "rewards": {
+        "text": "Tremble+ Droplet Of Precognition",
+        "cards": [
+          {
+            "id": "TREMBLE",
+            "name": "Tremble+",
+            "upgraded": true
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Droplet Of Precognition"
+        ]
+      }
+    },
+    {
+      "floor": 23,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Ovicopter (Normal)",
+      "turns": 5,
+      "damage_taken": 18,
+      "hp": {
+        "current": 35,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 445,
+        "delta": 24
+      },
+      "rewards": {
+        "text": "Flame Barrier",
+        "cards": [
+          {
+            "id": "FLAME_BARRIER",
+            "name": "Flame Barrier",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 24,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 35,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 460,
+        "delta": 15
+      },
+      "rewards": {
+        "text": "Clone",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Clone"
+        ]
+      }
+    },
+    {
+      "floor": 25,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "Chompers (Normal)",
+      "turns": 12,
+      "damage_taken": 29,
+      "hp": {
+        "current": 12,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 471,
+        "delta": 11
+      },
+      "rewards": {
+        "text": "Power Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Power Potion"
+        ]
+      }
+    },
+    {
+      "floor": 26,
+      "act": 2,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 12,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 510,
+        "delta": 39
+      },
+      "rewards": {
+        "text": "Bowler Hat",
+        "cards": [],
+        "relics": [
+          {
+            "id": "BOWLER_HAT",
+            "name": "Bowler Hat"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 27,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 40,
+        "max": 95,
+        "delta": 28
+      },
+      "gold": {
+        "current": 510,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Heal",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Heal"
+        ]
+      }
+    },
+    {
+      "floor": 28,
+      "act": 2,
+      "node_type": "unknown",
+      "encounter": "This Or That",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 40,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 528,
+        "delta": 18
+      },
+      "rewards": {
+        "text": "Candelabra",
+        "cards": [],
+        "relics": [
+          {
+            "id": "CANDELABRA",
+            "name": "Candelabra"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 29,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 40,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 564,
+        "delta": 36
+      },
+      "rewards": {
+        "text": "Clone",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Clone"
+        ]
+      }
+    },
+    {
+      "floor": 30,
+      "act": 2,
+      "node_type": "monster",
+      "encounter": "The Obscura (Normal)",
+      "turns": 14,
+      "damage_taken": 15,
+      "hp": {
+        "current": 31,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 592,
+        "delta": 28
+      },
+      "rewards": {
+        "text": "Burning Pact Flex Potion",
+        "cards": [
+          {
+            "id": "BURNING_PACT",
+            "name": "Burning Pact",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": [
+          "Flex Potion"
+        ]
+      }
+    },
+    {
+      "floor": 31,
+      "act": 2,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 31,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 46,
+        "delta": -564
+      },
+      "rewards": {
+        "text": "Pantograph Cure All",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PANTOGRAPH",
+            "name": "Pantograph"
+          }
+        ],
+        "other": [
+          "Cure All"
+        ]
+      }
+    },
+    {
+      "floor": 32,
+      "act": 2,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 31,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 118,
+        "delta": 72
+      },
+      "rewards": {
+        "text": "Clone",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Clone"
+        ]
+      }
+    },
+    {
+      "floor": 33,
+      "act": 2,
+      "node_type": "boss",
+      "encounter": "Kaiser Crab (Boss)",
+      "turns": 14,
+      "damage_taken": 4,
+      "hp": {
+        "current": 58,
+        "max": 95,
+        "delta": 31
+      },
+      "gold": {
+        "current": 229,
+        "delta": 111
+      },
+      "rewards": {
+        "text": "Demon Form",
+        "cards": [
+          {
+            "id": "DEMON_FORM",
+            "name": "Demon Form",
+            "upgraded": false
+          }
+        ],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 34,
+      "act": 3,
+      "node_type": "ancient",
+      "encounter": "Tanx",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 87,
+        "max": 95,
+        "delta": 29
+      },
+      "gold": {
+        "current": 229,
+        "delta": null
+      },
+      "rewards": {
+        "text": "Sai",
+        "cards": [],
+        "relics": [
+          {
+            "id": "SAI",
+            "name": "Sai"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 35,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Turret Operator (Weak)",
+      "turns": 8,
+      "damage_taken": null,
+      "hp": {
+        "current": 93,
+        "max": 95,
+        "delta": 6
+      },
+      "gold": {
+        "current": 246,
+        "delta": 17
+      },
+      "rewards": {
+        "text": "Blood Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Blood Potion"
+        ]
+      }
+    },
+    {
+      "floor": 36,
+      "act": 3,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 93,
+        "max": 95,
+        "delta": null
+      },
+      "gold": {
+        "current": 67,
+        "delta": -179
+      },
+      "rewards": {
+        "text": "Dragon Fruit",
+        "cards": [],
+        "relics": [
+          {
+            "id": "DRAGON_FRUIT",
+            "name": "Dragon Fruit"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 37,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Devoted Sculptor (Weak)",
+      "turns": 8,
+      "damage_taken": null,
+      "hp": {
+        "current": 97,
+        "max": 97,
+        "delta": 4
+      },
+      "gold": {
+        "current": 85,
+        "delta": 18
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 38,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Scrolls Of Biting (Normal)",
+      "turns": 11,
+      "damage_taken": 56,
+      "hp": {
+        "current": 49,
+        "max": 83,
+        "delta": 8
+      },
+      "gold": {
+        "current": 102,
+        "delta": 17
+      },
+      "rewards": {
+        "text": "Flex Potion",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Flex Potion"
+        ]
+      }
+    },
+    {
+      "floor": 39,
+      "act": 3,
+      "node_type": "monster",
+      "encounter": "Construct Menagerie (Normal)",
+      "turns": 8,
+      "damage_taken": 11,
+      "hp": {
+        "current": 46,
+        "max": 85,
+        "delta": 8
+      },
+      "gold": {
+        "current": 119,
+        "delta": 17
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 40,
+      "act": 3,
+      "node_type": "elite",
+      "encounter": "Soul Nexus (Elite)",
+      "turns": 10,
+      "damage_taken": 19,
+      "hp": {
+        "current": 37,
+        "max": 89,
+        "delta": 10
+      },
+      "gold": {
+        "current": 169,
+        "delta": 50
+      },
+      "rewards": {
+        "text": "Pommel Strike War Paint",
+        "cards": [
+          {
+            "id": "POMMEL_STRIKE",
+            "name": "Pommel Strike",
+            "upgraded": false
+          }
+        ],
+        "relics": [
+          {
+            "id": "WAR_PAINT",
+            "name": "War Paint"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 41,
+      "act": 3,
+      "node_type": "treasure",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 39,
+        "max": 91,
+        "delta": 2
+      },
+      "gold": {
+        "current": 217,
+        "delta": 48
+      },
+      "rewards": {
+        "text": "Strike Dummy",
+        "cards": [],
+        "relics": [
+          {
+            "id": "STRIKE_DUMMY",
+            "name": "Strike Dummy"
+          }
+        ],
+        "other": []
+      }
+    },
+    {
+      "floor": 42,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 55,
+        "max": 107,
+        "delta": 16
+      },
+      "gold": {
+        "current": 361,
+        "delta": 144
+      },
+      "rewards": {
+        "text": "Clone",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Clone"
+        ]
+      }
+    },
+    {
+      "floor": 43,
+      "act": 3,
+      "node_type": "elite",
+      "encounter": "Knights (Elite)",
+      "turns": 12,
+      "damage_taken": 42,
+      "hp": {
+        "current": 21,
+        "max": 109,
+        "delta": 8
+      },
+      "gold": {
+        "current": 399,
+        "delta": 38
+      },
+      "rewards": {
+        "text": "Lizard Tail Strength Potion",
+        "cards": [],
+        "relics": [
+          {
+            "id": "LIZARD_TAIL",
+            "name": "Lizard Tail"
+          }
+        ],
+        "other": [
+          "Strength Potion"
+        ]
+      }
+    },
+    {
+      "floor": 44,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 53,
+        "max": 141,
+        "delta": 32
+      },
+      "gold": {
+        "current": 687,
+        "delta": 288
+      },
+      "rewards": {
+        "text": "Clone",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Clone"
+        ]
+      }
+    },
+    {
+      "floor": 45,
+      "act": 3,
+      "node_type": "unknown",
+      "encounter": "Slippery Bridge",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 53,
+        "max": 141,
+        "delta": null
+      },
+      "gold": {
+        "current": 687,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 46,
+      "act": 3,
+      "node_type": "shop",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 55,
+        "max": 143,
+        "delta": 2
+      },
+      "gold": {
+        "current": 79,
+        "delta": -626
+      },
+      "rewards": {
+        "text": "Paper Phrog , Venerable Tea Set Attack Potion",
+        "cards": [],
+        "relics": [
+          {
+            "id": "PAPER_PHROG",
+            "name": "Paper Phrog"
+          },
+          {
+            "id": "VENERABLE_TEA_SET",
+            "name": "Venerable Tea Set"
+          }
+        ],
+        "other": [
+          "Attack Potion"
+        ]
+      }
+    },
+    {
+      "floor": 47,
+      "act": 3,
+      "node_type": "rest",
+      "encounter": "",
+      "turns": null,
+      "damage_taken": null,
+      "hp": {
+        "current": 119,
+        "max": 207,
+        "delta": 64
+      },
+      "gold": {
+        "current": 655,
+        "delta": 576
+      },
+      "rewards": {
+        "text": "Clone",
+        "cards": [],
+        "relics": [],
+        "other": [
+          "Clone"
+        ]
+      }
+    },
+    {
+      "floor": 48,
+      "act": 3,
+      "node_type": "boss",
+      "encounter": "Doormaker (Boss)",
+      "turns": 29,
+      "damage_taken": null,
+      "hp": {
+        "current": 150,
+        "max": 207,
+        "delta": 31
+      },
+      "gold": {
+        "current": 655,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    },
+    {
+      "floor": 49,
+      "act": 3,
+      "node_type": "boss",
+      "encounter": "Test Subject (Boss)",
+      "turns": 35,
+      "damage_taken": null,
+      "hp": {
+        "current": 207,
+        "max": 207,
+        "delta": 57
+      },
+      "gold": {
+        "current": 655,
+        "delta": null
+      },
+      "rewards": {
+        "text": "",
+        "cards": [],
+        "relics": [],
+        "other": []
+      }
+    }
+  ],
+  "relics": [
+    {
+      "id": "BURNING_BLOOD",
+      "name": "Burning Blood",
+      "floor": 1
+    },
+    {
+      "id": "PHIAL_HOLSTER",
+      "name": "Phial Holster",
+      "floor": 1
+    },
+    {
+      "id": "LUCKY_FYSH",
+      "name": "Lucky Fysh",
+      "floor": 7
+    },
+    {
+      "id": "ANCHOR",
+      "name": "Anchor",
+      "floor": 9
+    },
+    {
+      "id": "PEAR",
+      "name": "Pear",
+      "floor": 10
+    },
+    {
+      "id": "HAPPY_FLOWER",
+      "name": "Happy Flower",
+      "floor": 13
+    },
+    {
+      "id": "PAELS_GROWTH",
+      "name": "Pael's Growth",
+      "floor": 18
+    },
+    {
+      "id": "BOWLER_HAT",
+      "name": "Bowler Hat",
+      "floor": 26
+    },
+    {
+      "id": "CANDELABRA",
+      "name": "Candelabra",
+      "floor": 28
+    },
+    {
+      "id": "PANTOGRAPH",
+      "name": "Pantograph",
+      "floor": 31
+    },
+    {
+      "id": "SAI",
+      "name": "Sai",
+      "floor": 34
+    },
+    {
+      "id": "DRAGON_FRUIT",
+      "name": "Dragon Fruit",
+      "floor": 36
+    },
+    {
+      "id": "WAR_PAINT",
+      "name": "War Paint",
+      "floor": 40
+    },
+    {
+      "id": "STRIKE_DUMMY",
+      "name": "Strike Dummy",
+      "floor": 41
+    },
+    {
+      "id": "LIZARD_TAIL",
+      "name": "Lizard Tail",
+      "floor": 43
+    },
+    {
+      "id": "PAPER_PHROG",
+      "name": "Paper Phrog",
+      "floor": 46
+    },
+    {
+      "id": "VENERABLE_TEA_SET",
+      "name": "Venerable Tea Set",
+      "floor": 46
+    }
+  ],
+  "final_deck": [
+    {
+      "id": "DEMON_FORM",
+      "name": "Demon Form",
+      "upgraded": false,
+      "cost": "3",
+      "type": "Power"
+    },
+    {
+      "id": "JUGGERNAUT",
+      "name": "Juggernaut",
+      "upgraded": false,
+      "cost": "2",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "STONE_ARMOR",
+      "name": "Stone Armor+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Power"
+    },
+    {
+      "id": "ARMAMENTS",
+      "name": "Armaments",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "BURNING_PACT",
+      "name": "Burning Pact",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "DEFEND_IRONCLAD",
+      "name": "Defend Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "FLAME_BARRIER",
+      "name": "Flame Barrier+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Skill"
+    },
+    {
+      "id": "RAGE",
+      "name": "Rage",
+      "upgraded": false,
+      "cost": "0",
+      "type": "Skill"
+    },
+    {
+      "id": "SHRUG_IT_OFF",
+      "name": "Shrug It Off",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "TAUNT",
+      "name": "Taunt",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "TREMBLE",
+      "name": "Tremble+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "TRUE_GRIT",
+      "name": "True Grit+",
+      "upgraded": true,
+      "cost": "1",
+      "type": "Skill"
+    },
+    {
+      "id": "BASH",
+      "name": "Bash",
+      "upgraded": false,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "BODY_SLAM",
+      "name": "Body Slam",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "GOLD_AXE",
+      "name": "Gold Axe",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "HEMOKINESIS",
+      "name": "Hemokinesis",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "POMMEL_STRIKE",
+      "name": "Pommel Strike",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STOMP",
+      "name": "Stomp",
+      "upgraded": false,
+      "cost": "3",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "STRIKE_IRONCLAD",
+      "name": "Strike Ironclad",
+      "upgraded": false,
+      "cost": "1",
+      "type": "Attack"
+    },
+    {
+      "id": "UNRELENTING",
+      "name": "Unrelenting",
+      "upgraded": false,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "UPPERCUT",
+      "name": "Uppercut+",
+      "upgraded": true,
+      "cost": "2",
+      "type": "Attack"
+    },
+    {
+      "id": "ASCENDERS_BANE",
+      "name": "Ascenders Bane ?",
+      "upgraded": false,
+      "cost": null,
+      "type": "Curse"
+    }
+  ],
+  "derived": {
+    "floor_count": 49,
+    "final_deck_entries": 91,
+    "final_deck_cards_counted": 91,
+    "relic_count": 17,
+    "bosses": [
+      "Soul Fysh (Boss)",
+      "Kaiser Crab (Boss)",
+      "Doormaker (Boss)",
+      "Test Subject (Boss)"
+    ],
+    "elites": [
+      "Terror Eel (Elite)",
+      "Skulking Colony (Elite)",
+      "Phantasmal Gardeners (Elite)",
+      "Soul Nexus (Elite)",
+      "Knights (Elite)"
+    ]
+  }
+}

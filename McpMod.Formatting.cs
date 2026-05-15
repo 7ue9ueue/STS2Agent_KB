@@ -536,13 +536,29 @@ public static partial class McpMod
                 nodeLookup[$"{node["col"]},{node["row"]}"] = node;
         }
 
+        if (map.TryGetValue("bosses", out var bossesObj)
+            && bossesObj is List<Dictionary<string, object?>> bosses
+            && bosses.Count > 0)
+        {
+            sb.AppendLine("## Act Boss");
+            foreach (var boss in bosses)
+            {
+                string bossName = boss.GetValueOrDefault("boss_name")?.ToString() ?? "Unknown";
+                string bossId = boss.GetValueOrDefault("boss_id")?.ToString() ?? "";
+                string idSuffix = bossId.Length > 0 ? $" (`{bossId}`)" : "";
+                sb.AppendLine($"- **{bossName}**{idSuffix} ({boss["col"]},{boss["row"]})");
+            }
+            sb.AppendLine();
+        }
+
         // Next options with future path trees
         if (map.TryGetValue("next_options", out var optObj) && optObj is List<Dictionary<string, object?>> options && options.Count > 0)
         {
             sb.AppendLine("## Choose Next Node");
             foreach (var opt in options)
             {
-                sb.AppendLine($"- [{opt["index"]}] **{opt["type"]}** ({opt["col"]},{opt["row"]})");
+                var displayNode = nodeLookup.TryGetValue($"{opt["col"]},{opt["row"]}", out var canonicalOpt) ? canonicalOpt : opt;
+                sb.AppendLine($"- [{opt["index"]}] **{FormatMapNodeType(displayNode)}** ({opt["col"]},{opt["row"]})");
                 string tree = BuildFuturePathTree(opt, nodeLookup);
                 if (tree.Length > 0)
                     sb.AppendLine($"  Future paths: {tree}");
@@ -579,7 +595,7 @@ public static partial class McpMod
             {
                 if (nodeLookup.TryGetValue(key, out var node))
                 {
-                    string type = node["type"]?.ToString() ?? "Unknown";
+                    string type = FormatMapNodeType(node);
                     int col = node["col"] is int c ? c : Convert.ToInt32(node["col"]);
                     int row = node["row"] is int r ? r : Convert.ToInt32(node["row"]);
                     levelNodes.Add((type, col, row));
@@ -599,6 +615,14 @@ public static partial class McpMod
         }
 
         return sb.ToString().TrimEnd();
+    }
+
+    private static string FormatMapNodeType(Dictionary<string, object?> node)
+    {
+        string type = node["type"]?.ToString() ?? "Unknown";
+        if (type == "Boss" && node.TryGetValue("boss_name", out var bossName) && bossName != null)
+            return $"Boss: {bossName}";
+        return type;
     }
 
     private static HashSet<string> GetChildKeys(Dictionary<string, object?> node)

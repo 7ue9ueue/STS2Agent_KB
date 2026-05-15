@@ -1,0 +1,3558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run — Ironclad A10 — STS2.fun</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a2e'/><path d='M16 4 L20 14 L22 14 L18 24 L21 24 L16 30 L11 24 L14 24 L10 14 L12 14 Z' fill='%23e94560'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Almendra:wght@400;700&family=Cinzel:wght@600;700;900&family=Rajdhani:wght@400;500;600;700&family=Saira:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,WONK@0,9..144,100..900,0..1&family=Inter:wght@400;500;600;700&family=Metamorphous&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0D1014;
+            --surface: #151C22;
+            --surface2: #1C2530;
+            --accent: #A02828;
+            --accent2: #533483;
+            --accent-gold: #B8963C;
+            --text: #E8DDD0;
+            --text-muted: #6E6860;
+            --win: #3DBF7A;
+            --loss: #C0392B;
+        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Fraunces', Georgia, serif;
+            font-variation-settings: 'WONK' 1;
+            background-color: #07090D;
+            background-image:
+                /* Corner vignettes */
+                radial-gradient(ellipse 70% 70% at 0% 0%,     rgba(5,7,10,0.85) 0%, transparent 60%),
+                radial-gradient(ellipse 70% 70% at 100% 0%,   rgba(5,7,10,0.85) 0%, transparent 60%),
+                radial-gradient(ellipse 70% 70% at 0% 100%,   rgba(5,7,10,0.85) 0%, transparent 60%),
+                radial-gradient(ellipse 70% 70% at 100% 100%, rgba(5,7,10,0.85) 0%, transparent 60%),
+                /* Central atmospheric glow — rgba so artwork bleeds through */
+                radial-gradient(ellipse 100% 90% at 50% 20%, rgba(28,40,64,0.82) 0%, rgba(13,17,24,0.88) 55%, rgba(7,9,13,0.94) 100%),
+                /* Dark overlay to suppress the artwork */
+                linear-gradient(rgba(7,9,13,0.63), rgba(7,9,13,0.63)),
+                /* STS2 key art */
+                url('/static/bg.jpg');
+            background-size: auto, auto, auto, auto, auto, auto, cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+            position: relative;
+        }
+        /* Subtle grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-size: 256px 256px;
+            opacity: 0.045;
+        }
+        nav, .container, footer { position: relative; z-index: 1; }
+        nav {
+            background: var(--surface);
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+        }
+        nav a:hover { color: var(--accent-gold); }
+        nav .nav-primary {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            background: none;
+            color: var(--nav-accent);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+        nav .nav-primary::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--nav-accent);
+            opacity: 0;
+            transform: scaleX(0.3);
+            transition: all 0.25s ease;
+        }
+        nav .nav-primary img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 4px var(--nav-accent-dim));
+            transition: all 0.3s ease;
+        }
+        nav .nav-primary:hover {
+            color: #fff;
+        }
+        nav .nav-primary:hover::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        nav .nav-primary:hover img {
+            transform: scale(1.25) rotate(-6deg);
+            filter: drop-shadow(0 0 8px var(--nav-accent));
+        }
+        nav .nav-primary--cards { --nav-accent: #e94560; --nav-accent-dim: rgba(233,69,96,0.4); }
+        nav .nav-primary--potions { --nav-accent: #4ecca3; --nav-accent-dim: rgba(78,204,163,0.4); }
+        nav .nav-primary--relics { --nav-accent: #c9a84c; --nav-accent-dim: rgba(201,168,76,0.4); }
+        nav .nav-primary--ancients { --nav-accent: #ff9f43; --nav-accent-dim: rgba(255,159,67,0.4); }
+        nav .nav-primary--events { --nav-accent: #5ec4d4; --nav-accent-dim: rgba(94,196,212,0.4); }
+        nav .nav-primary--coop { --nav-accent: #b388ff; --nav-accent-dim: rgba(179,136,255,0.4); }
+        .nav-icon { width: 18px; height: 18px; vertical-align: -3px; margin-right: 3px; }
+        nav .nav-secondary {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 0.04em;
+            padding: 0.3rem 0.6rem;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        nav .nav-secondary:hover {
+            color: var(--accent-gold);
+            border-bottom-color: rgba(201,168,76,0.4);
+        }
+        nav .logo {
+            font-family: 'Metamorphous', serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            letter-spacing: 0.03em;
+        }
+        .sidebar-img {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+            mask-image: linear-gradient(to right, black 60%, transparent);
+            -webkit-mask-image: linear-gradient(to right, black 60%, transparent);
+        }
+        @media (max-width: 1400px) { .sidebar-img { display: none; } }
+        .container { max-width: 1150px; margin: 0 auto; padding: 2rem 2.5rem; position: relative; z-index: 1; }
+        h1, h2, h3 { margin-bottom: 1rem; }
+        h1 {
+            font-family: 'Metamorphous', serif;
+            font-size: 2.2rem;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            background: linear-gradient(135deg, #B8963C 0%, #E8C86A 45%, #9E7828 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-family: 'Cinzel', 'Georgia', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--accent-gold);
+            padding: 0.35rem 0.75rem 0.5rem;
+            border-left: 3px solid var(--accent-gold);
+            border-bottom: 1px solid rgba(184,150,60,0.15);
+            margin-bottom: 1.2rem;
+            background: linear-gradient(90deg, rgba(184,150,60,0.07) 0%, transparent 55%);
+            border-radius: 0 4px 0 0;
+            text-shadow: 0 0 24px rgba(184,150,60,0.2);
+        }
+        .card {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .stat-box {
+            background: var(--surface2);
+            border-radius: 10px;
+            padding: 1.4rem 1rem;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 0 1px rgba(184,150,60,0.15);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            cursor: default;
+        }
+        .stat-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.5), 0 0 0 1px rgba(184,150,60,0.3), 0 0 18px rgba(184,150,60,0.12);
+        }
+        .stat-box .value {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 0.06em;
+            font-weight: bold;
+            color: var(--accent-gold);
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+        .stat-box .label {
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            color: #B0A898;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+        }
+        th, td {
+            padding: 0.6rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+        }
+        /* ── Site-wide table convention: numbers center, name/text columns left ──
+           Default above is center. Per-table overrides below keep the columns
+           that contain names, dates, encounter labels, etc. left-aligned for
+           scannability. Anything not listed here inherits the centered default. */
+        /* Recent Uploads (index): Date, Player, Character */
+        #recent table th:nth-child(-n+3),
+        #recent table td:nth-child(-n+3) { text-align: left; }
+        /* Multiplayer character + party tables: col 1 is the name */
+        #char-table th:first-child, #char-table td:first-child,
+        .comp-table th:first-child, .comp-table td:first-child { text-align: left; }
+        /* Ancients main relic table: col 2 (Relic name + icon) */
+        .relic-table th:nth-child(2), .relic-table td:nth-child(2) { text-align: left; }
+        /* Ancients win-rate tables: col 1 always; col 2 also in the Act2+Act3 combo table */
+        .wr-table th:first-child, .wr-table td:first-child { text-align: left; }
+        .combo-wrap .wr-table th:nth-child(2), .combo-wrap .wr-table td:nth-child(2) { text-align: left; }
+        /* Events choice-path table */
+        .choice-table th:first-child, .choice-table td:first-child { text-align: left; }
+        /* Run page floor-by-floor: Encounter (col 4) and Rewards (last col) */
+        .run-floors th:nth-child(4), .run-floors td:nth-child(4),
+        .run-floors th:last-child, .run-floors td:last-child { text-align: left; }
+        /* Player profile character-stats table: col 1 (Character) */
+        .char-table th:first-child, .char-table td:first-child { text-align: left; }
+        /* Player run-history: Date (1), Character (2), Killed By (last) */
+        #run-history th:nth-child(1), #run-history td:nth-child(1),
+        #run-history th:nth-child(2), #run-history td:nth-child(2),
+        #run-history th:last-child, #run-history td:last-child { text-align: left; }
+        thead tr {
+            background: rgba(255,255,255,0.04);
+            border-bottom: 2px solid rgba(184,150,60,0.25);
+        }
+        th {
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            color: #C8BFB0;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            font-weight: 700;
+            padding: 0.75rem 1rem;
+        }
+        th.sortable { cursor: pointer; user-select: none; }
+        th.sortable::after { content: " ↕"; font-size: 0.65rem; color: var(--text-muted); opacity: 0.6; }
+        th.sortable:hover { color: var(--accent-gold); }
+        th.sortable:hover::after { color: var(--accent-gold); opacity: 1; }
+        th.sort-asc::after { content: " ▲"; font-size: 0.65rem; color: var(--accent-gold); opacity: 1; }
+        th.sort-desc::after { content: " ▼"; font-size: 0.65rem; color: var(--accent-gold); opacity: 1; }
+
+        /* ── Bounded scroll block for expanded tables (Option A) ──
+           Applied by expand/collapse JS to the table's immediate parent when
+           the user reveals >10 rows. Caps the height so the column headers
+           never leave the viewport, and keeps page scroll from exploding on
+           long leaderboards (800+ rows). Removed on sort-reset and collapse.  */
+        .is-scrolling {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(184,150,60,0.4) rgba(255,255,255,0.03);
+            /* Smooth scrolling when expandSection programmatically jumps to top */
+            scroll-behavior: smooth;
+        }
+        .is-scrolling::-webkit-scrollbar { width: 8px; height: 8px; }
+        .is-scrolling::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-radius: 4px; }
+        .is-scrolling::-webkit-scrollbar-thumb { background: rgba(184,150,60,0.35); border-radius: 4px; }
+        .is-scrolling::-webkit-scrollbar-thumb:hover { background: rgba(184,150,60,0.6); }
+        /* Sticky column headers — per <th> because border-collapse: collapse
+           has known issues applying sticky to the whole <thead> in Safari. */
+        .is-scrolling table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: var(--surface);
+            /* collapse mode eats the tr border when sticky engages — fake it */
+            box-shadow: inset 0 -2px 0 rgba(184,150,60,0.3);
+        }
+        /* Kill the gold top-gradient overlay on the leaderboard wrapper when
+           it becomes the scroll container — the overlay would scroll with
+           content and look like a rendering glitch. */
+        .lb-table-wrap.is-scrolling::before { display: none; }
+        @media (max-width: 768px) {
+            /* Phones: shorter cap — two-finger scroll in a nested container
+               gets awkward past ~60vh. */
+            .is-scrolling { max-height: 60vh; }
+        }
+
+        .win { color: var(--win); }
+        .loss { color: var(--loss); }
+        .pct { font-weight: bold; }
+        a { color: var(--accent); }
+        .upload-area {
+            border: 2px dashed var(--accent2);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .upload-area:hover, .upload-area.dragover {
+            border-color: var(--accent);
+        }
+        .upload-area input[type="file"] { display: none; }
+        button, .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+        button:hover, .btn:hover { opacity: 0.9; }
+        .msg { padding: 1rem; border-radius: 6px; margin-bottom: 1rem; }
+        .msg-success { background: rgba(78,204,163,0.2); border: 1px solid var(--win); }
+        .msg-error { background: rgba(233,69,96,0.2); border: 1px solid var(--loss); }
+        .tier {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+        }
+        .tier-boss { color: #D4622A; background: rgba(212,98,42,0.15); border: 1px solid rgba(212,98,42,0.3); }
+        .tier-elite { color: #9B6DDB; background: rgba(155,109,219,0.15); border: 1px solid rgba(155,109,219,0.3); }
+        .tier-normal { color: var(--text-muted); background: rgba(255,255,255,0.05); }
+        .tier-weak { color: #555; background: rgba(255,255,255,0.03); }
+        .tier-event { color: #64b5f6; background: rgba(100,181,246,0.15); border: 1px solid rgba(100,181,246,0.2); }
+
+        /* ── Card tooltip — full card render image ── */
+        .card-tooltip {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            pointer-events: none;
+            width: 200px;
+            filter: drop-shadow(0 8px 32px rgba(0,0,0,0.9));
+        }
+        .ct-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        [data-card-id] { cursor: help; border-bottom: 1px dotted rgba(255,255,255,0.2); }
+
+        /* Relic tooltip */
+        .relic-tooltip {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            background: #0c1220;
+            border: 2px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 0;
+            pointer-events: none;
+            width: 220px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+        .relic-tooltip .rt-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 0.8rem 0.4rem;
+            border-bottom: 1px solid rgba(184,150,60,0.2);
+        }
+        .relic-tooltip .rt-img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            flex-shrink: 0;
+            image-rendering: pixelated;
+        }
+        .relic-tooltip .rt-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            line-height: 1.2;
+        }
+        .relic-tooltip .rt-desc {
+            padding: 0.5rem 0.8rem 0.7rem;
+            font-size: 0.8rem;
+            color: #ccc;
+            line-height: 1.45;
+        }
+        [data-relic-id] { cursor: help; }
+
+        /* ── Hamburger button (hidden on desktop) ── */
+        .hamburger {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.3rem;
+            margin-left: auto;
+            z-index: 1001;
+            position: relative;
+        }
+        .hamburger-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 22px;
+        }
+        .hamburger-lines span {
+            display: block;
+            height: 2px;
+            background: var(--text);
+            border-radius: 1px;
+            transition: all 0.25s ease;
+            transform-origin: center;
+        }
+        .hamburger.open .hamburger-lines span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+        .hamburger.open .hamburger-lines span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open .hamburger-lines span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        /* ── Mobile dropdown menu ── */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #151C22;
+            border-bottom: 2px solid var(--accent-gold);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.8);
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            /* Bumped from 0.75rem to 0.9rem vertical so each link is >=44px
+               tall — the Apple/Google minimum tap target. */
+            padding: 0.9rem 1.5rem;
+            min-height: 44px;
+            color: var(--text);
+            text-decoration: none;
+            font-family: 'Sora', system-ui, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: background 0.15s;
+        }
+        .mobile-menu a:hover {
+            background: rgba(255,255,255,0.04);
+        }
+        .mobile-menu a img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+        .mobile-menu a svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        .mobile-menu .mm-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 0.3rem 1.2rem;
+        }
+        .mobile-menu .mm-section-label {
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            padding: 0.5rem 1.5rem 0.2rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav {
+                /* Use longhand so the safe-area-inset rule below still
+                   contributes the inline padding on notched phones
+                   (landscape notch can bias one side only). */
+                padding-block: 0.7rem;
+                padding-left: max(1rem, env(safe-area-inset-left));
+                padding-right: max(1rem, env(safe-area-inset-right));
+                gap: 0.8rem;
+                flex-wrap: nowrap;
+                z-index: 1000;
+            }
+            nav .logo { font-size: 1.1rem; }
+            /* Hide all nav links on mobile — hamburger takes over */
+            nav .nav-primary,
+            nav span[style*="margin-left: auto"] { display: none !important; }
+            nav span[style*="color: #D4AC50"] { display: none !important; }
+            /* Hamburger button */
+            .hamburger { display: flex !important; }
+            /* Mobile menu */
+            .mobile-menu.open { display: flex !important; }
+            .container { padding: 1rem 1.2rem; }
+            .card { padding: 1rem; overflow-x: auto; }
+            .grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.5rem; }
+            .stat-box { padding: 0.7rem; }
+            .stat-box .value { font-size: 1.4rem; font-family: 'Sora', sans-serif; }
+            th, td { padding: 0.4rem 0.5rem; font-size: 0.8rem; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            .card table { min-width: 500px; }
+        }
+
+        /* ── Encounter card (shared between index + player pages) ── */
+        .enc-card { padding: 0; overflow: hidden; }
+        .enc-card .enc-body { padding: 0 1.2rem 1.2rem; }
+        .enc-card table { min-width: 0; width: 100%; table-layout: auto; font-size: 0.78rem; }
+        .enc-card table th, .enc-card table td { padding: 0.4rem 0.5rem; white-space: nowrap; text-align: center; }
+        /* Encounter (col 1) stays left because it's an image+name cell that needs to wrap;
+           the colspan tier banner is also col 1 and reads cleanly left-aligned. */
+        .enc-card table th:first-child, .enc-card table td:first-child { white-space: normal; min-width: 120px; text-align: left; }
+        .enc-banner {
+            position: relative;
+            height: 310px;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+        }
+        .enc-banner-img {
+            position: absolute;
+            inset: 0;
+            background-image: url('/static/encounterspic.avif');
+            background-size: cover;
+            background-position: center 42%;
+            filter: saturate(0.88) brightness(0.82);
+            transform: scale(1.04);
+            transition: transform 6s ease;
+        }
+        .enc-card:hover .enc-banner-img { transform: scale(1.09); }
+        .enc-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(13,16,22,0.0)   0%,
+                rgba(13,16,22,0.15)  40%,
+                rgba(13,16,22,0.82)  78%,
+                rgba(13,16,22,1.0)   100%
+            );
+        }
+        .enc-banner-content {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 1rem 1.4rem 1.1rem;
+        }
+        .enc-banner-title {
+            font-family: 'Cinzel', 'Georgia', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 0 0 0.25rem;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.85);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent-gold);
+            padding: 0 0 0 0.6rem !important;
+        }
+        .enc-banner-sub {
+            font-size: 0.78rem;
+            color: rgba(180,170,160,0.8);
+            margin: 0;
+            letter-spacing: 0.04em;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+        }
+
+        /* ── Monster icons (used in encounters + deaths tables) ── */
+        .enemy-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .enemy-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            flex-shrink: 0;
+        }
+
+        /* ── Patch indicator (upper-right, below nav, site-wide) ── */
+        .patch-indicator {
+            position: absolute;
+            top: 72px;           /* sits just below the gold nav border */
+            right: 18px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            padding: 0.25rem 0.35rem 0.35rem;
+        }
+        .patch-indicator-version {
+            font-family: 'Cinzel', 'Fraunces', serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            color: rgba(232,221,208,0.78);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            white-space: nowrap;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.4em;
+        }
+        .patch-indicator-label {
+            color: rgba(184,150,60,0.72);           /* muted gold — reads as a label, not a value */
+            font-weight: 600;
+            letter-spacing: 0.18em;
+        }
+        .patch-indicator-number {
+            color: rgba(232,221,208,0.82);
+        }
+        .patch-indicator-icon {
+            width: 52px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.65));
+            transition: transform 0.25s cubic-bezier(.4,.6,.3,1.3);
+        }
+        /* Hover: only the book moves — no background, no text recolor, no glow. */
+        .patch-indicator:hover .patch-indicator-icon {
+            transform: translateY(-1px) rotate(-3deg);
+        }
+        /* Mobile: hide the absolute-positioned chrome entirely; the patch
+           link is duplicated into the hamburger menu so users can still
+           reach patch notes without the icon colliding with page content
+           (was overlapping the "2" of the homepage title). */
+        @media (max-width: 768px) {
+            .patch-indicator { display: none; }
+        }
+        /* ── Patch entry in the mobile menu ── */
+        .mobile-menu .mm-patch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .mobile-menu .mm-patch .mm-patch-right {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            color: rgba(184,150,60,0.78);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-variant-numeric: tabular-nums;
+        }
+        .mobile-menu .mm-patch .mm-patch-right img {
+            width: 18px; height: 18px; object-fit: contain;
+        }
+
+        /* ── Language selector ── */
+        .lang-switch {
+            position: relative;
+        }
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(184,150,60,0.06);
+            border: 1px solid rgba(184,150,60,0.28);
+            border-radius: 14px;
+            padding: 0.2rem 0.55rem;
+            color: var(--text-muted);
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .lang-switch-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(184,150,60,0.10);
+        }
+        .lang-switch-btn svg {
+            width: 12px; height: 12px;
+            opacity: 0.7;
+        }
+        .lang-switch-chevron {
+            width: 8px; height: 8px;
+            transition: transform 0.2s ease;
+        }
+        .lang-switch[open] .lang-switch-chevron {
+            transform: rotate(180deg);
+        }
+        .lang-switch-menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            min-width: 180px;
+            background: var(--surface);
+            border: 1px solid rgba(184,150,60,0.35);
+            border-radius: 6px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.4);
+            padding: 0.35rem;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        .lang-switch-menu a {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.8rem;
+            padding: 0.45rem 0.65rem;
+            border-radius: 3px;
+            color: var(--text);
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            font-size: 0.84rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-transform: none;
+            text-decoration: none;
+            transition: background 0.12s ease, color 0.12s ease;
+            white-space: nowrap;            /* keep every row on one line */
+        }
+        .lang-switch-menu a > span { white-space: nowrap; }
+        .lang-switch-menu a:hover {
+            background: rgba(184,150,60,0.10);
+            color: var(--accent-gold);
+        }
+        .lang-switch-menu a .lang-en {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+        }
+        .lang-switch-menu a.is-current {
+            background: rgba(184,150,60,0.12);
+            color: var(--accent-gold);
+        }
+        .lang-switch-menu a.is-current .lang-en {
+            color: rgba(184,150,60,0.75);
+        }
+        /* Remove default <summary> triangle */
+        .lang-switch summary { list-style: none; cursor: pointer; }
+        .lang-switch summary::-webkit-details-marker { display: none; }
+
+        /* ───────────────────────────────────────────────
+           Cross-cutting mobile improvements
+           ─────────────────────────────────────────────── */
+
+        /* Honor user's reduced-motion preference everywhere — animations
+           and smooth-scroll are decorative and can trigger vestibular
+           discomfort on phones. */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Safe-area insets for notched phones (iPhone X+ etc).
+           Pads the nav and main content so they don't tuck under the
+           status bar or home indicator. */
+        nav { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+        body { padding-bottom: env(safe-area-inset-bottom); }
+
+        /* Body scroll-lock when the mobile menu is open — without this the
+           page scrolls behind the menu on touch, which is disorienting. */
+        body.menu-open { overflow: hidden; touch-action: none; }
+
+        /* iOS zooms when focusing any input with font-size < 16px.
+           Force inputs/selects/textareas up to 16px on phones. (Visual size
+           can stay smaller via transform/scale if needed elsewhere.) */
+        @media (max-width: 768px) {
+            input[type="text"], input[type="search"], input[type="number"],
+            input[type="email"], input[type="password"], input[type="tel"],
+            input[type="url"], select, textarea {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Tap target floor for section nav pills, leaderboard tier tabs,
+           expand buttons, sort headers, and search inputs. 44px minimum. */
+        @media (max-width: 768px) {
+            .snav-btn, .lb-tier-btn, button.expand-btn,
+            th[onclick], th.sortable, .filter-search {
+                min-height: 44px;
+            }
+            /* Sort headers need some padding or the min-height leaves the
+               arrow glued to the text baseline. */
+            th[onclick], th.sortable { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        }
+
+        /* Right-edge fade on horizontally scrolling tables so users see
+           there's more content. Only applies inside .card on mobile, where
+           tables can still overflow despite our min-width scoping. */
+        @media (max-width: 768px) {
+            .card { position: relative; }
+            .card.has-scroll-table::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 24px;
+                pointer-events: none;
+                background: linear-gradient(to left, rgba(20, 25, 33, 0.85), rgba(20, 25, 33, 0));
+                opacity: 0.9;
+                border-radius: 0 var(--radius, 10px) var(--radius, 10px) 0;
+            }
+        }
+
+        /* Kill the grey/blue flash that iOS and Android Chrome paint over
+           any tapped link or button — our own :active/hover states are the
+           feedback source of truth. */
+        a, button, [role="button"], .snav-btn, .lb-tier-btn,
+        .char-emblem-btn, .hamburger, .mm-nav a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Prevent Android Chrome from auto-resizing body text on
+           orientation change (especially in tables), and block the "rubber
+           band" overscroll bleeding past the nav on iOS. */
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+        body { overscroll-behavior-y: contain; }
+
+        /* Touch devices don't hover — give primary taps a visible pressed
+           state so a laggy network doesn't feel unresponsive. */
+        @media (hover: none) {
+            .nav-primary:active,
+            .snav-btn:active,
+            .lb-tier-btn:active,
+            .char-emblem-btn:active,
+            button.expand-btn:active,
+            .mm-nav a:active {
+                transform: scale(0.97);
+                transition: transform 60ms ease;
+            }
+        }
+
+        /* Skip-to-content link for keyboard/screen-reader users on phones.
+           Hidden offscreen until focused. */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: 10000;
+        }
+        .skip-link:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: 0.55rem 0.9rem;
+            background: #0f1520;
+            color: var(--accent-gold, #D4AC50);
+            border: 1px solid var(--accent-gold, #D4AC50);
+            border-radius: 6px;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav style="position: relative;">
+        <a href="/" class="logo">STS2 Stats</a>
+        <a href="/cards" class="nav-primary nav-primary--cards">
+            <img src="https://img-preview.untapped.gg/sts2/en/cards/bash" alt="">Cards</a>
+        <a href="/potions" class="nav-primary nav-primary--potions">
+            <img src="https://sts2json.untapped.gg/art/potions/fire_potion.png" alt="">Potions</a>
+        <a href="/relics" class="nav-primary nav-primary--relics">
+            <img src="/static/relics/akabeko.png" alt="">Relics</a>
+        <a href="/ancients" class="nav-primary nav-primary--ancients">
+            <img src="/static/relics/neow.png" alt="">Ancients</a>
+        <a href="/events" class="nav-primary nav-primary--events">
+            <img src="/static/map_unknown.png" alt="">Events</a>
+        <a href="/multiplayer" class="nav-primary nav-primary--coop">
+            <img src="/static/coop_icon.svg" alt="">Co-op</a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+            <div class="hamburger-lines"><span></span><span></span><span></span></div>
+        </button>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mm-section-label">Pages</div>
+            <a href="/cards" style="color: #e94560;">
+                <img src="https://img-preview.untapped.gg/sts2/en/cards/bash" alt="">Cards</a>
+            <a href="/potions" style="color: #4ecca3;">
+                <img src="https://sts2json.untapped.gg/art/potions/fire_potion.png" alt="">Potions</a>
+            <a href="/relics" style="color: #c9a84c;">
+                <img src="/static/relics/akabeko.png" alt="">Relics</a>
+            <a href="/ancients" style="color: #ff9f43;">
+                <img src="/static/relics/neow.png" alt="">Ancients</a>
+            <a href="/events" style="color: #5ec4d4;">
+                <img src="/static/map_unknown.png" alt="" class="nav-icon">Events</a>
+            <a href="/multiplayer" style="color: #b388ff;">
+                <img src="/static/coop_icon.svg" alt="">Co-op</a>
+            <div class="mm-divider"></div>
+            <a href="/faq"><img src="/static/icons/confused_power.png" alt="" class="nav-icon">FAQ</a>
+            <a href="/upload"><img src="/static/icons/adaptable_power.png" alt="" class="nav-icon">Upload</a>
+            <div class="mm-divider"></div>
+            <div class="mm-section-label">Community</div>
+            <a href="https://discord.gg/slaythespire" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.082.114 18.106.134 18.12a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                Discord</a>
+            <a href="https://www.reddit.com/r/SlayTheSpire2/" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                Reddit</a>
+            <a href="https://store.steampowered.com/app/2868840/Slay_the_Spire_2/" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.718L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.497 1.009 2.455-.397.957-1.497 1.409-2.455 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273.012c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/></svg>
+                Steam</a>
+            
+            <div class="mm-divider"></div>
+            <a href="https://store.steampowered.com/news/app/2868840?updates=true" target="_blank" rel="noopener" class="mm-patch"
+               title="patch notes">
+                <span>patch notes</span>
+                <span class="mm-patch-right">
+                    <span>Patch v0.103.2</span>
+                    <img src="/static/icons/submenu_history_icon.webp" alt="">
+                </span>
+            </a>
+            
+        </div>
+        <span style="margin-left: auto; display: flex; gap: 1rem; align-items: center;">
+            <a href="/faq" class="nav-secondary"><img src="/static/icons/confused_power.png" alt="" class="nav-icon">FAQ</a>
+            <a href="/upload" class="nav-secondary"><img src="/static/icons/adaptable_power.png" alt="" class="nav-icon">Upload</a>
+            <span style="width:1px; height:16px; background:rgba(255,255,255,0.12); flex-shrink:0;"></span>
+            <!-- Language selector -->
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <details class="lang-switch" id="lang-switch">
+                <summary class="lang-switch-btn" title="Language" aria-label="Language">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span>EN</span>
+                    <svg class="lang-switch-chevron" viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
+                </summary>
+                <div class="lang-switch-menu" role="menu">
+                    
+                    <a href="/lang/en" role="menuitem" class="is-current" hreflang="en">
+                        <span>English</span>
+                        <span class="lang-en">English</span>
+                    </a>
+                    
+                    <a href="/lang/zh-CN" role="menuitem" class="" hreflang="zh-CN">
+                        <span>简体中文</span>
+                        <span class="lang-en">Chinese</span>
+                    </a>
+                    
+                    <a href="/lang/ja" role="menuitem" class="" hreflang="ja">
+                        <span>日本語</span>
+                        <span class="lang-en">Japanese</span>
+                    </a>
+                    
+                    <a href="/lang/ko" role="menuitem" class="" hreflang="ko">
+                        <span>한국어</span>
+                        <span class="lang-en">Korean</span>
+                    </a>
+                    
+                    <a href="/lang/es" role="menuitem" class="" hreflang="es">
+                        <span>Español</span>
+                        <span class="lang-en">Spanish</span>
+                    </a>
+                    
+                    <a href="/lang/fr" role="menuitem" class="" hreflang="fr">
+                        <span>Français</span>
+                        <span class="lang-en">French</span>
+                    </a>
+                    
+                    <a href="/lang/de" role="menuitem" class="" hreflang="de">
+                        <span>Deutsch</span>
+                        <span class="lang-en">German</span>
+                    </a>
+                    
+                    <a href="/lang/ru" role="menuitem" class="" hreflang="ru">
+                        <span>Русский</span>
+                        <span class="lang-en">Russian</span>
+                    </a>
+                    
+                </div>
+            </details>
+            <span style="width:1px; height:16px; background:rgba(255,255,255,0.12); flex-shrink:0;"></span>
+            <!-- Discord -->
+            <a href="https://discord.gg/slaythespire" target="_blank" rel="noopener" title="Discord community (54k members)" style="color: var(--text-muted); display:flex; align-items:center; gap:0.35rem; font-size:0.88rem; text-decoration:none;" onmouseover="this.style.color='#5865F2'" onmouseout="this.style.color='var(--text-muted)'">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.082.114 18.106.134 18.12a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                Discord
+            </a>
+            <!-- Reddit -->
+            <a href="https://www.reddit.com/r/SlayTheSpire2/" target="_blank" rel="noopener" title="Reddit community" style="color: var(--text-muted); display:flex; align-items:center; gap:0.35rem; font-size:0.88rem; text-decoration:none;" onmouseover="this.style.color='#FF4500'" onmouseout="this.style.color='var(--text-muted)'">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                Reddit
+            </a>
+            <!-- Steam -->
+            <a href="https://store.steampowered.com/app/2868840/Slay_the_Spire_2/" target="_blank" rel="noopener" title="Steam page" style="color: var(--text-muted); display:flex; align-items:center; gap:0.35rem; font-size:0.88rem; text-decoration:none;" onmouseover="this.style.color='#66C0F4'" onmouseout="this.style.color='var(--text-muted)'">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.718L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.497 1.009 2.455-.397.957-1.497 1.409-2.455 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273.012c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/></svg>
+                Steam
+            </a>
+            
+        </span>
+    </nav>
+    
+    <a class="patch-indicator" href="https://store.steampowered.com/news/app/2868840?updates=true" target="_blank" rel="noopener"
+       title="patch notes" aria-label="Patch v0.103.2 · patch notes">
+        <span class="patch-indicator-version">
+            <span class="patch-indicator-label">Patch</span>
+            <span class="patch-indicator-number">v0.103.2</span>
+        </span>
+        <img class="patch-indicator-icon" src="/static/icons/submenu_history_icon.webp" alt="" width="52" height="40">
+    </a>
+    
+    <div class="container" id="main">
+        
+<style>
+@media (max-width: 640px) {
+    /* Floor table is the densest thing on the page — 9 columns don't fit a phone.
+       Hide Act (redundant with Floor + the boss-line grouping), Turns, and Gold.
+       Rewards column wraps naturally on mobile instead of growing the row wider. */
+    .run-floors th:nth-child(2), .run-floors td:nth-child(2),
+    .run-floors th:nth-child(5), .run-floors td:nth-child(5),
+    .run-floors th:nth-child(8), .run-floors td:nth-child(8) { display: none; }
+    .run-floors { font-size: 0.78rem; }
+    .run-floors th, .run-floors td { padding: 0.35rem 0.35rem; }
+    .run-floors td:last-child { white-space: normal; word-break: break-word; }
+    /* Stat tiles — tighter spacing so all 8 fit the fold */
+    .grid .stat-box { padding: 0.55rem 0.3rem; }
+    .grid .stat-box .value { font-size: 1.1rem; }
+    .grid .stat-box .label { font-size: 0.62rem; letter-spacing: 0.03em; }
+}
+</style>
+<h1>
+    Ironclad — A10
+    <span class="win" style="font-size: 0.7em;">WIN</span>
+</h1>
+<p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+    <a href="/player/icy-lurker">icy-lurker</a>
+    
+</p>
+
+<div class="grid" style="margin-bottom: 2rem;">
+    <div class="stat-box">
+        <div class="value">49</div>
+        <div class="label">Floors</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">66 min</div>
+        <div class="label">Duration</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">40/74</div>
+        <div class="label">Final HP</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">334</div>
+        <div class="label">Total Damage</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">32</div>
+        <div class="label">Deck Size</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">71</div>
+        <div class="label">Final Gold</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">6</div>
+        <div class="label">Elites Killed</div>
+    </div>
+    <div class="stat-box">
+        <div class="value">10</div>
+        <div class="label">Campfires (8 Smith, 2 Heal)</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Floor by Floor</h2>
+    <table class="run-floors">
+        <thead>
+            <tr>
+                <th>Floor</th>
+                <th>Act</th>
+                <th>Type</th>
+                <th>Encounter</th>
+                <th>Turns</th>
+                <th>Dmg</th>
+                <th>HP</th>
+                <th>Gold</th>
+                <th>Rewards</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-event">ancient</span>
+                    
+                </td>
+                <td>Neow</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        64</span><span style="color: var(--text-muted);">/80</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +64</span>
+                </td>
+                <td>
+                    99
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="SILVER_CRUCIBLE"><img src="/static/relics/silver_crucible.png" alt="Silver Crucible" title="Silver Crucible" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Silver Crucible</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Seapunk (Weak)</td>
+                <td>3</td>
+                <td class="loss">16</td>
+                <td>
+                    <span style="color: var(--text);">
+                        54</span><span style="color: var(--text-muted);">/80</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    112
+                    <span style="color: var(--win); font-size: 0.8em;"> +13</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="TAUNT" data-upgraded="1">Taunt+</span>
+                    
+                    <span style="color: #64b5f6;">Blood Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Drowning Beacon</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        54</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    112
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="FRESNEL_LENS"><img src="/static/relics/fresnel_lens.png" alt="Fresnel Lens" title="Fresnel Lens" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Fresnel Lens</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Sludge Spinner (Weak)</td>
+                <td>4</td>
+                <td class="loss">4</td>
+                <td>
+                    <span style="color: var(--win);">
+                        56</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    119
+                    <span style="color: var(--win); font-size: 0.8em;"> +7</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="DISMANTLE" data-upgraded="1">Dismantle+</span>
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Toadpoles (Weak)</td>
+                <td>3</td>
+                <td class="loss">4</td>
+                <td>
+                    <span style="color: var(--win);">
+                        58</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    130
+                    <span style="color: var(--win); font-size: 0.8em;"> +11</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="HOWL_FROM_BEYOND" data-upgraded="1">Howl From Beyond+</span>
+                    
+                    <span style="color: #64b5f6;">Strength Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-normal">monster</span>
+                    
+                </td>
+                <td>Living Fog (Normal)</td>
+                <td>5</td>
+                <td class="loss">6</td>
+                <td>
+                    <span style="color: var(--win);">
+                        67</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +15</span>
+                </td>
+                <td>
+                    141
+                    <span style="color: var(--win); font-size: 0.8em;"> +11</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="BLOODLETTING" data-upgraded="0">Bloodletting</span>
+                    
+                    <span style="color: #64b5f6;">Heart Of Iron</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td>1</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        67</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    141
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Bloodletting</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-elite">elite</span>
+                    
+                </td>
+                <td>Phantasmal Gardeners (Elite)</td>
+                <td>5</td>
+                <td class="loss">31</td>
+                <td>
+                    <span style="color: var(--text);">
+                        42</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    185
+                    <span style="color: var(--win); font-size: 0.8em;"> +44</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="INFERNO" data-upgraded="0">Inferno</span>
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="LUCKY_FYSH"><img src="/static/relics/lucky_fysh.png" alt="Lucky Fysh" title="Lucky Fysh" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Lucky Fysh</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td>1</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        62</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +20</span>
+                </td>
+                <td>
+                    185
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Heal</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td>1</td>
+                <td>
+                    
+                    <span style="color: #ffd700;">treasure</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        62</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    185
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-elite">elite</span>
+                    
+                </td>
+                <td>Terror Eel (Elite)</td>
+                <td>6</td>
+                <td class="loss">30</td>
+                <td>
+                    <span style="color: var(--text);">
+                        38</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    229
+                    <span style="color: var(--win); font-size: 0.8em;"> +44</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="BLOOD_WALL" data-upgraded="0">Blood Wall</span>
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="CENTENNIAL_PUZZLE"><img src="/static/relics/centennial_puzzle.png" alt="Centennial Puzzle" title="Centennial Puzzle" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Centennial Puzzle</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td>1</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        58</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +20</span>
+                </td>
+                <td>
+                    229
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Heal</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-elite">elite</span>
+                    
+                </td>
+                <td>Skulking Colony (Elite)</td>
+                <td>5</td>
+                <td class="loss">35</td>
+                <td>
+                    <span style="color: var(--text);">
+                        29</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    276
+                    <span style="color: var(--win); font-size: 0.8em;"> +47</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="HEADBUTT" data-upgraded="0">Headbutt</span>
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="VAJRA"><img src="/static/relics/vajra.png" alt="Vajra" title="Vajra" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Vajra</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>14</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-normal">monster</span>
+                    
+                </td>
+                <td>Cultists (Normal)</td>
+                <td>2</td>
+                <td class="loss">4</td>
+                <td>
+                    <span style="color: var(--text);">
+                        31</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    301
+                    <span style="color: var(--win); font-size: 0.8em;"> +25</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="TRUE_GRIT" data-upgraded="0">True Grit</span>
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>15</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-elite">elite</span>
+                    
+                </td>
+                <td>Phantasmal Gardeners (Elite)</td>
+                <td>3</td>
+                <td class="loss">5</td>
+                <td>
+                    <span style="color: var(--text);">
+                        32</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    327
+                    <span style="color: var(--win); font-size: 0.8em;"> +26</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="HAPPY_FLOWER"><img src="/static/relics/happy_flower.png" alt="Happy Flower" title="Happy Flower" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Happy Flower</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>16</td>
+                <td>1</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--text);">
+                        32</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    327
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: True Grit</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>17</td>
+                <td>1</td>
+                <td>
+                    
+                    <span class="tier tier-boss">boss</span>
+                    
+                </td>
+                <td>Soul Fysh (Boss)</td>
+                <td>11</td>
+                <td class="loss">22</td>
+                <td>
+                    <span style="color: var(--loss);">
+                        16</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    417
+                    <span style="color: var(--win); font-size: 0.8em;"> +90</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="THRASH" data-upgraded="0">Thrash</span>
+                    
+                    <span style="color: #64b5f6;">Cure All</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>18</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-event">ancient</span>
+                    
+                </td>
+                <td>Pael</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        56</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +40</span>
+                </td>
+                <td>
+                    417
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="PAELS_EYE"><img src="/static/relics/paels_eye.png" alt="Paels Eye" title="Paels Eye" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Paels Eye</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>19</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Bowlbugs (Weak)</td>
+                <td>4</td>
+                <td class="loss">2</td>
+                <td>
+                    <span style="color: var(--win);">
+                        60</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    444
+                    <span style="color: var(--win); font-size: 0.8em;"> +27</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="SPITE" data-upgraded="0">Spite</span>
+                    
+                    <span style="color: #64b5f6;">Fortifier</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>20</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>The Lantern Key</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        60</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    544
+                    <span style="color: var(--win); font-size: 0.8em;"> +100</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>21</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Thieving Hopper (Weak)</td>
+                <td>5</td>
+                <td class="loss">8</td>
+                <td>
+                    <span style="color: var(--win);">
+                        58</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    588
+                    <span style="color: var(--win); font-size: 0.8em;"> +44</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="SHRUG_IT_OFF" data-upgraded="1">Shrug It Off+</span>
+                    
+                    <span style="color: #64b5f6;">Colorless Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>22</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Hunter Killer (Normal)</td>
+                <td>4</td>
+                <td class="loss">5</td>
+                <td>
+                    <span style="color: var(--win);">
+                        59</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    603
+                    <span style="color: var(--win); font-size: 0.8em;"> +15</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    <span style="color: #64b5f6;">Blood Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>23</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-normal">monster</span>
+                    
+                </td>
+                <td>Ovicopter (Normal)</td>
+                <td>4</td>
+                <td class="loss">7</td>
+                <td>
+                    <span style="color: var(--win);">
+                        58</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    626
+                    <span style="color: var(--win); font-size: 0.8em;"> +23</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="BARRICADE" data-upgraded="0">Barricade</span>
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>24</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-elite">elite</span>
+                    
+                </td>
+                <td>Decimillipede (Elite)</td>
+                <td>3</td>
+                <td class="loss">12</td>
+                <td>
+                    <span style="color: var(--win);">
+                        52</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    674
+                    <span style="color: var(--win); font-size: 0.8em;"> +48</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="POMMEL_STRIKE" data-upgraded="0">Pommel Strike</span>
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="PARRYING_SHIELD"><img src="/static/relics/parrying_shield.png" alt="Parrying Shield" title="Parrying Shield" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Parrying Shield</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>25</td>
+                <td>2</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        52</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    674
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Pommel Strike</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>26</td>
+                <td>2</td>
+                <td>
+                    
+                    <span style="color: #ffd700;">treasure</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        52</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    713
+                    <span style="color: var(--win); font-size: 0.8em;"> +39</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="BAG_OF_MARBLES"><img src="/static/relics/bag_of_marbles.png" alt="Bag Of Marbles" title="Bag Of Marbles" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Bag Of Marbles</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>27</td>
+                <td>2</td>
+                <td>
+                    
+                    <span style="color: #ffd700;">shop</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        52</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    120
+                    <span style="color: var(--win); font-size: 0.8em;"> +45</span>
+                    <span style="color: var(--loss); font-size: 0.8em;"> -638</span>
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="ANCHOR"><img src="/static/relics/anchor.png" alt="Anchor" title="Anchor" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Anchor</span>
+                    <span style="color: #64b5f6;">Power Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>28</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-elite">elite</span>
+                    
+                </td>
+                <td>Entomancer (Elite)</td>
+                <td>5</td>
+                <td class="loss">7</td>
+                <td>
+                    <span style="color: var(--win);">
+                        51</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    162
+                    <span style="color: var(--win); font-size: 0.8em;"> +42</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="TREMBLE" data-upgraded="0">Tremble</span>
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="STRIKE_DUMMY"><img src="/static/relics/strike_dummy.png" alt="Strike Dummy" title="Strike Dummy" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Strike Dummy</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>29</td>
+                <td>2</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        51</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    162
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Barricade</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>30</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Bugslayer</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        51</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    177
+                    <span style="color: var(--win); font-size: 0.8em;"> +15</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>31</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-normal">monster</span>
+                    
+                </td>
+                <td>The Obscura (Normal)</td>
+                <td>4</td>
+                <td class="loss">6</td>
+                <td>
+                    <span style="color: var(--win);">
+                        64</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +19</span>
+                </td>
+                <td>
+                    191
+                    <span style="color: var(--win); font-size: 0.8em;"> +14</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    <span style="color: #64b5f6;">Ashwater</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>32</td>
+                <td>2</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        64</span><span style="color: var(--text-muted);">/67</span>
+                    
+                </td>
+                <td>
+                    191
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Vicious</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>33</td>
+                <td>2</td>
+                <td>
+                    
+                    <span class="tier tier-boss">boss</span>
+                    
+                </td>
+                <td>The Insatiable (Boss)</td>
+                <td>7</td>
+                <td class="loss">32</td>
+                <td>
+                    <span style="color: var(--text);">
+                        38</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    281
+                    <span style="color: var(--win); font-size: 0.8em;"> +90</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="AGGRESSION" data-upgraded="0">Aggression</span>
+                    
+                    <span style="color: #64b5f6;">Vulnerable Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>34</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-event">ancient</span>
+                    
+                </td>
+                <td>Vakuu</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        61</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +23</span>
+                </td>
+                <td>
+                    281
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="MUSIC_BOX"><img src="/static/relics/music_box.png" alt="Music Box" title="Music Box" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Music Box</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>35</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Scrolls Of Biting (Weak)</td>
+                <td>3</td>
+                <td class="loss">4</td>
+                <td>
+                    <span style="color: var(--win);">
+                        63</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    309
+                    <span style="color: var(--win); font-size: 0.8em;"> +28</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="RUPTURE" data-upgraded="1">Rupture+</span>
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>36</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-weak">monster</span>
+                    
+                </td>
+                <td>Devoted Sculptor (Weak)</td>
+                <td>4</td>
+                <td class="loss">5</td>
+                <td>
+                    <span style="color: var(--win);">
+                        64</span><span style="color: var(--text-muted);">/67</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    318
+                    <span style="color: var(--win); font-size: 0.8em;"> +9</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>37</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Crystal Sphere</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        71</span><span style="color: var(--text-muted);">/74</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +7</span>
+                </td>
+                <td>
+                    388
+                    <span style="color: var(--win); font-size: 0.8em;"> +70</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="NOT_YET" data-upgraded="0">Not Yet</span>
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="STRAWBERRY"><img src="/static/relics/strawberry.png" alt="Strawberry" title="Strawberry" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Strawberry</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>38</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Frog Knight (Normal)</td>
+                <td>7</td>
+                <td class="loss">21</td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +16</span>
+                </td>
+                <td>
+                    395
+                    <span style="color: var(--win); font-size: 0.8em;"> +7</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>39</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Ranwid The Elder</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    395
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="CHARONS_ASHES"><img src="/static/relics/charons_ashes.png" alt="Charons Ashes" title="Charons Ashes" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Charons Ashes</span>, <span style="color: #ffd700; white-space: nowrap;" data-relic-id="FESTIVE_POPPER"><img src="/static/relics/festive_popper.png" alt="Festive Popper" title="Festive Popper" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Festive Popper</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>40</td>
+                <td>3</td>
+                <td>
+                    
+                    <span style="color: #ffd700;">shop</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    169
+                    
+                    <span style="color: var(--loss); font-size: 0.8em;"> -226</span>
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    <span style="color: #64b5f6;">Touch Of Insanity</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>41</td>
+                <td>3</td>
+                <td>
+                    
+                    <span style="color: #ffd700;">treasure</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    202
+                    <span style="color: var(--win); font-size: 0.8em;"> +33</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    <span style="color: #ffd700; white-space: nowrap;" data-relic-id="REPTILE_TRINKET"><img src="/static/relics/reptile_trinket.png" alt="Reptile Trinket" title="Reptile Trinket" style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'"> Reptile Trinket</span>
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>42</td>
+                <td>3</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    202
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Squash</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>43</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-normal">monster</span>
+                    
+                </td>
+                <td>Slimed Berserker (Normal)</td>
+                <td>7</td>
+                <td class="loss">6</td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    226
+                    <span style="color: var(--win); font-size: 0.8em;"> +24</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    <span style="color: var(--accent);" data-card-id="BURNING_PACT" data-upgraded="0">Burning Pact</span>
+                    
+                    <span style="color: #64b5f6;">Blood Potion</span>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>44</td>
+                <td>3</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    226
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Burning Pact</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>45</td>
+                <td>3</td>
+                <td>
+                    
+                    <span style="color: #ffd700;">shop</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    26
+                    
+                    <span style="color: var(--loss); font-size: 0.8em;"> -200</span>
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>46</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-event">unknown</span>
+                    
+                </td>
+                <td>Trial</td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    71
+                    <span style="color: var(--win); font-size: 0.8em;"> +45</span>
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>47</td>
+                <td>3</td>
+                <td>
+                    
+                    <span style="color: var(--win);">rest</span>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td class=""></td>
+                <td>
+                    <span style="color: var(--win);">
+                        66</span><span style="color: var(--text-muted);">/74</span>
+                    
+                </td>
+                <td>
+                    71
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    <span style="color: var(--win);">Smith: Mangle</span>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>48</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-boss">boss</span>
+                    
+                </td>
+                <td>Doormaker (Boss)</td>
+                <td>10</td>
+                <td class="loss">28</td>
+                <td>
+                    <span style="color: var(--text);">
+                        44</span><span style="color: var(--text-muted);">/74</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +6</span>
+                </td>
+                <td>
+                    71
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>49</td>
+                <td>3</td>
+                <td>
+                    
+                    <span class="tier tier-boss">boss</span>
+                    
+                </td>
+                <td>Test Subject (Boss)</td>
+                <td>11</td>
+                <td class="loss">34</td>
+                <td>
+                    <span style="color: var(--text);">
+                        40</span><span style="color: var(--text-muted);">/74</span>
+                    <span style="color: var(--win); font-size: 0.8em;"> +30</span>
+                </td>
+                <td>
+                    71
+                    
+                    
+                </td>
+                <td style="font-size: 0.85em;">
+                    
+                    
+                    
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+
+<div class="card">
+    <h2>Relics (16)</h2>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="BURNING_BLOOD">
+            <img src="/static/relics/burning_blood.png" alt="Burning Blood" title="Burning Blood"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Burning Blood
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F1</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="SILVER_CRUCIBLE">
+            <img src="/static/relics/silver_crucible.png" alt="Silver Crucible" title="Silver Crucible"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Silver Crucible
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F1</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="FRESNEL_LENS">
+            <img src="/static/relics/fresnel_lens.png" alt="Fresnel Lens" title="Fresnel Lens"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Fresnel Lens
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F3</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="LUCKY_FYSH">
+            <img src="/static/relics/lucky_fysh.png" alt="Lucky Fysh" title="Lucky Fysh"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Lucky Fysh
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F8</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="CENTENNIAL_PUZZLE">
+            <img src="/static/relics/centennial_puzzle.png" alt="Centennial Puzzle" title="Centennial Puzzle"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Centennial Puzzle
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F11</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="VAJRA">
+            <img src="/static/relics/vajra.png" alt="Vajra" title="Vajra"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Vajra
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F13</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="HAPPY_FLOWER">
+            <img src="/static/relics/happy_flower.png" alt="Happy Flower" title="Happy Flower"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Happy Flower
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F15</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="PAELS_EYE">
+            <img src="/static/relics/paels_eye.png" alt="Pael&#39;s Eye" title="Pael&#39;s Eye"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Pael&#39;s Eye
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F18</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="PARRYING_SHIELD">
+            <img src="/static/relics/parrying_shield.png" alt="Parrying Shield" title="Parrying Shield"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Parrying Shield
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F24</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="BAG_OF_MARBLES">
+            <img src="/static/relics/bag_of_marbles.png" alt="Bag of Marbles" title="Bag of Marbles"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Bag of Marbles
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F26</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="ANCHOR">
+            <img src="/static/relics/anchor.png" alt="Anchor" title="Anchor"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Anchor
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F27</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="MUSIC_BOX">
+            <img src="/static/relics/music_box.png" alt="Music Box" title="Music Box"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Music Box
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F34</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="STRAWBERRY">
+            <img src="/static/relics/strawberry.png" alt="Strawberry" title="Strawberry"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Strawberry
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F37</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="CHARONS_ASHES">
+            <img src="/static/relics/charons_ashes.png" alt="Charon&#39;s Ashes" title="Charon&#39;s Ashes"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Charon&#39;s Ashes
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F39</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="FESTIVE_POPPER">
+            <img src="/static/relics/festive_popper.png" alt="Festive Popper" title="Festive Popper"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Festive Popper
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F39</span>
+        </span>
+    
+        <span style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05); white-space: nowrap;
+                     border-left: 3px solid #ffd700;" data-relic-id="REPTILE_TRINKET">
+            <img src="/static/relics/reptile_trinket.png" alt="Reptile Trinket" title="Reptile Trinket"
+                 style="width: 20px; height: 20px; vertical-align: middle;" onerror="this.style.display='none'">
+            Reptile Trinket
+            <span style="color: var(--text-muted); font-size: 0.75rem;">F41</span>
+        </span>
+    
+</div>
+
+
+
+<div class="card">
+    <h2>Final Deck (32 cards)</h2>
+    
+    
+    
+        
+            
+            
+            <div style="margin-bottom: 0.8rem;">
+            <span style="color: #b388ff; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Power</span><br>
+        
+        <span data-card-id="AGGRESSION" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid #b388ff;">
+            Aggression
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="BARRICADE" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid #b388ff;">
+            Barricade<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">3</span>
+        </span>
+    
+        
+        <span data-card-id="INFERNO" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid #b388ff;">
+            Inferno
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="RUPTURE" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid #b388ff;">
+            Rupture<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="VICIOUS" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid #b388ff;">
+            Vicious<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+            </div>
+            
+            <div style="margin-bottom: 0.8rem;">
+            <span style="color: var(--win); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Skill</span><br>
+        
+        <span data-card-id="BLOOD_WALL" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Blood Wall
+            <span style="color: var(--text-muted); font-size: 0.75rem;">2</span>
+        </span>
+    
+        
+        <span data-card-id="BLOODLETTING" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Bloodletting<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">0</span>
+        </span>
+    
+        
+        <span data-card-id="BURNING_PACT" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Burning Pact<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="COLOSSUS" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Colossus
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="DEFEND_IRONCLAD" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Defend Ironclad
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="DEFEND_IRONCLAD" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Defend Ironclad
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="DEFEND_IRONCLAD" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Defend Ironclad
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="DEFEND_IRONCLAD" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Defend Ironclad
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="MASTER_OF_STRATEGY" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Master Of Strategy
+            <span style="color: var(--text-muted); font-size: 0.75rem;">0</span>
+        </span>
+    
+        
+        <span data-card-id="NOT_YET" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Not Yet
+            <span style="color: var(--text-muted); font-size: 0.75rem;">2</span>
+        </span>
+    
+        
+        <span data-card-id="SHRUG_IT_OFF" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Shrug It Off<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="TAUNT" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Taunt<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="TREMBLE" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            Tremble
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="TRUE_GRIT" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--win);">
+            True Grit<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+            </div>
+            
+            <div style="margin-bottom: 0.8rem;">
+            <span style="color: var(--accent); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Attack</span><br>
+        
+        <span data-card-id="BASH" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Bash
+            <span style="color: var(--text-muted); font-size: 0.75rem;">2</span>
+        </span>
+    
+        
+        <span data-card-id="DISMANTLE" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Dismantle<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="FLASH_OF_STEEL" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Flash Of Steel
+            <span style="color: var(--text-muted); font-size: 0.75rem;">0</span>
+        </span>
+    
+        
+        <span data-card-id="HEADBUTT" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Headbutt
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="HOWL_FROM_BEYOND" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Howl From Beyond<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">3</span>
+        </span>
+    
+        
+        <span data-card-id="MANGLE" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Mangle<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">3</span>
+        </span>
+    
+        
+        <span data-card-id="POMMEL_STRIKE" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Pommel Strike<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="SPITE" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Spite
+            <span style="color: var(--text-muted); font-size: 0.75rem;">0</span>
+        </span>
+    
+        
+        <span data-card-id="SQUASH" data-upgraded="1"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Squash<span style="color: var(--win);">+</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="STRIKE_IRONCLAD" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Strike Ironclad
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+        <span data-card-id="THRASH" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--accent);">
+            Thrash
+            <span style="color: var(--text-muted); font-size: 0.75rem;">1</span>
+        </span>
+    
+        
+            </div>
+            
+            <div style="margin-bottom: 0.8rem;">
+            <span style="color: var(--text-muted); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Curse</span><br>
+        
+        <span data-card-id="ASCENDERS_BANE" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--text-muted);">
+            Ascenders Bane
+            <span style="color: var(--text-muted); font-size: 0.75rem;">?</span>
+        </span>
+    
+        
+        <span data-card-id="DOUBT" data-upgraded="0"
+              style="display: inline-block; margin: 0.15rem 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                     font-size: 0.85rem; background: rgba(255,255,255,0.05);
+                     border-left: 3px solid var(--text-muted);">
+            Doubt
+            <span style="color: var(--text-muted); font-size: 0.75rem;">2</span>
+        </span>
+    
+    </div>
+</div>
+
+
+    </div>
+    <script>
+    // Hamburger menu toggle
+    (function() {
+        var btn = document.getElementById('hamburger-btn');
+        var menu = document.getElementById('mobile-menu');
+        function syncBodyLock() {
+            // Lock body scroll while menu is open so the page beneath
+            // doesn't drift on touch.
+            if (menu.classList.contains('open')) {
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.classList.remove('menu-open');
+            }
+        }
+        if (btn && menu) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                btn.classList.toggle('open');
+                menu.classList.toggle('open');
+                syncBodyLock();
+            });
+            document.addEventListener('click', function(e) {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    btn.classList.remove('open');
+                    menu.classList.remove('open');
+                    syncBodyLock();
+                }
+            });
+            // Close on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && menu.classList.contains('open')) {
+                    btn.classList.remove('open');
+                    menu.classList.remove('open');
+                    syncBodyLock();
+                }
+            });
+            // Close on link click
+            menu.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    btn.classList.remove('open');
+                    menu.classList.remove('open');
+                    syncBodyLock();
+                });
+            });
+        }
+    })();
+
+    // Tag .card containers whose table actually overflows so the right-edge
+    // fade hint renders. Re-checks on resize.
+    (function() {
+        function tagScrollers() {
+            document.querySelectorAll('.card').forEach(function(card) {
+                var tbl = card.querySelector('table');
+                if (!tbl) { card.classList.remove('has-scroll-table'); return; }
+                if (tbl.scrollWidth > card.clientWidth + 2) {
+                    card.classList.add('has-scroll-table');
+                } else {
+                    card.classList.remove('has-scroll-table');
+                }
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', tagScrollers);
+        } else {
+            tagScrollers();
+        }
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(tagScrollers, 120);
+        });
+    })();
+
+    // Language selector: close on outside click / escape
+    (function() {
+        var sw = document.getElementById('lang-switch');
+        if (!sw) return;
+        document.addEventListener('click', function(e) {
+            if (sw.open && !sw.contains(e.target)) sw.open = false;
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sw.open) sw.open = false;
+        });
+    })();
+
+    function toggleEncounters(btn, tableId) {
+        const table = document.getElementById(tableId);
+        const hidden = table.querySelectorAll('.encounter-hidden');
+        const showing = hidden[0] && hidden[0].style.display !== 'none';
+        hidden.forEach(row => row.style.display = showing ? 'none' : '');
+        btn.textContent = showing ? 'Show all (' + (hidden.length + 15) + ')' : 'Show top 15';
+    }
+
+    /* Sortable tables: click any <th> with class "sortable" */
+    document.addEventListener('click', function(e) {
+        const th = e.target.closest('th.sortable');
+        if (!th) return;
+        const table = th.closest('table');
+        const tbody = table.querySelector('tbody');
+        const idx = Array.from(th.parentNode.children).indexOf(th);
+        // Separate banner rows (tier headers) from sortable data rows
+        const allRows = Array.from(tbody.querySelectorAll('tr'));
+        const bannerRows = allRows.filter(r => r.dataset.banner);
+        const rows = allRows.filter(r => !r.dataset.banner);
+
+        // Toggle direction
+        const asc = th.dataset.sortDir === 'asc';
+        // Reset all headers in this table
+        th.parentNode.querySelectorAll('th').forEach(h => { h.dataset.sortDir = ''; h.classList.remove('sort-asc', 'sort-desc'); });
+        th.dataset.sortDir = asc ? 'desc' : 'asc';
+        th.classList.add(asc ? 'sort-desc' : 'sort-asc');
+
+        rows.sort((a, b) => {
+            // Prefer explicit data-sort-value when present — lets the template
+            // render a display string like "18:30" while sorting on the raw
+            // numeric minutes. Falls back to cell text for backwards compat.
+            const ca = a.children[idx], cb = b.children[idx];
+            const dsa = ca.dataset.sortValue, dsb = cb.dataset.sortValue;
+            if (dsa !== undefined && dsb !== undefined) {
+                const na = parseFloat(dsa), nb = parseFloat(dsb);
+                if (!isNaN(na) && !isNaN(nb)) return asc ? nb - na : na - nb;
+            }
+            let va = ca.textContent.trim();
+            let vb = cb.textContent.trim();
+            // Try numeric (strip % and —)
+            const na = parseFloat(va.replace('%', '').replace('—', '-1'));
+            const nb = parseFloat(vb.replace('%', '').replace('—', '-1'));
+            if (!isNaN(na) && !isNaN(nb)) {
+                return asc ? nb - na : na - nb;
+            }
+            return asc ? vb.localeCompare(va) : va.localeCompare(vb);
+        });
+
+        // Remove banner rows from DOM (they don't make sense when sorted)
+        bannerRows.forEach(r => r.remove());
+        // Re-append sorted rows, keep only first 10 visible (same as default)
+        rows.forEach((r, i) => {
+            r.style.display = '';
+            r.classList.remove('encounter-hidden');
+            if (i < 10) {
+                r.classList.remove('hidden-row', 'collapse-target');
+            } else {
+                r.classList.add('hidden-row', 'collapse-target');
+            }
+            tbody.appendChild(r);
+        });
+        // Reset expand button to initial state
+        const card = table.closest('.lb-panel') || table.closest('.enc-card') || table.closest('.card');
+        const expandBtn = card?.querySelector('.expand-btn');
+        if (expandBtn && rows.length > 10) {
+            expandBtn.style.display = '';
+            expandBtn.textContent = 'Show 50';
+            expandBtn.dataset.expandState = 'collapsed';
+            expandBtn.onclick = function() { expandSection(this); };
+        }
+        // Sort collapses the table back to 10 rows — drop the bounded-scroll
+        // state so the block isn't capped at 70vh when only 10 rows show.
+        const scrollWrap = table.parentElement;
+        if (scrollWrap && scrollWrap.classList.contains('is-scrolling')) {
+            scrollWrap.classList.remove('is-scrolling');
+            scrollWrap.scrollTop = 0;
+        }
+    });
+
+    /* Card tooltips — shows full card render image on hover */
+    (function() {
+        let cardMeta = null;
+        const tip = document.createElement('div');
+        tip.className = 'card-tooltip';
+        tip.innerHTML = '<img class="ct-img" alt="">';
+        document.body.appendChild(tip);
+
+        function loadMeta() {
+            if (cardMeta) return Promise.resolve(cardMeta);
+            return fetch('/static/card_data.json?v=13').then(r => r.json()).then(d => { cardMeta = d; return d; });
+        }
+        loadMeta(); // preload eagerly
+
+        document.addEventListener('mouseover', function(e) {
+            const el = e.target.closest('[data-card-id]');
+            if (!el) return;
+            const cid = el.dataset.cardId;
+            const upgraded = el.dataset.upgraded === '1';
+            loadMeta().then(meta => {
+                const card = meta[cid];
+                if (!card) return;
+                const img = tip.querySelector('.ct-img');
+                const slug = (card.slug || cid.toLowerCase());
+                img.src = card.image_url || ('https://img-preview.untapped.gg/sts2/en/cards/' + slug);
+                img.alt = card.name || cid;
+                tip.style.display = 'block';
+                positionTip(e);
+            });
+        });
+
+        function positionTip(e) {
+            const TW = 210, TH = 270;
+            let x = e.clientX + 18;
+            let y = e.clientY + 10;
+            if (x + TW > window.innerWidth  - 8) x = e.clientX - TW - 8;
+            if (y + TH > window.innerHeight - 8) y = e.clientY - TH - 8;
+            if (y < 8) y = 8;
+            tip.style.left = x + 'px';
+            tip.style.top  = y + 'px';
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            if (tip.style.display !== 'block') return;
+            positionTip(e);
+        });
+
+        document.addEventListener('mouseout', function(e) {
+            if (e.target.closest('[data-card-id]')) tip.style.display = 'none';
+        });
+
+        // Touch support: tap card to show tooltip, tap elsewhere to dismiss
+        let activeTouchCard = null;
+        document.addEventListener('touchstart', function(e) {
+            const el = e.target.closest('[data-card-id]');
+            if (el) {
+                if (activeTouchCard === el) {
+                    tip.style.display = 'none';
+                    activeTouchCard = null;
+                    return;
+                }
+                activeTouchCard = el;
+                const cid = el.dataset.cardId;
+                const upgraded = el.dataset.upgraded === '1';
+                loadMeta().then(meta => {
+                    const card = meta[cid];
+                    if (!card) return;
+                    const img = tip.querySelector('.ct-img');
+                    const slug = (card.slug || cid.toLowerCase());
+                    img.src = card.image_url || ('https://img-preview.untapped.gg/sts2/en/cards/' + slug);
+                    img.alt = card.name || cid;
+                    const rect = el.getBoundingClientRect();
+                    const TW = 210, TH = 270;
+                    let x = rect.left, y = rect.bottom + 8;
+                    if (x + TW > window.innerWidth) x = window.innerWidth - TW - 8;
+                    if (y + TH > window.innerHeight) y = rect.top - TH - 8;
+                    if (y < 8) y = 8;
+                    tip.style.left = x + 'px';
+                    tip.style.top = y + 'px';
+                    tip.style.display = 'block';
+                });
+                e.preventDefault();
+            } else if (!e.target.closest('.card-tooltip')) {
+                if (tip.style.display === 'block') {
+                    tip.style.display = 'none';
+                    activeTouchCard = null;
+                }
+            }
+        }, {passive: false});
+    })();
+
+    /* Relic tooltips */
+    (function() {
+        let relicMeta = null;
+        const rtip = document.createElement('div');
+        rtip.className = 'relic-tooltip';
+        rtip.innerHTML =
+            '<div class="rt-header">' +
+                '<img class="rt-img">' +
+                '<span class="rt-name"></span>' +
+            '</div>' +
+            '<div class="rt-desc"></div>';
+        document.body.appendChild(rtip);
+
+        // Preload eagerly so first hover is instant; ?v= busts any browser cache
+        fetch('/static/relic_data.json?v=6')
+            .then(r => r.json())
+            .then(d => {
+                relicMeta = d;
+                console.log('[relics] loaded', Object.keys(d).length, 'entries, sample ARCANE_SCROLL=', d['ARCANE_SCROLL']);
+            })
+            .catch(err => console.error('[relics] relic_data.json load failed:', err));
+
+        function positionTip(e) {
+            let x = e.clientX + 15, y = e.clientY + 15;
+            if (x + 230 > window.innerWidth)  x = e.clientX - 235;
+            if (y + 220 > window.innerHeight) y = e.clientY - 220;
+            rtip.style.left = x + 'px';
+            rtip.style.top  = y + 'px';
+        }
+
+        document.addEventListener('mouseover', function(e) {
+            const el = e.target.closest('[data-relic-id]');
+            if (!el || !relicMeta) return;
+            const rid = el.dataset.relicId;
+            // Try direct lookup, then without underscores
+            const relic = relicMeta[rid] || relicMeta[rid.replace(/_/g, '')] || null;
+            const img = rtip.querySelector('.rt-img');
+            if (relic) {
+                img.src = '/static/relics/' + (relic.image || rid.toLowerCase() + '.png');
+                img.onerror = function() { this.style.display = 'none'; };
+                img.style.display = '';
+                rtip.querySelector('.rt-name').textContent = relic.name || rid;
+                rtip.querySelector('.rt-desc').textContent = relic.description || 'No description available.';
+            } else {
+                img.src = '/static/relics/' + rid.toLowerCase() + '.png';
+                img.onerror = function() { this.style.display = 'none'; };
+                img.style.display = '';
+                rtip.querySelector('.rt-name').textContent = rid.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+                rtip.querySelector('.rt-desc').textContent = 'No description available.';
+            }
+            positionTip(e);  // position immediately on show, not just on move
+            rtip.style.display = 'block';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (rtip.style.display === 'block') positionTip(e);
+        });
+
+        document.addEventListener('mouseout', function(e) {
+            const el = e.target.closest('[data-relic-id]');
+            if (!el) return;
+            if (!el.contains(e.relatedTarget)) rtip.style.display = 'none';
+        });
+
+        // Touch support: tap relic to show tooltip, tap elsewhere to dismiss
+        let activeTouchEl = null;
+        document.addEventListener('touchstart', function(e) {
+            const el = e.target.closest('[data-relic-id]');
+            if (el && relicMeta) {
+                if (activeTouchEl === el) {
+                    // Second tap on same relic — dismiss
+                    rtip.style.display = 'none';
+                    activeTouchEl = null;
+                    return;
+                }
+                activeTouchEl = el;
+                // Trigger the same lookup as mouseover
+                const rid = el.dataset.relicId;
+                const relic = relicMeta[rid] || relicMeta[rid.replace(/_/g, '')] || null;
+                const img = rtip.querySelector('.rt-img');
+                if (relic) {
+                    img.src = '/static/relics/' + (relic.image || rid.toLowerCase() + '.png');
+                    img.onerror = function() { this.style.display = 'none'; };
+                    img.style.display = '';
+                    rtip.querySelector('.rt-name').textContent = relic.name || rid;
+                    rtip.querySelector('.rt-desc').textContent = relic.description || 'No description available.';
+                } else {
+                    img.src = '/static/relics/' + rid.toLowerCase() + '.png';
+                    img.onerror = function() { this.style.display = 'none'; };
+                    img.style.display = '';
+                    rtip.querySelector('.rt-name').textContent = rid.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+                    rtip.querySelector('.rt-desc').textContent = 'No description available.';
+                }
+                // Position near the element
+                const rect = el.getBoundingClientRect();
+                let x = rect.left, y = rect.bottom + 8;
+                if (x + 230 > window.innerWidth) x = window.innerWidth - 240;
+                if (y + 200 > window.innerHeight) y = rect.top - 210;
+                rtip.style.left = x + 'px';
+                rtip.style.top = y + 'px';
+                rtip.style.display = 'block';
+                e.preventDefault();
+            } else {
+                // Tap outside — dismiss
+                if (rtip.style.display === 'block') {
+                    rtip.style.display = 'none';
+                    activeTouchEl = null;
+                }
+            }
+        }, {passive: false});
+    })();
+
+    /* ── Countup animation for .enc-counter ── */
+    (function() {
+        const counters = document.querySelectorAll('.enc-counter[data-target]');
+        if (!counters.length) return;
+        const run = (el) => {
+            const target = parseInt(el.dataset.target, 10);
+            const duration = 1200;
+            const start = performance.now();
+            el.textContent = '0';
+            const step = (now) => {
+                const p = Math.min((now - start) / duration, 1);
+                // ease-out cubic
+                const ease = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(ease * target);
+                if (p < 1) requestAnimationFrame(step);
+                else el.textContent = target;
+            };
+            requestAnimationFrame(step);
+        };
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { run(e.target); obs.unobserve(e.target); } });
+        }, { threshold: 0.3 });
+        counters.forEach(c => obs.observe(c));
+    })();
+    </script>
+
+    <!-- Chomper easter egg: sneaks up on Snecko Eye, freaks out, then flees -->
+    <style>
+    .chomper {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        width: 82px;
+        height: auto;
+        z-index: 9998;
+        pointer-events: none;
+        opacity: 0;
+        background: transparent;
+        mix-blend-mode: screen;
+        filter: brightness(0.72) contrast(1.35) saturate(1.1);
+        transform: scaleX(1);
+        will-change: left, bottom, transform;
+        -webkit-tap-highlight-color: transparent;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+    #snecko-wrap {
+        -webkit-tap-highlight-color: transparent !important;
+        outline: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    #snecko-wrap *, .chomper * {
+        -webkit-tap-highlight-color: transparent !important;
+        outline: none !important;
+    }
+    @keyframes chomper-fright {
+        0%   { bottom: 20px; }
+        20%  { bottom: 52px; }   /* jump up */
+        38%  { bottom: 20px; }   /* land */
+        52%  { bottom: 38px; }   /* smaller hop */
+        65%  { bottom: 20px; }
+        78%  { bottom: 28px; }   /* tiny tremor */
+        90%  { bottom: 20px; }
+        100% { bottom: 20px; }
+    }
+    </style>
+    <img class="chomper" id="chomper" src="/static/chomper.gif" alt="">
+    <script>
+    (function() {
+        // Only run on pages that have the Snecko Eye (main page)
+        if (!document.getElementById('snecko-wrap')) return;
+        var chomper = document.getElementById('chomper');
+
+        function runChomper() {
+            var stopX = 24 + 90 + 12; // just right of snecko
+
+            // Reset: off-screen right, facing left naturally (scaleX(1) = default orientation)
+            chomper.style.transition = 'none';
+            chomper.style.animation = 'none';
+            chomper.style.left = (window.innerWidth + 100) + 'px';
+            chomper.style.bottom = '20px';
+            chomper.style.transform = 'scaleX(1)';
+            chomper.style.opacity = '1';
+
+            // Walk toward snecko
+            requestAnimationFrame(function() { requestAnimationFrame(function() {
+                chomper.style.transition = 'left 6s linear';
+                chomper.style.left = stopX + 'px';
+            }); });
+
+            // Arrived — trigger fright animation (jump + tremor)
+            setTimeout(function() {
+                chomper.style.transition = 'none';
+                chomper.style.animation = 'chomper-fright 0.7s ease-in-out forwards';
+
+                // After fright, flip and sprint
+                setTimeout(function() {
+                    chomper.style.animation = 'none';
+                    chomper.style.bottom = '20px';
+                    chomper.style.transform = 'scaleX(-1)'; // flip to face right = flee
+                    chomper.style.transition = 'left 1.0s ease-in';
+                    chomper.style.left = (window.innerWidth + 100) + 'px';
+
+                    setTimeout(function() {
+                        chomper.style.opacity = '0';
+                        setTimeout(runChomper, 30000 + Math.random() * 40000);
+                    }, 1100);
+                }, 750); // fright duration
+            }, 6000); // walk duration
+        }
+
+        setTimeout(runChomper, 6000);
+    })();
+    </script>
+</body>
+</html>

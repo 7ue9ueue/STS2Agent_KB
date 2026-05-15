@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sts2": {
+      "command": "uv",
+      "args": ["run", "--directory", "/Users/tonywu/Desktop/sts2_agent/STS2MCP/mcp", "python", "server.py"]
+    }
+  }
+}

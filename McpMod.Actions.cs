@@ -16,6 +16,7 @@ using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Nodes.Events;
 using MegaCrit.Sts2.Core.Nodes.Events.Custom;
 using MegaCrit.Sts2.Core.Nodes.Events.Custom.CrystalSphere;
+using MegaCrit.Sts2.Core.Multiplayer.Game;
 using MegaCrit.Sts2.Core.Nodes.Screens.Shops;
 using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
 using MegaCrit.Sts2.Core.Map;
@@ -87,8 +88,60 @@ public static partial class McpMod
             "crystal_sphere_set_tool" => ExecuteCrystalSphereSetTool(data),
             "crystal_sphere_click_cell" => ExecuteCrystalSphereClickCell(data),
             "crystal_sphere_proceed" => ExecuteCrystalSphereProceed(),
+            "save_and_quit" => ExecuteSaveAndQuit(),
+            "save_quit" => ExecuteSaveAndQuit(),
             _ => Error($"Unknown action: {action}")
         };
+    }
+
+    private static Dictionary<string, object?> ExecuteSaveAndQuit()
+    {
+        if (RunManager.Instance.NetService.Type.IsMultiplayer())
+            return Error("save_and_quit is singleplayer-only; multiplayer has its own lobby/load flow");
+
+        var tree = (Godot.Engine.GetMainLoop()) as SceneTree;
+        if (tree?.Root == null)
+            return Error("Cannot access scene tree");
+
+        if (TryClickVisibleSaveAndQuitButton(tree.Root))
+            return new Dictionary<string, object?> { ["status"] = "ok", ["message"] = "Clicked Save and Quit" };
+
+        var pauseButton = FindAll<NClickableControl>(tree.Root)
+            .FirstOrDefault(button =>
+                button.GetType().FullName?.EndsWith(".NTopBarPauseButton", System.StringComparison.Ordinal) == true &&
+                button.IsEnabled &&
+                IsNodeVisible(button));
+
+        if (pauseButton == null)
+            return Error("Could not find a visible Save and Quit button or top-bar pause button");
+
+        pauseButton.ForceClick();
+
+        if (TryClickVisibleSaveAndQuitButton(tree.Root))
+            return new Dictionary<string, object?> { ["status"] = "ok", ["message"] = "Opened pause menu and clicked Save and Quit" };
+
+        return new Dictionary<string, object?>
+        {
+            ["status"] = "ok",
+            ["message"] = "Opened pause menu; call save_and_quit again after the pause screen finishes opening"
+        };
+    }
+
+    private static bool TryClickVisibleSaveAndQuitButton(Node root)
+    {
+        foreach (var node in FindAll<Node>(root))
+        {
+            var btn = GetInstanceFieldValue(node, "_saveAndQuitButton");
+            if (btn is NClickableControl clickable &&
+                clickable.IsEnabled &&
+                IsNodeVisible(clickable))
+            {
+                clickable.ForceClick();
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static Dictionary<string, object?> ExecutePlayCard(Player player, Dictionary<string, JsonElement> data)
