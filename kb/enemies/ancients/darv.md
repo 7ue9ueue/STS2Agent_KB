@@ -185,3 +185,4 @@ _None._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Dusty Tome is strong for Ironclad decks with a real skill package; Corruption+ gives a controlled exhaust/tempo plan without the randomness of Pandora's Box or Snecko Eye.
+- Darv/Ancient choices cannot be save/load branch-inspected in this harness; pick from visible option quality and avoid high-variance relics unless the deck can absorb misses.

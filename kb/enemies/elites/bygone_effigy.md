@@ -56,3 +56,4 @@ The Slow effect is usually not particularly impactful, but it does mean that ext
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- In a forced low-HP Act 1 elite, turn-1 Vulnerable Potion plus a large attack like Bludgeon can be worth more than saving the potion for the boss; Effigy becomes a repeated 25-damage race once awake.

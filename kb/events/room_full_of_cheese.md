@@ -53,3 +53,4 @@ _No relic list in source record._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Search is strong when an immediate rest site can heal the 14 HP loss before a boss; it avoids adding random common-card bloat.
+- If save/load branch inspection shows premium common choices, Gorge can beat Search, especially with Book of Five Rings progress or a boss that rewards specific commons.

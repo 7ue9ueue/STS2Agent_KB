@@ -56,3 +56,4 @@ _No relic list in source record._
      Wiki facts live above the divider. -->
 - Approach opens a deck enchant selection for eligible Attacks; cards that already have an enchantment do not appear.
 - Corrupted is strongest on high-impact Attacks that are not spammed every cycle, such as Uppercut+, when HP sustain is good.
+- Corrupted is also strong on upgraded single-shot burst attacks such as Bludgeon+ before Act 3 bosses; the 2 HP cost is acceptable when Pantograph/Burning Blood or other sustain covers it.

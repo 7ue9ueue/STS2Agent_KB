@@ -1,6 +1,7 @@
 # Ironclad Strategy Summary
 
 Reward decisions (deck-size targets, archetype lanes, smith priorities, synergies): [reward_choice.md](reward_choice.md).
+Deck-size and answer-density gates: [deck_size.md](deck_size.md).
 Pathing and HP checkpoints: [pathing.md](pathing.md).
 Combat sequencing: [combat.md](combat.md).
 Detailed templates: [archetypes.md](archetypes.md). Data-informed card notes: [card_impressions.md](card_impressions.md).
@@ -8,6 +9,7 @@ Detailed templates: [archetypes.md](archetypes.md). Data-informed card notes: [c
 ## Draft Shape
 
 - Build enough to survive, then protect draw quality.
+- In late Act 2 and Act 3, protect answer density: skip medium-good cards if they delay panic cards, engine setup, or known boss/elite answers.
 - In Act 1, "survive" usually means taking enough actual Attack cards and frontloaded damage before enemies scale up or dangerous patterns take over.
 - Strong Act 1 transition reminders: Pommel Strike, Anger, Tremble, Shrug It Off, and Taunt are good because they improve damage per energy or let starter attacks deal more. Pommel/Anger supply efficient early attacks, Tremble/Taunt multiply damage with Vulnerable, and Shrug keeps draw quality while covering attack turns.
 - Skipping is good when offered cards do not improve damage, draw, block, energy, scaling, or boss answers.
@@ -26,7 +28,7 @@ Detailed templates: [archetypes.md](archetypes.md). Data-informed card notes: [c
 - Draw and energy are the baseline shell. Damage scaling, block engines, and exhaust packages sit on top of that shell.
 - Exhaust is virtual deck-thinning. Exhausting statuses, curses, starter filler, or spent setup cards shrinks the live combat deck and cycles good cards faster.
 - In shops, inspect colorless and rare cards early because scarcity matters when function is close, but buy the option that best solves the run.
-- Default campfire choice is Smith unless HP and path risk make resting mathematically necessary.
+- Default campfire choice is Smith. Rest only when HP/pathing math says the run is likely to die before the upgrade pays back; against bosses, prefer upgrades that improve scaling, draw, block, exhaust, or setup speed because extra HP alone does not solve long-fight scaling.
 
 ## Pathing Bias
 

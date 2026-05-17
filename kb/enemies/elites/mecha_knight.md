@@ -49,3 +49,5 @@ _None._
 - Treat Heavy Cleave as a hard survival check after each Windup; Strength from repeated Windups makes later cycles lethal at low HP.
 - Burns from Flamethrower can consume Buffer before Heavy Cleave. Exhaust Burns or cover their end-turn damage before relying on Lucky Tonic or other Buffer.
 - Strip Artifact before the Heavy Cleave turn if possible so Weak/Vulnerable cards can both reduce the hit and shorten the fight.
+- Do not enter the second Windup cycle without dedicated 50+ damage coverage, Intangible, or a near-guaranteed kill; Burns can dilute draws enough that generic block density is not enough.
+- Treat the Windup turn as the planning checkpoint: if lethal is not guaranteed, spend draw/topdeck tools to line up Impervious, Apparition, Second Wind, Weak, or other hard coverage for the following Heavy Cleave.

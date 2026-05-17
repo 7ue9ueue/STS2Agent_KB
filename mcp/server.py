@@ -6,8 +6,15 @@ as MCP tools for Claude Desktop / Claude Code.
 
 import argparse
 import asyncio
+import inspect
 import json
+import os
+import re
 import sys
+import time
+import uuid
+from datetime import datetime, timezone
+from pathlib import Path
 
 import httpx
 from mcp.server.fastmcp import FastMCP
@@ -16,6 +23,40 @@ mcp = FastMCP("sts2")
 
 _base_url: str = "http://localhost:15526"
 _trust_env: bool = True
+_repo_root = Path(__file__).resolve().parent.parent
+_log_enabled = os.environ.get("STS2_TOOL_LOG", "").lower() in {"1", "true", "yes", "on"}
+_log_session_id = os.environ.get("STS2_TOOL_LOG_SESSION") or (
+    datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4().hex[:8]
+)
+_log_local_run = os.environ.get("STS2_TOOL_LOG_RUN")
+_log_run_id = os.environ.get("STS2_TOOL_LOG_RUN_ID")
+_log_seq = 0
+_log_lock = asyncio.Lock()
+_log_path_env = os.environ.get("STS2_TOOL_LOG_PATH")
+_log_file_stem = _log_local_run or _log_run_id or f"sts2_tool_log_{_log_session_id}"
+_log_path = (
+    Path(_log_path_env).expanduser()
+    if _log_path_env
+    else _repo_root / "history" / "tool_logs" / f"{_log_file_stem}.jsonl"
+)
+_max_response_bytes = int(os.environ.get("STS2_TOOL_LOG_MAX_RESPONSE_BYTES", "0") or "0")
+_max_request_bytes = int(os.environ.get("STS2_TOOL_LOG_MAX_REQUEST_BYTES", "0") or "0")
+_log_detail = os.environ.get("STS2_TOOL_LOG_DETAIL", "full").lower()
+
+
+def _safe_log_stem(value: str) -> str:
+    stem = re.sub(r"[^A-Za-z0-9_.-]+", "_", value.strip())
+    stem = stem.strip(".")
+    if not stem:
+        raise ValueError("Log run name must contain at least one safe filename character")
+    if stem in {".", ".."}:
+        raise ValueError("Invalid log run name")
+    return stem
+
+
+def _default_log_path_for(local_run: str | None, run_id: str | None) -> Path:
+    raw_stem = local_run or run_id or f"sts2_tool_log_{_log_session_id}"
+    return _repo_root / "history" / "tool_logs" / f"{_safe_log_stem(raw_stem)}.jsonl"
 
 
 def _sp_url() -> str:
@@ -34,53 +75,431 @@ def _profiles_url() -> str:
     return f"{_base_url}/api/v1/profiles"
 
 
+def _truncate_text(value: str | None, max_bytes: int) -> dict | str | None:
+    if value is None or max_bytes <= 0:
+        return value
+
+    raw = value.encode("utf-8")
+    if len(raw) <= max_bytes:
+        return value
+
+    truncated = raw[:max_bytes].decode("utf-8", errors="replace")
+    return {
+        "truncated": True,
+        "bytes": len(raw),
+        "max_bytes": max_bytes,
+        "text": truncated,
+    }
+
+
+def _truncate_json(value: object, max_bytes: int) -> object:
+    if max_bytes <= 0:
+        return value
+
+    try:
+        text = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+    except TypeError:
+        text = repr(value)
+
+    return _truncate_text(text, max_bytes)
+
+
+def _infer_tool_name() -> str | None:
+    helper_names = {
+        "_infer_tool_name",
+        "_log_http_event",
+        "_request_text",
+        "_get",
+        "_post",
+        "_mp_get",
+        "_mp_post",
+        "_profile_get",
+        "_profiles_get",
+        "_profiles_post",
+        "_wait_for_profile",
+    }
+    for frame in inspect.stack()[2:]:
+        name = frame.function
+        if name.startswith("_") or name in helper_names:
+            continue
+        return name
+    return None
+
+
+def _name_or_id(item: object) -> object:
+    if not isinstance(item, dict):
+        return item
+    return item.get("name") or item.get("id") or item
+
+
+def _power_summary(power: object) -> object:
+    if not isinstance(power, dict):
+        return power
+    name = power.get("name") or power.get("id")
+    amount = power.get("amount")
+    if amount is None:
+        amount = power.get("stacks")
+    if amount is None:
+        return name
+    return {"name": name, "amount": amount}
+
+
+def _card_summary(card: object) -> object:
+    if not isinstance(card, dict):
+        return card
+
+    summary = {
+        key: card.get(key)
+        for key in (
+            "index",
+            "name",
+            "id",
+            "type",
+            "cost",
+            "is_upgraded",
+            "can_play",
+            "unplayable_reason",
+        )
+        if key in card
+    }
+    if "is_upgraded" in summary:
+        summary["upgraded"] = summary.pop("is_upgraded")
+    return summary
+
+
+def _relic_summary(relic: object) -> object:
+    if not isinstance(relic, dict):
+        return relic
+    summary = {"name": relic.get("name") or relic.get("id")}
+    if relic.get("counter") is not None:
+        summary["counter"] = relic.get("counter")
+    return summary
+
+
+def _potion_summary(potion: object) -> object:
+    if not isinstance(potion, dict):
+        return potion
+    return {
+        key: potion.get(key)
+        for key in ("slot", "name", "id", "target_type", "can_use_in_combat")
+        if key in potion
+    }
+
+
+def _enemy_summary(enemy: object) -> object:
+    if not isinstance(enemy, dict):
+        return enemy
+
+    summary = {
+        key: enemy.get(key)
+        for key in (
+            "entity_id",
+            "name",
+            "hp",
+            "max_hp",
+            "block",
+            "intent",
+            "intent_damage",
+            "intent_hits",
+        )
+        if key in enemy
+    }
+    if "status" in enemy:
+        summary["status"] = [_power_summary(power) for power in enemy.get("status", [])]
+    return summary
+
+
+def _option_summary(option: object) -> object:
+    if not isinstance(option, dict):
+        return option
+    return {
+        key: option.get(key)
+        for key in (
+            "index",
+            "id",
+            "name",
+            "type",
+            "label",
+            "text",
+            "description",
+            "disabled",
+            "node_type",
+            "x",
+            "y",
+            "col",
+            "row",
+            "boss_id",
+        )
+        if key in option
+    }
+
+
+def _player_summary(player: object) -> object:
+    if not isinstance(player, dict):
+        return player
+
+    summary = {
+        key: player.get(key)
+        for key in (
+            "character",
+            "hp",
+            "max_hp",
+            "block",
+            "gold",
+            "energy",
+            "max_energy",
+            "stars",
+        )
+        if key in player
+    }
+    if "status" in player:
+        summary["status"] = [_power_summary(power) for power in player.get("status", [])]
+    if "relics" in player:
+        summary["relics"] = [_relic_summary(relic) for relic in player.get("relics", [])]
+    if "potions" in player:
+        summary["potions"] = [_potion_summary(potion) for potion in player.get("potions", [])]
+    if "hand" in player:
+        summary["hand"] = [_card_summary(card) for card in player.get("hand", [])]
+    for pile in ("draw_pile", "discard_pile", "exhaust_pile", "deck"):
+        if pile in player and isinstance(player[pile], list):
+            summary[f"{pile}_count"] = len(player[pile])
+    return summary
+
+
+def _summarize_json_state(state: dict) -> dict:
+    summary = {
+        key: state.get(key)
+        for key in (
+            "state_type",
+            "game_mode",
+            "menu_screen",
+            "message",
+            "net_type",
+            "player_count",
+            "local_player_slot",
+        )
+        if key in state
+    }
+    if "run" in state:
+        summary["run"] = state.get("run")
+    if "player" in state:
+        summary["player"] = _player_summary(state.get("player"))
+    if "players" in state:
+        summary["players"] = [_player_summary(player) for player in state.get("players", [])]
+
+    battle = state.get("battle")
+    if isinstance(battle, dict):
+        summary["battle"] = {
+            key: battle.get(key)
+            for key in ("round", "turn", "is_play_phase", "all_players_ready")
+            if key in battle
+        }
+        if "enemies" in battle:
+            summary["battle"]["enemies"] = [_enemy_summary(enemy) for enemy in battle.get("enemies", [])]
+
+    for screen_key in ("card_select", "hand_select", "card_reward"):
+        screen = state.get(screen_key)
+        if isinstance(screen, dict):
+            compact = {
+                key: screen.get(key)
+                for key in (
+                    "screen_type",
+                    "prompt",
+                    "preview_showing",
+                    "can_cancel",
+                    "can_confirm",
+                )
+                if key in screen
+            }
+            if "cards" in screen:
+                compact["cards"] = [_card_summary(card) for card in screen.get("cards", [])]
+            summary[screen_key] = compact
+
+    for screen_key in ("map", "event", "shop", "fake_merchant", "rest", "rewards", "treasure"):
+        screen = state.get(screen_key)
+        if not isinstance(screen, dict):
+            continue
+        compact = {
+            key: screen.get(key)
+            for key in (
+                "name",
+                "event_id",
+                "prompt",
+                "is_shared",
+                "all_voted",
+                "all_bid",
+                "is_bidding_phase",
+            )
+            if key in screen
+        }
+        for list_key in ("options", "next_options", "items", "rewards", "relics", "votes", "bids"):
+            if list_key in screen and isinstance(screen[list_key], list):
+                compact[list_key] = [_option_summary(item) for item in screen[list_key]]
+        summary[screen_key] = compact
+
+    return summary
+
+
+def _summarize_markdown_state(text: str) -> dict:
+    kept_lines = []
+    skip_prefixes = ("  Future paths:", "- **Injury**:", "- **Unplayable**:")
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith(skip_prefixes):
+            continue
+        if (
+            stripped.startswith("#")
+            or stripped.startswith("**Act ")
+            or stripped.startswith("**The ")
+            or stripped.startswith("- [")
+            or stripped.startswith("- **")
+            or stripped.startswith("## ")
+        ):
+            kept_lines.append(stripped)
+        if len(kept_lines) >= 80:
+            break
+    return {"format": "markdown", "lines": kept_lines}
+
+
+def _should_summarize_response(scope: str, method: str) -> bool:
+    return _log_detail in {"summary", "thin"} and method == "GET" and scope in {"singleplayer", "multiplayer"}
+
+
+def _summarize_response_text(text: str) -> dict:
+    try:
+        parsed = json.loads(text)
+    except json.JSONDecodeError:
+        return _summarize_markdown_state(text)
+
+    if isinstance(parsed, dict):
+        return _summarize_json_state(parsed)
+    return {"value": parsed}
+
+
+async def _log_http_event(event: dict) -> None:
+    if not _log_enabled:
+        return
+
+    global _log_seq
+    async with _log_lock:
+        _log_seq += 1
+        event["seq"] = _log_seq
+        event["session_id"] = _log_session_id
+        if _log_local_run:
+            event["local_run"] = _log_local_run
+        if _log_run_id:
+            event["run_id"] = _log_run_id
+        event.setdefault("ts", datetime.now(timezone.utc).isoformat())
+
+        try:
+            _log_path.parent.mkdir(parents=True, exist_ok=True)
+            with _log_path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(event, ensure_ascii=False, separators=(",", ":")) + "\n")
+        except Exception as e:
+            print(f"STS2 tool logger error: {e}", file=sys.stderr)
+
+
+async def _request_text(
+    *,
+    scope: str,
+    method: str,
+    url: str,
+    params: dict | None = None,
+    body: dict | None = None,
+) -> str:
+    tool_name = _infer_tool_name() if _log_enabled else None
+    started = time.perf_counter()
+    event = {
+        "tool": tool_name,
+        "scope": scope,
+        "method": method,
+        "url": url,
+        "params": _truncate_json(params, _max_request_bytes),
+        "request": _truncate_json(body, _max_request_bytes),
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
+            if method == "GET":
+                r = await client.get(url, params=params)
+            elif method == "POST":
+                r = await client.post(url, json=body)
+            else:
+                raise ValueError(f"Unsupported HTTP method: {method}")
+
+            response_text = r.text
+            ok = 200 <= r.status_code < 400
+            response_log: dict
+            if ok and _should_summarize_response(scope, method):
+                response_log = {
+                    "response_summary": _summarize_response_text(response_text),
+                    "response_bytes": len(response_text.encode("utf-8")),
+                }
+            else:
+                response_log = {
+                    "response": _truncate_text(response_text, _max_response_bytes),
+                }
+            event.update(
+                {
+                    "ok": ok,
+                    "status_code": r.status_code,
+                    "duration_ms": round((time.perf_counter() - started) * 1000, 3),
+                    **response_log,
+                }
+            )
+            if not ok:
+                event["error_type"] = "HTTPStatusError"
+                event["error"] = f"HTTP {r.status_code}"
+            await _log_http_event(event)
+            r.raise_for_status()
+            return response_text
+    except Exception as e:
+        if isinstance(e, httpx.HTTPStatusError):
+            raise
+
+        event.update(
+            {
+                "ok": False,
+                "duration_ms": round((time.perf_counter() - started) * 1000, 3),
+                "error_type": type(e).__name__,
+                "error": str(e),
+            }
+        )
+        await _log_http_event(event)
+        raise
+
+
+def _print_log_startup_message() -> None:
+    if _log_enabled:
+        print(f"STS2 tool logging enabled: {_log_path}", file=sys.stderr)
+
+
 async def _get(params: dict | None = None) -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.get(_sp_url(), params=params)
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="singleplayer", method="GET", url=_sp_url(), params=params)
 
 
 async def _post(body: dict) -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.post(_sp_url(), json=body)
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="singleplayer", method="POST", url=_sp_url(), body=body)
 
 
 async def _mp_get(params: dict | None = None) -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.get(_mp_url(), params=params)
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="multiplayer", method="GET", url=_mp_url(), params=params)
 
 
 async def _mp_post(body: dict) -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.post(_mp_url(), json=body)
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="multiplayer", method="POST", url=_mp_url(), body=body)
 
 
 async def _profile_get() -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.get(_profile_url())
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="profile", method="GET", url=_profile_url())
 
 
 async def _profiles_get() -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.get(_profiles_url())
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="profiles", method="GET", url=_profiles_url())
 
 
 async def _profiles_post(body: dict) -> str:
-    async with httpx.AsyncClient(timeout=10, trust_env=_trust_env) as client:
-        r = await client.post(_profiles_url(), json=body)
-        r.raise_for_status()
-        return r.text
+    return await _request_text(scope="profiles", method="POST", url=_profiles_url(), body=body)
 
 
 async def _wait_for_profile(profile_id: int, fallback: str) -> str:
@@ -129,9 +548,110 @@ def _handle_error(e: Exception) -> str:
     return f"Error: {e}"
 
 
+async def _set_tool_log_target(local_run: str, run_id: str | None = None) -> dict:
+    safe_local_run = _safe_log_stem(local_run)
+    safe_run_id = _safe_log_stem(run_id) if run_id else None
+
+    global _log_enabled, _log_local_run, _log_run_id, _log_file_stem, _log_path
+    _log_enabled = True
+    _log_local_run = safe_local_run
+    _log_run_id = safe_run_id
+    _log_file_stem = safe_local_run
+    _log_path = _default_log_path_for(_log_local_run, _log_run_id)
+
+    result = {
+        "status": "ok",
+        "message": f"Tool transcript logging is now paired with {safe_local_run}",
+        "enabled": _log_enabled,
+        "local_run": _log_local_run,
+        "run_id": _log_run_id,
+        "path": str(_log_path),
+            "session_id": _log_session_id,
+            "detail": _log_detail,
+        }
+    await _log_http_event(
+        {
+            "tool": "set_tool_log_run",
+            "scope": "logger",
+            "method": "CONFIG",
+            "ok": True,
+            "status_code": None,
+            "duration_ms": 0,
+            "request": {"local_run": local_run, "run_id": run_id},
+            "response": json.dumps(result, ensure_ascii=False, separators=(",", ":")),
+        }
+    )
+    return result
+
+
+def _set_log_detail(detail: str) -> dict:
+    normalized = detail.lower().strip()
+    if normalized not in {"full", "summary", "thin"}:
+        raise ValueError("detail must be one of: full, summary, thin")
+
+    global _log_detail
+    _log_detail = normalized
+    return {
+        "status": "ok",
+        "message": f"Tool transcript detail is now {normalized}",
+        "detail": _log_detail,
+        "path": str(_log_path),
+        "session_id": _log_session_id,
+    }
+
+
 # ---------------------------------------------------------------------------
 # General
 # ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+async def set_tool_log_run(local_run: str, run_id: str | None = None) -> str:
+    """Set the active tool transcript log target for the current local run.
+
+    Use this at the start of a run after creating history/run<N>.md so the
+    logger writes subsequent tool transcripts to history/tool_logs/run<N>.jsonl.
+
+    Args:
+        local_run: Local history run key, e.g. "run20".
+        run_id: Optional secondary run id to include in events.
+    """
+    try:
+        return json.dumps(await _set_tool_log_target(local_run, run_id), indent=2)
+    except Exception as e:
+        return _handle_error(e)
+
+
+@mcp.tool()
+async def get_tool_log_status() -> str:
+    """Get the current MCP tool transcript logging target."""
+    return json.dumps(
+        {
+            "enabled": _log_enabled,
+            "local_run": _log_local_run,
+            "run_id": _log_run_id,
+            "path": str(_log_path),
+            "session_id": _log_session_id,
+            "max_response_bytes": _max_response_bytes,
+            "max_request_bytes": _max_request_bytes,
+            "detail": _log_detail,
+        },
+        indent=2,
+    )
+
+
+@mcp.tool()
+async def set_tool_log_detail(detail: str) -> str:
+    """Set transcript detail mode at runtime.
+
+    Args:
+        detail: "full" for raw responses, or "summary"/"thin" for compact
+            singleplayer/multiplayer get_game_state responses.
+    """
+    try:
+        return json.dumps(_set_log_detail(detail), indent=2)
+    except Exception as e:
+        return _handle_error(e)
 
 
 @mcp.tool()
@@ -1082,6 +1602,7 @@ def main():
     _base_url = f"http://{args.host}:{args.port}"
     _trust_env = not args.no_trust_env
 
+    _print_log_startup_message()
     mcp.run(transport="stdio")
 
 

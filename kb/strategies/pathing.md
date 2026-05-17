@@ -9,6 +9,7 @@ Pathing is rest-site planning first, defensive planning second, and reward optim
 - The first three hallway enemies of an act are usually weak; early combats are often good because they give card rewards, gold, and potions before the harder encounter pool appears.
 - Prefer question marks over regular enemies when the deck is not desperate for immediate card rewards. The API does not reveal what a question mark contains, but unknown nodes are generally safer than hard hallway fights and can give removals, upgrades, relics, gold, healing, or other value.
 - Avoid optional elites unless the run is in Act 1 with strong early damage, or the deck/HP/potions are already very healthy.
+- For forced or optional Act 3 elites, check answer density as well as HP. A large deck with only a few panic cards can be unsafe even at high HP.
 - In Act 2, be especially cautious with elites because Decimillipede can appear; without AoE, multi-target damage, or a solid block/draw engine, path away.
 - Low current HP changes even hallway math: if the next node is a forced Act 2 combat, keep a defensive potion or route to recovery before spending the last survival resource.
 - After a costly Act 2 hallway, check the next forced node before accepting the outcome. Exiting around 20-25 HP with no potion can still be unrecoverable if another hallway stands before the first rest site.
@@ -38,17 +39,12 @@ Before choosing an elite path, answer all of these:
 - What elites can appear in this act?
 - Which strategy file and enemy KB files were read?
 - What exact cards, relics, potions, or HP total make this elite safe?
+- How reliably does the deck find those exact answers before the elite's scripted burst turn?
 - Where is the next rest site if the fight goes badly?
 
 If those answers are weak, take the safer path.
 
 ## HP Thresholds By Act
-
-| Act | Elite floor | Unknown node floor |
-|---|---|---|
-| Act 1 | >70% HP (~64+ HP) | 50–70% HP |
-| Act 2 | >70% HP, with caution for Hive elites | 50–70% HP |
-| Act 3 | >60% HP, with potion/defense reserve | tighter — fewer safe outcomes |
 
 - **Below 20% HP after any fight → immediate rest site.** Don't chain combats at low HP.
 - Before taking a low-HP survival line, check whether the path has forced combats before the next rest; if it does, spend resources earlier or reroute.
@@ -65,8 +61,10 @@ From the 161 A10 win corpus, smith share by act:
 | Act 2 | 67.1% |
 | Act 3 | 66.8% |
 
-- **Default = Smith.** Heal only at low HP or before a known hard boss.
-- **Final pre-boss rest needs explicit math.** Do not rest just because HP is not full; if relics/cards already cover the next boss's expected damage, smith the highest-impact card instead.
+- **Default = Smith.** Rest only when current HP, potions, relic healing, and the forced path fail concrete survival math.
+- Treat Rest as buying a survival buffer, not power. Extra HP does not make the deck scale faster, block better, or end boss phases sooner.
+- Boss campfires are especially upgrade-biased: bosses scale, tax, or flood the deck over time, so a key smith that improves damage, draw, exhaust, block, or setup speed can prevent more damage than a heal restores.
+- **Final pre-boss rest needs explicit math.** Do not rest just because HP is not full; if relics/cards already cover the next boss's expected damage, smith the highest-impact scaling or consistency card instead.
 - Before the final campfire, re-check the full route tree rather than trusting the previous branch read. If the remaining path can still force an elite or hallway before the last rest, low HP should push Rest over Smith even when the upgrade is high value.
 
 ## HP Checkpoints (Winning A10 Medians)
@@ -79,7 +77,7 @@ From the 161 A10 win corpus, smith share by act:
 | Before Act 3 boss #1 | 98% | Near-full is common; final rest can still be a Smith with Pantograph/Fairy and a concrete boss plan |
 | Before final boss | 70% | First A3 boss costs ~20pp HP on average; for Queen, require a guaranteed post-Bound Beam defense or a kill plan for Amalgam |
 
-**Key rule**: Reach the last campfire before each boss with a plan. Default to Smith if HP is stable; heal if a hard boss or low HP would make the fight unsafe.
+**Key rule**: Reach the last campfire before each boss with a plan. Default to Smith if HP is stable; heal only if the boss or remaining path is likely to kill through the upgraded plan.
 
 ## Act-Specific Notes
 

@@ -68,3 +68,4 @@ wiki_stub: true
      Wiki facts live above the divider. -->
 - Its 1 HP loss happens during the player turn, so it enables Spite's double-hit condition immediately.
 - Take as a purposeful Act 2 AoE patch when the deck lacks multi-target damage; Burning Blood or other sustain makes the 1 HP cost easier to absorb.
+- One-Two Punch repeats the HP loss as well as the damage; duplicated Breakthrough costs 2 HP, so apply Buffer after it if Buffer is meant for enemy damage.

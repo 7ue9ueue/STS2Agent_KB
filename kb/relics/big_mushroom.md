@@ -36,3 +36,4 @@ Can only be obtained from the Hungry for Mushrooms event by selecting .
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Treat the -2 opening draw as a major Act 3 boss liability; extra max HP rarely offsets missing setup, draw, or one-card defense in the opening hand.

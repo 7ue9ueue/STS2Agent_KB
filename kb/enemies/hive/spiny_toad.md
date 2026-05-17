@@ -45,3 +45,4 @@ _None._
 - Do not enter at single-digit HP without reliable turn-2 block; it gains 5 Thorns first, then attacks for 23, making attack-based recovery risky.
 - Powdered Demise is reasonable against its high HP, but it does not solve the immediate Spike Explosion damage check.
 - At low HP, plan for both Spike Explosion and the following Tongue Lash; blocking the 25-damage turn but reaching turn 3 without block or lethal still loses.
+- Treat the no-Thorns buff turn as the main damage window; if setting up lethal for the next turn, account for 5 reflected damage from the finishing attack.

@@ -61,3 +61,4 @@ _None._
 - Non-damaging debuffs/setup such as Dominate do not wake it; Pyre+ is a strong final-campfire plan when the deck can draw it during sleep.
 - After Soul Siphon, Defend-heavy hands can fail to close despite low boss HP; preserve potion or draw fixing to avoid another attack cycle.
 - Do not let Sword Boomerang/other low-base multi-hit plans fight through repeated Soul Siphons; negative Strength can reduce hits to 0, and The Boot did not rescue 0-damage hits in live A10.
+- If Vambrace is available, avoid spending it on sleep-turn overblock; saving it for the first real attack can turn Flame Barrier into 24 Block and preserve the HP needed to finish.

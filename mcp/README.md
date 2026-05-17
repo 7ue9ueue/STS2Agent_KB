@@ -1,9 +1,76 @@
 # MCP Tools
 
+## Tool Transcript Logging
+
+The MCP bridge can write a JSONL transcript of every HTTP request it sends to
+the STS2 mod, including read-only `get_game_state` calls and mutating actions.
+Enable it with environment variables when starting the MCP server:
+
+```bash
+STS2_TOOL_LOG=1 STS2_TOOL_LOG_RUN=run20 uv run --directory /path/to/STS2_MCP/mcp python server.py
+```
+
+By default, logs are written under `history/tool_logs/`:
+
+```text
+history/tool_logs/<local-run-or-run-id-or-session>.jsonl
+```
+
+Each line contains a timestamp, session id, sequence number, inferred MCP tool
+name, optional run linkage fields, request params/body, status, duration, and
+response text. For live local runs, set `STS2_TOOL_LOG_RUN=run<N>` so the log
+pairs with `history/run<N>.md` and `history/run<N>_strategy.md`:
+
+```bash
+STS2_TOOL_LOG=1 \
+STS2_TOOL_LOG_RUN=run20 \
+STS2_TOOL_LOG_DETAIL=summary \
+STS2_TOOL_LOG_MAX_RESPONSE_BYTES=50000 \
+uv run --directory /path/to/STS2_MCP/mcp python server.py
+```
+
+`STS2_TOOL_LOG_DETAIL=full` logs raw responses. `STS2_TOOL_LOG_DETAIL=summary`
+keeps mutating action responses full, but replaces singleplayer/multiplayer
+`get_game_state` responses with compact `response_summary` objects plus the
+original response byte count.
+
+The playing agent can also set or change the active log name at runtime:
+
+```text
+set_tool_log_run(local_run="run21")
+set_tool_log_detail(detail="summary")
+```
+
+After that call, subsequent transcript events are written to:
+
+```text
+history/tool_logs/run21.jsonl
+```
+
+Useful variables:
+
+| Variable | Description |
+|---|---|
+| `STS2_TOOL_LOG` | Set to `1`, `true`, `yes`, or `on` to enable logging |
+| `STS2_TOOL_LOG_RUN` | Optional local run key such as `run20`; used in events and default file name |
+| `STS2_TOOL_LOG_RUN_ID` | Optional secondary run id; used in events and default file name if `STS2_TOOL_LOG_RUN` is unset |
+| `STS2_TOOL_LOG_PATH` | Optional explicit JSONL output path |
+| `STS2_TOOL_LOG_SESSION` | Optional session id written into each event |
+| `STS2_TOOL_LOG_DETAIL` | `full` for raw responses, or `summary`/`thin` for compact state-read responses |
+| `STS2_TOOL_LOG_MAX_RESPONSE_BYTES` | Optional response truncation limit; `0` or unset means full response |
+| `STS2_TOOL_LOG_MAX_REQUEST_BYTES` | Optional request truncation limit; `0` or unset means full request |
+
+The MCP process must be restarted after changing these variables. Existing game
+runs can continue because the logger only changes the bridge process, not the
+game mod.
+
 ## Singleplayer
 
 | Tool | Scope | Description |
 |---|---|---|
+| `set_tool_log_run(local_run, run_id?)` | Logger | Set the active transcript log target, e.g. `history/tool_logs/run20.jsonl` |
+| `get_tool_log_status()` | Logger | Show whether transcript logging is enabled and where it writes |
+| `set_tool_log_detail(detail)` | Logger | Switch between `full` and `summary`/`thin` transcript detail |
 | `get_game_state(format?)` | General | Get current game state (`markdown` or `json`) |
 | `menu_select(option, seed?)` | General | Select a visible menu/game-over option |
 | `save_and_quit()` | General | Save the current singleplayer run and return to the main menu |

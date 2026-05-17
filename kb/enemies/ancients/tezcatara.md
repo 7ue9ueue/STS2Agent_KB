@@ -170,3 +170,4 @@ _None._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Very Hot Cocoa is premium for decks with high-impact turn-one plays; prefer it over gold-draining or path-locking options when the deck can spend large opening energy.
+- Golden Compass is a high-upside Act 2 option if HP is high and the deck has elite answers; its fixed path includes repeated rests, two treasures, and a merchant before forced late elites.

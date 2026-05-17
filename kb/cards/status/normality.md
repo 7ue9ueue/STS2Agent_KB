@@ -63,3 +63,4 @@ stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Very dangerous in decks built around Offering, Bloodletting, cantrips, or multi-card burst turns; two removals rarely compensate unless a shop/removal is immediate.

@@ -66,3 +66,4 @@ wiki_stub: false
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
 - Stronger when the deck has high-impact 2-cost Attacks such as Bash, Uppercut, or Tear Asunder; the free next Attack can turn a normal 3-energy hand into two premium attacks.
+- The Free Attack buff can persist into the next turn if no later Attack is played; this can set up lethal after an Intangible or forced-block turn.

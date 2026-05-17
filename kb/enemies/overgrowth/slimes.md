@@ -95,3 +95,4 @@ _None._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- In mixed Slime fights, kill status-generating small Leaf Slimes when block can already cover Twig damage; temporary Slimed cards are often less costly than spending HP on Bloodletting just to end one turn sooner.

@@ -69,3 +69,4 @@ wiki_stub: false
 - 161-win signal: appears in 41.6% of final decks; visible picks skew early (39 Act 1 picks, avg floor 18.1).
 - Best when it recycles upgraded Pommel Strike, Uppercut, or key draw/exhaust cards rather than just raw damage.
 - Early pick improves with Armaments/Fiend Fire starts because it can redraw Bash or setup cards before the deck has stronger draw.
+- In known-script fights, use Headbutt as survival setup: put Impervious, Apparition, Second Wind, Shrug It Off, or similar answers on top before predictable burst turns instead of defaulting to damage.

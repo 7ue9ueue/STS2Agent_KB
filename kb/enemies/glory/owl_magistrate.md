@@ -49,3 +49,5 @@ _None._
 - Apply Weak 2 before Judicial Flight/Verdict when possible; it can carry into Verdict and reduce the 33-damage hit, while Weak 1 may expire first.
 - Barricade decks can use Judicial Flight and the repeat buff turn to bank block; Verdict removes Soar afterward, reopening normal damage lines.
 - Use Judicial Flight's no-damage turn to set up Verdict defense with Headbutt or draw control; Soar makes next-turn attack lethal checks less reliable.
+- If Verdict is likely to force a defensive potion, test the burst potion timing before Peck Assault; applying Vulnerable before turn-one attacks can save more HP than waiting for the obvious burst hand.
+- Soar can make otherwise strong attacks miss lethal by a wide margin; preserve a deterministic block plan for Verdict rather than relying on low-HP attack math through Soar.

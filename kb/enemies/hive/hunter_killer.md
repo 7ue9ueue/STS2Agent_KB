@@ -45,3 +45,4 @@ _None._
 - Tender punishes Corruption multi-card turns by reducing Strength and Dexterity after each card; front-load high-impact attacks/block before utility cards.
 - If the fight is likely to last past the first deck cycle, consider early scaling or a fast kill plan rather than spending many low-impact free skills.
 - At very low HP, use one large block card before damage/draw utility; Tender can make later block too small even when a potion or Weak is available.
+- Flame Barrier-style thorns are not reduced by Tender and can finish Puncture turns after blocking the first hits.

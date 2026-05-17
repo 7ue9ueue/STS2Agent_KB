@@ -52,3 +52,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Bottle is usually safer than Climb before a block package exists; Glowwater is immediate elite/boss equity, while Fresnel Lens costs 13 max HP and needs future block picks.

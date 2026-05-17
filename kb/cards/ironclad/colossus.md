@@ -70,3 +70,4 @@ wiki_stub: true
 - Strong with **Shrug It Off** as a block backbone; take when incoming damage is the limiting factor.
 - Vs Vulnerable enemies: halves incoming damage that turn. Use on enemy attack turns where Vul is on the enemy (Bash, Squash, Tremble, etc.).
 - Sale copies are efficient Act 2 pickups for decks with strong damage but only modest block density.
+- Does not protect against attacks from enemies that have lost Vulnerable before the hit; verify the live enemy status on delayed/death-blow turns.

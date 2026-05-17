@@ -60,3 +60,4 @@ _No relic list in source record._
 - When the only potion is Fairy in a Bottle and HP is low, prefer Push if the 6 HP cost is survivable; +10 Max HP does not replace the death buffer.
 - A card that already has an enchant may be unavailable for the Push attack enchant; choose the next best finisher such as Break+.
 - Vigorous 8 is strongest on attacks with multiple damage packets; if Whirlwind is unavailable, prefer Fiend Fire over single-hit attacks when the deck can feed it.
+- If holding a high-value defensive potion for a forced elite/boss, Push can beat Drink and Lift even at medium HP; put Vigorous on Whirlwind or another repeat-hit attack.

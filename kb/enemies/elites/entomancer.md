@@ -47,3 +47,4 @@ _None._
 - Corruption helps survival, but exhausting key block cards early can leave no answer to the second Beeeees! cycle.
 - Weak Potion is high value on the opening Beeeees! turn; reducing 3x7 to 2x7 can turn a mediocre block hand into a full-block race.
 - Red Mask or other early Weak plus a doubled block card can fully cover the opener without adding Dazed; use the Pheromone turn to set scaling and race before Hive reaches 3.
+- Non-Attack damage is especially valuable after Personal Hive reaches 2; Explosive Ampoule and Parrying Shield can close damage without adding more Dazed.

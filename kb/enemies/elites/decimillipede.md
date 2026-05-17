@@ -58,3 +58,6 @@ When a segment is killed, it uses Reattach to revive with 25 HP if at least one 
 - AoE should ideally lower all segments together, then burst-kill the final group before the first dead segment reattaches.
 - If one segment dies early, immediately switch to a reattach-timer plan: either kill all remaining segments before it returns or stop spending burst on single-target kills.
 - In a delayed stagger plan, spend Vulnerable/potion damage on the segment that lets one attack kill it, then reserve Bash/Pommel/Dismantle-style follow-up for the final segment before reattach.
+- Heart of Iron plus Unmovable/Second Wind can still fail from roughly 33/80 HP if the deck lacks enough burst/AoE to kill a segment before repeated 34+ incoming turns.
+- Prefer entering with either a large HP buffer, strong AoE/frontload, or multiple defensive resources; one Plating potion is not a complete answer to the offset multi-attack cycle.
+- Bloodletting+ into Whirlwind+ can kill all A10 segments together on turn 1 if X reaches 7; this avoids Reattach entirely and is worth 3 HP.

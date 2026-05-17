@@ -58,3 +58,4 @@ After the opening move, all Nibbits cycle in a fixed order: Butt, then Hesitant 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - In paired Nibbits at very low HP, prioritize killing the front attacker before the offset cycles overlap; Blood Wall can be unusable once its 2 HP cost would make later chip fatal.
+- Against solo Nibbit, a partial-block opener can beat all-out damage if it still kills during or immediately after Hiss; preserving HP and potion value matters before early elites.

@@ -54,3 +54,4 @@ _No relic list in source record._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - At high HP with a stable early deck, Spoils Map's Act 2 gold payoff can outweigh one unplayable card and a random-potion alternative.
+- Before a pending Act 1 boss where every draw matters, prefer the potion line if the deck still lacks reliable block or already has enough gold for the next shop.

@@ -67,3 +67,4 @@ wiki_stub: false
      Source facts live above the divider. -->
 - Strong with high-value single attacks and temporary attack transforms such as Giant Rock; upgrade is attractive when the deck can play two attacks after setup.
 - With Whirlwind, lethal replay damage may resolve after a short delay; wait and re-poll before assuming the fight is still active.
+- Duplicating attacks with self-HP loss, such as Breakthrough, repeats that self-loss; sequence Buffer after the attack if the Buffer is needed for enemy damage.

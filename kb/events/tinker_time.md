@@ -62,3 +62,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Protector + Wisdom creates a block-and-draw custom Skill, which is a strong low-risk late pick when the deck needs boss consistency more than more attacks.

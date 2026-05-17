@@ -65,3 +65,4 @@ wiki_stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Strong Act 1 frontload when the deck lacks a clean elite/boss damage card; upgrade is a major damage breakpoint but can be clunky without energy/draw.

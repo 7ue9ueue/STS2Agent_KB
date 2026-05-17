@@ -54,3 +54,5 @@ _None._
 - Save burst damage for the Burrow turn; on A10, fully breaking the 37 Block prevents the 26-damage Attack from Below with a stun.
 - Strong turn-one energy can also kill or nearly kill before Burrow; prioritize damage over blocking if the 15 Bite can be covered by existing Block or HP.
 - If the opener deals 40+ damage, use draw/Vulnerable on the Burrow turn to find lethal before the 37 Block is applied.
+- It is often correct to spend a Strength potion or HP-for-energy card if it turns the Burrow turn into a full Block break; preventing Attack from Below saves 26 damage on A10.
+- With One-Two Punch, count drawn attacks before spending energy; a cantrip that draws a second attack can convert a partial Burrow break into a stun.

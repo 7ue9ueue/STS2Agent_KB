@@ -65,3 +65,4 @@ wiki_stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Best as a frontload/Vulnerable support card after Bash, Tremble, or Uppercut; doubling Vulnerable can set up Bludgeon/Perfected Strike boss turns, and Exhaust removes it after use.

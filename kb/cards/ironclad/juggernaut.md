@@ -65,3 +65,4 @@ wiki_stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Block gained from potions can trigger Juggernaut, so defensive potions may also strip Slippery stacks or add lethal damage.

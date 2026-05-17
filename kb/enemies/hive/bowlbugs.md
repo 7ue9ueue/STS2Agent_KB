@@ -102,4 +102,5 @@ _None._
 - In Rock/Silk/Nectar fights, kill Nectar before its Strength buff if full Rock block is unavailable; otherwise Rock chip plus Silk Weak can compound quickly.
 - Vambrace plus a large block card such as Blood Wall can fully block Rock's Headbutt and force the stun, buying a full turn to answer Nectar.
 - In Rock/Egg fights, a first-turn full block on Rock can be worth minor self-damage because the stun turn lets you focus Egg before its repeated Block drags the fight.
+- In Rock/Egg fights, killing Egg before its first Block and then using Blood Wall/large block to stun Rock can keep the fight short even if the first Rock hit is only partly blocked.
 - At low HP, Fiend Fire plans that only kill Rock can still lose; preserve enough follow-up or AoE to answer Egg/Nectar, especially before Nectar's +16 Strength turn.

@@ -165,3 +165,4 @@ _None._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Iron Club is strong for decks that routinely play 4+ cards per turn; prefer it over random/free attack relics when the deck already has a coherent attack package.
+- Crossbow is strong for Act 3 damage clocks when the deck already has enough block and does not want more deck size; it adds free attacks without replacing existing cards.

@@ -65,3 +65,4 @@ _None._
 - Killing Parafright prevents its current Slam and can trigger on-kill relics, but Illusion revives it next turn at full HP.
 - Do not spend repeated full turns killing Parafright while Obscura scales. Kill Parafright only when it prevents a large unblocked Slam; otherwise push Obscura with Vulnerable, big attacks, and self-damage payoffs.
 - End-of-turn damage that kills Obscura before enemy attacks (e.g. Plating triggering Juggernaut) removes Parafright before its Slam resolves.
+- Weak on Parafright can buy a key turn after Wail; prioritize leader damage and use block payoffs to race before repeated Wails make Slam lethal.

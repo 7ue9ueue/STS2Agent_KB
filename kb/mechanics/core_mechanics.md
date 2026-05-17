@@ -19,6 +19,7 @@ This file is a compact orientation page. Use the linked mechanics files for stru
 - Energy: spent to play most cards during combat.
 - Gold: spent at shops and some events; earned mostly from combats, chests, events, relics, and cards.
 - Potions: single-use combat consumables that persist between combats until used or discarded.
+- Potion slots: at A10, Tight Belt leaves 2 potion slots. Do not discard an existing potion for a reward potion unless both slots are full.
 
 ## Cards
 

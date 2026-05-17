@@ -34,4 +34,4 @@ Whenever this would be shuffled into your Draw Pile, place it on the top instead
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
-
+- Prefer non-Exhaust engine or payoff cards; Exhaust cards leave combat after use and usually do not benefit from later reshuffle placement.

@@ -52,3 +52,4 @@ _None._
 - Barricade decks can spend early potions to set powers, then convert retained block into Body Slam damage; be careful that Vital Spark does not refund through the Prism's block.
 - Block Potion and Plating can trigger Juggernaut, helping clear Radiate/Pulsate block before attacks.
 - With Bag of Marbles or early Vulnerable, a fast Ironclad deck can race through Jab/Radiate and accept partial Whirlwind damage if the line kills before Pulsate's Strength.
+- With One-Two Punch and Vulnerable active, spend deterministic large attacks first, then check Thrash lethal before using scarce potions; Thrash can cover the final 20-30 HP but should be sequenced after key attacks because it exhausts a random Attack.

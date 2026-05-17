@@ -19,6 +19,8 @@ stub: true
 
 Book of Five Rings is a Common Relic.
 
+Live observed text: Every 5 cards you add to your Deck, heal 20 HP.
+
 ## Notes
 
 ### Obtaining Book of Five Rings
@@ -41,3 +43,4 @@ Book of Five Rings is a Common Relic.
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Card additions can have immediate HP value after pickup; count the relic counter before close pick/skip decisions, but do not add weak cards solely for healing unless the route needs HP.

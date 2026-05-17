@@ -50,3 +50,4 @@ The transformed cards you can obtain are as follows:
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Ironclad Bash+ -> Break+ is a major Vul-chain upgrade: lower cost, much higher damage, and 7 Vulnerable for Bully/Whirlwind/Fiend Fire follow-up turns.
+- Even unupgraded Bash -> Break is a strong Act 2 pickup when the deck has big attacks or multi-hit payoffs; it improves damage, Vulnerable duration, and energy efficiency without adding deck size.

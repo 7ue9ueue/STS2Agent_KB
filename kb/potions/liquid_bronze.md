@@ -19,3 +19,4 @@ stub: true
      Source facts live above the divider. -->
 - Save for multi-hit attackers, elites, or bosses when possible; it converts enemy attacks into damage without spending energy.
 - Do not rely on Thorns to rescue lethal incoming damage; live A10 Cultists ended the run when lethal damage landed before the last 3 Thorns could secure a win.
+- Weak against single huge attacks such as Heavy Cleave unless the reflected damage changes lethal math; use earlier if it can shorten the fight before the burst turn.

@@ -53,3 +53,4 @@ _None._
 - Kill or heavily damage the Enrage-position Exoskeleton early so the group does not scale while capped damage slows kills.
 - One-Two Punch plus Whirlwind can clear the group through repeated small AoE hits; wait/poll after Whirlwind because lethal replay damage may resolve after the immediate state response.
 - Tear Asunder becomes efficient once HP-loss events build multiple hits; even modest 5-damage hits can finish low Exoskeletons through Hard to Kill.
+- Flame Barrier is strong against Skitter because each reflected hit is a separate damage packet; Vambrace + Flame Barrier can cover the turn while dealing meaningful capped-safe damage.

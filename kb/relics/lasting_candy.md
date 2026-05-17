@@ -1,7 +1,7 @@
 ---
 title: Lasting Candy
 source: https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Lasting_Candy
-rarity: Rare
+rarity: Uncommon
 class: CHARACTERNAME
 stub: true
 ---
@@ -12,12 +12,12 @@ stub: true
 
 | Field | Value |
 |-------|-------|
-| Rarity | Rare |
+| Rarity | Uncommon |
 | Class | CHARACTERNAME |
 
 ## Description
 
-Lasting Candy is a Rare Relic.
+Lasting Candy is an Uncommon Relic.
 
 ## Notes
 
@@ -44,3 +44,4 @@ Lasting Candy is a Rare Relic.
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Best before several card rewards; late pickups are modest unless the path still has combats or Prayer Wheel-style extra rewards.

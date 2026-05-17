@@ -64,3 +64,5 @@ wiki_stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Strong boss-specific pickup when the deck already has Unmovable plus large block cards; The Insatiable's non-attack opener can let unupgraded Barricade install before Thrash/Lunging Bite.
+- Against The Insatiable, unupgraded Barricade still competes with early Frantic Escape and block energy; prefer upgrading it or carrying a defensive potion when entering below roughly two-thirds HP.

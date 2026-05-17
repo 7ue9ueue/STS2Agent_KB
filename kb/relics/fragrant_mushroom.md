@@ -39,3 +39,4 @@ Can only be obtained from the Hungry for Mushrooms event by selecting  and losin
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Prefer over Big Mushroom in late Act 3 when HP/recovery can absorb the 15 HP cost; preserving opening draw quality is usually more valuable than extra max HP.

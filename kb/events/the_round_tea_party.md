@@ -54,3 +54,4 @@ _No relic list in source record._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Avoid Royal Poison before a boss gauntlet unless the full heal is mandatory; the repeated 4 HP loss at each combat start can cost more than the one-time 11 HP relic option.
+- Centennial Puzzle changes the math: Royal Poison can be acceptable when the full heal preserves a smith/rest decision and the deck can convert start-of-combat draw into block or fast setup.

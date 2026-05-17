@@ -73,3 +73,4 @@ wiki_stub: true
 - Can be useful in Act 2 when the deck wants cheap separate attack instances for Conflagration or Hard to Kill enemies.
 - With Dark Embrace against Doormaker Hunger, Anger can become repeatable 0-cost damage because the played copy exhausts and draws while Anger creates another copy. Requires a thin live deck and does not work through Scrutiny's no-draw rule.
 - WARNING: Stop exploiting Anger in Act 2. The copy-on-play side effect rapidly pollutes the deck, diluting draws and crippling consistency for Act 2/3 fights. Treat it as an Act 1 damage bridge only — avoid spamming it in Act 2 unless there is a specific exhaust/thinning plan to clean up the copies.
+- One Act 1 copy can be justified against Vantom as a 0-cost Slippery hit; do not add more copies unless the deck has draw/exhaust control.

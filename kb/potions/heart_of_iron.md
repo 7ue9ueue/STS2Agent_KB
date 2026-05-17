@@ -25,3 +25,4 @@ stub: true
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
 - Strong boss/hallway survival potion because Plating adds repeated end-turn Block without spending cards or energy.
+- Plating can help trigger Parrying Shield on block turns and is strongest when spent before multi-hit elite/boss attacks rather than after chip damage has already landed.

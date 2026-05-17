@@ -61,3 +61,4 @@ _None._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Preventing Suck triggers is often worth giving up small attacks; once Strength lands, Lash scales especially hard across both hits.
+- Drawing into Unmovable or exhaust block with Cure All/Second Wind can justify spending a potion on turn 1; full-blocking the opener prevents the Strength snowball.

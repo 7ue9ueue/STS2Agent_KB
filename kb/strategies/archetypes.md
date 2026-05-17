@@ -2,6 +2,8 @@
 
 These are templates, not forced plans. Start each run by solving the current act: damage in Act 1, a real engine and block in Act 2, refinement in Act 3. Pivot into a template only when the offered cards and relics support it.
 
+Before adding late cards to any template, check [deck_size.md](deck_size.md). A complete engine loses if the deck is too large to find its answer cards on scripted danger turns.
+
 ## Template 1: Infinity / Fast Cycle
 
 ### What It Means

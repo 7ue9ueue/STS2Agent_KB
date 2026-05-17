@@ -52,3 +52,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Use save/load to inspect both card-reward branches when possible; do not pay 5 HP for the Colorless branch unless it clearly beats the free 5-card class offer.

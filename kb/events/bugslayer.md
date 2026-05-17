@@ -52,3 +52,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Pick Exterminate when a forced Act 2 elite path still has Decimillipede risk; AoE/multi-hit is usually more valuable than another single-target Vulnerable card.

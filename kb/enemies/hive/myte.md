@@ -48,3 +48,4 @@ _None._
      Wiki facts live above the divider. -->
 - Play or exhaust Toxic cards before ending turn when possible; two retained Toxic cards are 10 avoidable damage.
 - Killing the Suck Myte early prevents Strength scaling while leaving the Toxic/Bite Myte as a simpler single-target fight.
+- Prefer early frontload plus partial block over slow power setup; Toxic taxes can make Demon Form-style openings lose more HP than they repay.

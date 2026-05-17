@@ -41,3 +41,4 @@ Red Mask is an Uncommon Relic.
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Observed effect: at combat start, apply 1 Weak to all enemies; this is valuable low-HP mitigation in multi-enemy hallways and elites.

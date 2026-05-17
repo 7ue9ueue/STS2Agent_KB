@@ -52,3 +52,5 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- In late Act 3, Big Mushroom's -2 opening draw is a severe boss-consistency penalty; prefer Fragrant Mushroom when current HP and upcoming recovery can absorb the 15 HP loss.
+- If using save/load to inspect Fragrant Mushroom, verify upgraded cards from live save/deck data before valuing the branch; do not assume the upgrade text produced useful upgrades.

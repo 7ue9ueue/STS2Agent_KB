@@ -7,6 +7,7 @@ Canonical boss files live in [kb/enemies/bosses](../enemies/bosses).
 - Read the visible boss file at the beginning of each act, not only before the boss.
 - Let the boss change card picks, pathing, removals, shop buys, and potion priorities.
 - Hold or replace potions for the expected hard turn rather than carrying generic value.
+- At the final pre-boss campfire, Smith is still the default. Rest only if the upgraded boss plan still dies to expected damage; extra HP buys turns, but upgrades are what improve scaling, setup speed, draw consistency, and phase-kill math.
 
 ## Boss-Specific Reminders
 

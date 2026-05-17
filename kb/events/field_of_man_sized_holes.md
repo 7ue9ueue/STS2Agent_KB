@@ -52,3 +52,5 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Avoid Resist in decks that rely on long burst turns; Normality can shut off Offering/Bloodletting/draw chains before the next shop removes it.
+- Perfect Fit is best on a non-Exhaust core card that remains valuable after reshuffles; do not enchant one-time Exhaust cards unless the opening cycle is all that matters.

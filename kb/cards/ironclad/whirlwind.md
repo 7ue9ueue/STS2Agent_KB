@@ -67,3 +67,4 @@ wiki_stub: false
      Source facts live above the divider. -->
 - Upgraded copies are strong with large opening-energy relics; Miniature Cannon may further improve the per-hit damage because Whirlwind is an upgraded Attack.
 - Sharp enchantments are especially strong if they increase each Whirlwind hit; prioritize Whirlwind for Sharp when the deck has extra energy.
+- Bloodletting, Offering, Happy Flower, and Energy Potion can turn Whirlwind+ into an elite-safe AoE burst; prioritize it when Act 2 elite risk includes Decimillipede.

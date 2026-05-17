@@ -34,3 +34,4 @@ Can only be obtained from The Round Tea Party by selecting the  option.
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Repeated start-of-combat HP loss is dangerous before the Act 3 boss gauntlet, but it can be worth taking with Centennial Puzzle when the full heal is large and the deck benefits strongly from immediate draw.

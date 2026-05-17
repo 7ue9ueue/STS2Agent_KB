@@ -65,3 +65,4 @@ wiki_stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Sharp enchantments are high leverage because the bonus applies to both hits; this is especially useful for Vantom-style Slippery stack clearing plus post-stack damage.

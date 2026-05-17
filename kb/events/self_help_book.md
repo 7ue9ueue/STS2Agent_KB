@@ -63,3 +63,5 @@ _No relic list in source record._
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Sharp 2 is highest leverage on X-cost or repeat-hit Attacks such as Whirlwind because the damage bonus can apply multiple times.
+- Swift 2 is high leverage on 1-cost setup powers that need to be played before engine turns; Vicious and Dark Embrace convert the enchant into immediate tempo and consistency.
+- If only one eligible card exists for the chosen option, the event can apply the enchant immediately without opening a selection screen.

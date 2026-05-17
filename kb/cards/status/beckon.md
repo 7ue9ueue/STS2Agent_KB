@@ -65,3 +65,5 @@ stub: false
      Source facts live above the divider. -->
 - Soul Fysh shuffles Beckon into draw/discard; each copy costs 1 and punishes being left in hand with 6 HP loss.
 - Prioritize playing or exhausting Beckon on low-HP turns; it is worse than Dazed because it can become direct HP loss.
+- Battle Trance, Pommel Strike, and Shrug It Off can turn a stable hand into lethal HP loss if they draw Beckon after energy is spent; count remaining energy before drawing.
+- Second Wind is a premium answer when multiple Beckons are in hand, especially with Unmovable or Feel No Pain active.

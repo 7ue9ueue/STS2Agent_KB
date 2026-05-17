@@ -49,3 +49,4 @@ Cycles through its moves in a fixed order:
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Avoid leaving Seapunk barely alive before Bubble Burp; its 8 Block plus 2 Strength can turn a near-kill into another heavy attack cycle.

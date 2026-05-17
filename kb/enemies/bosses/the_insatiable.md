@@ -60,3 +60,5 @@ _None._
 - Avoid skipping Frantic Escape at Sandpit 2 unless lethal is guaranteed; next-turn Escape may cost 2-3 and become unaffordable after blocking.
 - Barricade/Unmovable plus large block cards can convert late survival into lethal Body Slam damage, useful when Sandpit pressure prevents slow chip lines.
 - Late-fight Frantic Escape costs can reach 3+; at Sandpit 2, prioritize playing an affordable Escape before spending energy on block unless lethal is guaranteed.
+- Entering around 50 HP with no potion and unupgraded Barricade is still unsafe if the deck cannot both install Barricade and keep enough HP through the first post-Salivate attack cycle.
+- Energy Potion is often best spent on the Salivate/free turn to combine Frantic Escape, Vulnerable extension, Strength setup, and a large Whirlwind or burst attack before the second attack cycle.

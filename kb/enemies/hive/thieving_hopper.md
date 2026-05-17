@@ -66,3 +66,5 @@ _None._
 - Kill before Escape (T5) to recover the stolen card. If you kill it by T4, it always returns the card.
 - T2 Flutter is a free offense turn (no damage) — use it to Bash+/Tremble for Vul setup. Multi-hit + Vul still effective through Flutter's 50% reduction.
 - On T3 Hat Trick, five attack-damage hits into Flutter stun it and can prevent the 21-damage attack.
+- Exterminate supplies four Flutter hits by itself; pair it with any other Attack hit to stun the T3 Hat Trick turn.
+- If energy is already spent, 0-cost draw can still be worth playing before ending turn to shape the next hand for Flutter hits and the pre-Escape kill.

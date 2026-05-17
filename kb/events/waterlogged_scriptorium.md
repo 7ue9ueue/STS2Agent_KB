@@ -58,3 +58,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Prickly Sponge opens a deck selection for exact Steady targets; premium retain targets include Battle Trance and key debuff/frontload cards such as Uppercut.

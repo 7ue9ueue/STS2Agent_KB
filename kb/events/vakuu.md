@@ -57,3 +57,4 @@ _No page-transition options in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Distinguished Cape is a strong Act 3 boss-gauntlet pick when current HP is high enough after max HP loss and the deck has Feel No Pain/Dark Embrace; Apparitions answer scripted spike turns and become exhaust value.

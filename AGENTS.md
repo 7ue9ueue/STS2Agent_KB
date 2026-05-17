@@ -140,10 +140,30 @@ Do not make card, shop, pathing, elite, boss, rest-site, event, or relic decisio
 
 Before every run:
 - Read `GUIDE.md`
-- Read every Markdown file in `kb/strategies/` before starting, including `_index.md` and all strategy playbooks.
+- Read every Markdown file in `kb/strategies/` before starting:
+  - `kb/strategies/_index.md`
+  - `kb/strategies/archetypes.md`
+  - `kb/strategies/bosses.md`
+  - `kb/strategies/card_impressions.md`
+  - `kb/strategies/combat.md`
+  - `kb/strategies/deck_size.md`
+  - `kb/strategies/elites.md`
+  - `kb/strategies/ironclad.md`
+  - `kb/strategies/meta_play.md`
+  - `kb/strategies/pathing.md`
+  - `kb/strategies/reward_choice.md`
+- Read `kb/strategies/meta_play.md` before setting run logging, retry limits, save/load usage, or post-run reflection expectations.
+
+After context compaction or resume:
+- Do not rely only on the compacted conversation summary before making gameplay decisions.
+- Re-read `GUIDE.md`, `history/run<N>.md`, and `history/run<N>_strategy.md` for the active run.
+- Re-read every Markdown file in `kb/strategies/` listed above, with special attention to `kb/strategies/meta_play.md`, `kb/strategies/pathing.md`, `kb/strategies/combat.md`, `kb/strategies/deck_size.md`, and `kb/strategies/reward_choice.md`.
+- Poll the current game state, then re-read the relevant entity KB files for the current screen: enemies for combat, boss at act start, event file for events, card/relic/potion files for rewards and shops, and mechanics files for unfamiliar keywords.
+- Record in `history/run<N>.md` that context was compacted and which strategy/entity files were reloaded before the next decision.
 
 Before choosing a map route:
 - Read `kb/strategies/pathing.md`
+- Read `kb/strategies/deck_size.md` when evaluating whether the current path needs more card rewards, removals, shops, or refinement.
 - Check rest-site/campfire access, first-three-combat safety, question-mark alternatives, elite risk, and next recovery point.
 
 Before pathing into an elite:
@@ -154,11 +174,17 @@ At the start of each act:
 - Read `kb/strategies/bosses.md`
 - Read the visible boss KB file.
 
+Before combat:
+- Read `kb/strategies/combat.md`
+- Read the relevant enemy KB files for the encounter.
+
 Before editing deck:
 - Read `GUIDE.md`
 - Read `kb/strategies/archetypes.md`
 - Read `kb/strategies/card_impressions.md`
 - Read `kb/strategies/ironclad.md`
+- Read `kb/strategies/deck_size.md`
+- Read `kb/strategies/reward_choice.md`
 - Read specific KB files for unfamiliar cards, close choices, or cards that match/contradict the current deck template.
 
 For every major decision, explicitly write in `history/run<N>.md`:
@@ -267,6 +293,18 @@ During each run (win or loss) after making each decision, write or update a summ
 - Tactical lessons to carry forward
 
 This is where detailed combat breakdowns belong — not in kb files or GUIDE.md. Don't modify GUIDE.md unless an important strategy is discovered. GUIDE.md should include bullet points that is important about the game mechanism. 
+
+### Tool Transcript Logs
+
+If MCP tool transcript logging is available, pair it with the same local run number as the history file. Immediately after creating `history/run<N>.md` and `history/run<N>_strategy.md`, call:
+
+```text
+set_tool_log_run(local_run="run<N>")
+```
+
+This directs subsequent MCP tool transcripts to `history/tool_logs/run<N>.jsonl` and adds `local_run: "run<N>"` to each log event. Call `get_tool_log_status()` if you need to verify the active log target. At the start of every new run, set the log target again so a new run does not continue writing into the previous run's transcript.
+
+For long runs, prefer summary detail: call `set_tool_log_detail(detail="summary")` or start MCP with `STS2_TOOL_LOG_DETAIL=summary`. Action responses remain full, while repeated `get_game_state` responses are logged as compact summaries.
 
 ### Run Analysis (`analysis/`)
 

@@ -58,3 +58,6 @@ _None._
 - Slippery (9): The Nth (last) hit still deals only 1 HP — you need N+1 hits total before real damage begins. Plan multi-hit attacks (Dismantle+, Thunderclap, Inky Lance Thorns) across T1–T2 to clear all 9 stacks.
 - T2 with Candelabra (5 energy) is the ideal stack-burning window. Liquid Bronze Thorns (3) on T2 returns 6 free damage against Inky Lance's 2 hits.
 - T3 Dismember (27 damage + 3 Wounds) is the survival check — stockpile block from T3 Defends or plan high HP buffer going in.
+- If Dismember shuffles Wounds before the second cycle, plan a guaranteed high-block draw for T7; Headbutt cannot fetch cards that reshuffle into the draw pile, so do not count on replaying Blood Wall after a reshuffle.
+- Aggressively block the first Dismember even if it means skipping small attacks; the HP saved can be the difference between surviving the second Dismember cycle and dying to the following multi-hit.
+- Juggernaut plus block cards/potions can both strip Slippery and race Vantom while defending Dismember; prioritize getting the power online early if the opening hand supports it.

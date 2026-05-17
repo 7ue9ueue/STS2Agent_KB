@@ -65,3 +65,6 @@ wiki_stub: false
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Source facts live above the divider. -->
+- Boss burst payoff when the hand has a high-damage expendable Attack, but random Attack exhaust can remove key one-copy attacks; sequence after deciding which attacks are safe to lose.
+- Scales with Strength and Vulnerable as a two-hit attack, so it fits Inflame/Bash/Tremble burst turns when the random exhaust target is acceptable.
+- Re-check resolved damage after playing; in Doormaker Hunger/Scrutiny branches, the random exhaust can fail to create the expected burst even when the exhausted-pile tooltip later shows added damage.

@@ -71,3 +71,4 @@ Almost every move also adds 3 Steam Eruption. When the Waterfall Giant is killed
 - 161-win corpus: hardest common Act 1 boss by damage (39.4 avg, 38 median over 31 wins); draft/upgrade block before this fight.
 - Before lethal, plan the exact Death Blow draw and block total; delay the kill if the next hand cannot cover Steam Eruption.
 - On A10, use boss potions early if they change the damage clock, but preserve enough HP for the 44+ explosion turn.
+- Colossus does not halve Death Blow unless the Giant still has Vulnerable; after lethal, the Death Blow state can have no debuffs, leaving Colossus as only 5 block.

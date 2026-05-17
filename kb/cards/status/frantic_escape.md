@@ -65,3 +65,4 @@ stub: false
      Source facts live above the divider. -->
 - The cost increase is per copy and permanent for that combat; play 1-cost copies early against The Insatiable instead of saving them until they become 2-3 cost.
 - Blocking does not prevent Sandpit death. At Sandpit 2 or lower, prioritize an affordable Frantic Escape unless lethal is guaranteed before the enemy turn.
+- Frantic Escape does not exhaust when played, so it does not trigger Feel No Pain or Joss Paper by itself.

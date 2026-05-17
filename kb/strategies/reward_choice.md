@@ -4,6 +4,8 @@ How to decide on card rewards, shop buys, and smith targets. For per-card behavi
 
 **Always read the relevant card KB files before picking, skipping, or upgrading.**
 
+For late-run deck-size discipline, read [deck_size.md](deck_size.md). Treat answer density as a separate check from raw card quality.
+
 ## The Core Question
 
 For every offered card, ask: **does this solve the deck's current problem (damage, draw, energy, block, scaling, or a known boss/elite answer)?** If not, skip.
@@ -18,14 +20,16 @@ Practical default targets. These are the **act-end** sizes you should plan aroun
 
 | Checkpoint | Target deck size | Draft posture |
 |---|---:|---|
-| End Act 1 | 22 | Attack-heavy survival package online; frontload over filler |
-| End Act 2 | 27 | Scaling, exhaust, block, or energy plan mostly complete |
+| End Act 1 | 20 | Attack-heavy survival package online; frontload over filler |
+| End Act 2 | 26 | Scaling, exhaust, block, or energy plan mostly complete |
 | End Act 3 | 30 | Refine with premium cards, removals, upgrades, relics, potions |
 
 
 **Above the targets:** 35+ cards needs a concrete reason — innate Apotheosis, heavy draw, transforms that replaced basics, or multiple energy tools. A 38-card winning deck is an exception, not a template.
 
 **Letting the deck drift above the low-30s without enough draw/removal is a common mistake.** Late speculative cards can be worse than seeing Barricade, Unmovable, Body Slam, or the key draw card one turn earlier.
+
+**Answer-density override:** if the next elite/boss has a scripted burst turn, count how many cards find or are the answer. A 35+ card deck with only one or two panic cards should prefer skip/removal/draw/exhaust/potion over another medium-good card.
 
 ## Act Plan
 

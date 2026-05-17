@@ -52,3 +52,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Transforming a starter can be worth inspecting with save/load, but if the replacement is not visible in the live state, prefer the guaranteed upgrade on a premium card such as Pommel Strike+ over committing blind.

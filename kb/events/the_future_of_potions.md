@@ -50,3 +50,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Live options can differ by inserted potion: in run 23, Swift Potion offered an upgraded common Attack, while Energy Potion offered an upgraded common Skill.

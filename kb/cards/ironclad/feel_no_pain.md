@@ -67,3 +67,4 @@ wiki_stub: false
      Source facts live above the divider. -->
 - 161-win signal: appears in 34.8% of final decks; most visible picks are Act 2, after exhaust enablers start appearing.
 - Take when the deck already has or expects True Grit, Burning Pact, Fiend Fire, Second Wind, or status/curse exhaust; those exhausts also thin the live deck so the block engine finds its best cards faster.
+- Prioritize installing before status-heavy or exhaust-heavy enemy cycles; late setup can miss the window where Burns, Apparitions, Second Wind, or Burning Pact need to convert into block.

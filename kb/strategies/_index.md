@@ -9,6 +9,7 @@ For the top-level routing table, see [`GUIDE.md`](../../GUIDE.md).
 | Decision | File |
 |---|---|
 | Card rewards, shop buys, smiths | [reward_choice.md](reward_choice.md) |
+| Deck size and answer density | [deck_size.md](deck_size.md) |
 | Map route choice | [pathing.md](pathing.md) |
 | In-combat play (sequencing, mistakes) | [combat.md](combat.md) |
 | Elite path readiness | [elites.md](elites.md) |

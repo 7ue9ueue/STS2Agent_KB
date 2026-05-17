@@ -54,3 +54,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Return the Key is preferred at medium HP when a future shop is visible; the guaranteed 100 gold can buy removal/potions without risking an immediate fight for speculative War Historian value.

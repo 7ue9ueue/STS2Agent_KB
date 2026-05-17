@@ -52,3 +52,5 @@ _None._
      Wiki facts live above the divider. -->
 - Save burst for the Beckon/Gaze turns or immediately after Fade; Intangible makes the Fade/Scream window inefficient for major attacks.
 - Speed Potion can fully stabilize De-Gas/Scream turns when paired with two block cards.
+- If using Unmovable, installing it before the second De-Gas cycle can be worth a damage loss; doubled Defend/Shrug/Second Wind can convert Beckon-heavy hands into survivable turns.
+- Avoid draw effects on low-energy De-Gas/Scream turns unless a Beckon answer remains; drawing extra Beckons after energy is spent can make the branch forced-dead.

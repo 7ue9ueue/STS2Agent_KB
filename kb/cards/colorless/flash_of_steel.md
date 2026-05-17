@@ -51,3 +51,4 @@ Flash of Steel is a Colorless card, and therefore can be obtained in the followi
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Strong shop buy for draw/energy Ironclad decks: 0-cost attack cantrip converts Bloodletting turns into more output and adds a cheap Vantom Slippery hit.

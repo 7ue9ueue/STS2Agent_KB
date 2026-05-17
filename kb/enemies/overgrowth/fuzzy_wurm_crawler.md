@@ -49,3 +49,4 @@ _None._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Frontload before the Inhale turn resolves; a Bash/Vulnerable setup into a large attack can kill before the first buffed Acid Goop.

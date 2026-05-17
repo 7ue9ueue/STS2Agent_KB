@@ -93,3 +93,4 @@ _None._
      Wiki facts live above the divider. -->
 - After killing Merc, prioritize Fat Gremlin before its first Flee turn to recover stolen gold.
 - If racing Merc without block, budget for Sneaky Gremlin's 9-damage follow-up after the spawn turn.
+- If Fat cannot be killed from full HP on its escape turn, use generated/returned attacks to damage it on the spawn turn; stolen gold is paid as a post-combat reward.

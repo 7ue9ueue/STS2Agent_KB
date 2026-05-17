@@ -45,6 +45,7 @@ All four Gardeners cycle through the same four moves in order: Bite, Lash, Flail
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
-- Skittish gives 6 Block on first hit each turn; AoE damage is still strong, but follow-up single-target attacks may be blocked unexpectedly.
+- At A10, Skittish gives 7 Block after the first hit each turn; AoE damage is still strong, but follow-up single-target attacks and Fire Potion can be soaked by the new Block.
 - Blood Wall plus upgraded Breakthrough can stabilize turn 2 while putting all four Gardeners into kill range.
 - Battle Trance into Fiend Fire+ can delete one Gardener through Skittish and reduce the first two turns' incoming damage.
+- If a line kills but spends all potions or exits near death, save/load the room and retry a different first-kill order; prioritize preserving at least one potion and avoiding late two-Gardener Strength turns.

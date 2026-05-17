@@ -76,3 +76,4 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Before high-damage Act 1 bosses or when below a comfortable smith threshold, prefer the 10 HP heal over trading current HP for small max HP.
