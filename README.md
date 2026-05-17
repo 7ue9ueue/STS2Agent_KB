@@ -8,6 +8,9 @@ A mod for [**Slay the Spire 2**](https://store.steampowered.com/app/2868840/Slay
 
 Singleplayer and multiplayer (co-op) supported. Tested against STS2 `v0.103.2`.
 
+This fork also maintains an Ironclad-focused AI gameplay knowledge base, run
+history, and live strategy notes for agents that learn across STS2 runs.
+
 > [!warning]
 > This mod allows external programs to read and control your game via a localhost API. Use at your own risk with runs you care less about.
 
@@ -103,6 +106,25 @@ Restart your Claude session after adding the config. To verify the MCP server is
 The MCP server accepts `--host` and `--port` options if you need non-default settings.
 
 Flag `--no-trust-env` can be used to disable `requests` from picking up proxy settings from the environment, which can cause connection issues if you are running the server in a container.
+
+## AI Gameplay Knowledge Base
+
+This repository includes a working knowledge base for Ironclad agent play:
+
+- `GUIDE.md` contains high-level gameplay rules and agent workflow guidance.
+- `kb/` contains entity-specific notes for cards, relics, potions, enemies,
+  events, mechanics, and strategy summaries.
+- `history/run<N>.md` records run-by-run decisions, outcomes, and reflections.
+- `history/run<N>_strategy.md` is the live strategy plan for each active run.
+- `history/tool_logs/` can store MCP transcript JSONL files paired with local
+  run numbers.
+
+Agents should read `GUIDE.md`, `AGENTS.md`, and the relevant `kb/strategies/`
+files before each run, then update entity KB notes and run history after major
+combat, route, reward, event, rest, shop, and boss decisions.
+
+For the full MCP tool list and transcript logging configuration, see
+[`mcp/README.md`](mcp/README.md).
 
 ## For Developers
 
