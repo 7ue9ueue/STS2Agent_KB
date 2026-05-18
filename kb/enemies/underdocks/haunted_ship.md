@@ -51,3 +51,4 @@ From the second turn onward, alternates between Ramming Speed and a random choic
      Wiki facts live above the divider. -->
 - Haunt gives no damage turn 1, so front-load attacks before the 5 Dazed dilute the first reshuffle.
 - Vulnerable plus Fiend Fire can exploit the Dazed cards from Haunt as extra exhaust count to end the fight before Weak attacks land.
+- Ramming Speed's Weak can break planned Whirlwind lethal on the next turn; check the post-Weak displayed damage before spending potions or committing.

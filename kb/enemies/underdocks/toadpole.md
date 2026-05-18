@@ -44,3 +44,4 @@ _None._
      Wiki facts live above the divider. -->
 - In the weak two-Toadpole encounter, kill the Whirl attacker first; the front Spiken Toadpole adds 2 Thorns, making delayed attacks cost HP.
 - Breakthrough plus two base Strikes deals 21, leaving a 22-HP Whirl Toadpole at 1; add Strength, another 0-cost attack, or accept one attack.
+- If the front Spiken Toadpole can be killed or reduced to 1 HP before its buff, that can be better than leaving it as a full-HP thorned attacker.

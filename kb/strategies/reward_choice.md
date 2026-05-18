@@ -1,6 +1,6 @@
 # Reward Choice Playbook
 
-How to decide on card rewards, shop buys, and smith targets. For per-card behavior, look up the card in `kb/cards/<color>/<card>.md` (its Strategy Notes contain pick-rate, upgrade-rate, and synergy data).
+How to decide on card rewards, shop buys, and smith targets. For per-card behavior and synergies, look up the card in `kb/cards/<color>/<card>.md`. For current site win-rate stats, use [card_winrates.md](card_winrates.md) only as a secondary reference.
 
 **Always read the relevant card KB files before picking, skipping, or upgrading.**
 
@@ -8,9 +8,10 @@ For late-run deck-size discipline, read [deck_size.md](deck_size.md). Treat answ
 
 ## The Core Question
 
-For every offered card, ask: **does this solve the deck's current problem (damage, draw, energy, block, scaling, or a known boss/elite answer)?** If not, skip.
+For every offered card, ask: **does this solve the deck's current problem (damage, draw, energy, block, scaling, or a known boss/elite answer), and does it synergize with the deck's current plan?** If not, skip.
 
-- Function first; rarity/scarcity is only a tiebreaker when function is close.
+- Function and synergy first. Act needs, boss/elite answers, deck size, and answer density come before rarity, scarcity, or win-rate stats.
+- Win-rate data is a small supporting signal, not a decision rule. Use it only after the functional and synergy evaluation: positive impact means "re-check why this might be strong"; negative impact means "demand a concrete deck/job reason."
 - Skipping is good when the offered cards do not improve the deck's jobs.
 - Don't take a card just because it is upgraded, rare, or individually playable.
 
@@ -36,6 +37,7 @@ Practical default targets. These are the **act-end** sizes you should plan aroun
 ### Act 1 — Survive
 
 - Bias toward Attack cards and frontloaded damage. Take attacks that end fights, apply Vulnerable, provide AoE, or carry draw/tempo.
+- Exception: against [Waterfall Giant](../enemies/bosses/waterfall_giant.md), draft and upgrade defense earlier than usual. Its KB notes it is the hardest common Act 1 boss by damage in the 161-win corpus and that the Steam Eruption explosion requires exact block planning before lethal.
 - Add Powers/draw/energy as **support**, not as substitutes for damage.
 - Strong Act 1 transition picks: Pommel Strike, Anger, Tremble, Shrug It Off, Taunt.
 - Skip filler even in Act 1 — the deck needs frontload and boss answers, not raw card count.

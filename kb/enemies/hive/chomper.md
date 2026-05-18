@@ -47,3 +47,4 @@ _None._
 - Kill or heavily damage the currently Clamping Chomper; the pair alternates attacks, so focus prevents repeated 8x2 turns.
 - Each starts with Artifact, so Vulnerable setup may take multiple debuff cards before Dismantle gets its double-hit payoff.
 - If a turn-one draw finds a large block card, consider blocking the first Clamp instead of pure damage; repeated Screech Dazed makes early HP loss hard to recover without a fast kill.
+- Feel No Pain can turn Screech Dazed into useful block, but the fight still needs focused damage; otherwise repeated Screech bloats reshuffles and delays lethal.

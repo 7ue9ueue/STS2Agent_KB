@@ -38,6 +38,7 @@ Reusable tactical rules go in the relevant entity's KB Strategy Notes; exact ret
 
 ## Proactive Use
 
+- In each battle, use save/load at least once when possible; the comparison branch should be materially different and should happen before lethal/rewards so combat HP and potion outcomes can still be improved.
 - Do not wait until a line is technically dead if the current branch is already burning too much HP for the visible route or boss.
 - Actively compare materially different branches for resource quality: prefer the line that exits with more HP, better potion retention, or stronger path equity, not merely the first line that wins the room.
 - When comparing branches, score HP saved against potion value and future route pressure; a small HP gain is usually not worth spending a premium potion before an elite or boss unless it prevents dangerous snowballing.

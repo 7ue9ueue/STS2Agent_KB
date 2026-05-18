@@ -51,3 +51,4 @@ _None._
 - Use Judicial Flight's no-damage turn to set up Verdict defense with Headbutt or draw control; Soar makes next-turn attack lethal checks less reliable.
 - If Verdict is likely to force a defensive potion, test the burst potion timing before Peck Assault; applying Vulnerable before turn-one attacks can save more HP than waiting for the obvious burst hand.
 - Soar can make otherwise strong attacks miss lethal by a wide margin; preserve a deterministic block plan for Verdict rather than relying on low-HP attack math through Soar.
+- Treat forced Owl before final bosses as a boss-equity check. If it consumes both burst and defensive potions, the final rest may not restore enough HP for Doormaker/Queen.

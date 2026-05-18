@@ -1,19 +1,20 @@
 # Data-Informed Card Impressions
 
-Source: `https://sts2.fun/cards` card table checked on 2026-04-30, plus local KB and `analysis/` notes. These stats are reference only. Pick rate and win-rate impact are confounded by act, deck state, player desperation, and rarity; choose by function first.
+Source: current full win-rate table in [card_winrates.md](card_winrates.md), plus local KB and `analysis/` notes. These stats are reference only. Pick rate and win-rate impact are confounded by act, deck state, player desperation, and rarity; choose by function and synergy first. When numeric values here conflict with [card_winrates.md](card_winrates.md), use [card_winrates.md](card_winrates.md) as the current numeric source, but keep it subordinate to the deck's actual needs.
 
 ## How To Use Stats
 
 - High pick rate means players often find a card useful, not that it is always correct.
 - Low pick rate does not mean unplayable; some cards are narrow build-arounds.
 - Negative win-rate impact does not automatically mean bad. Strong commons like Pommel Strike, Shrug It Off, and Bloodletting are often taken early or by weaker decks, which can depress their with-card win rate.
-- Large positive/negative impact is still a strong general signal. Use it to raise scrutiny: high-impact cards deserve a serious look, while low-impact cards need a concrete deck/job reason.
+- Large positive/negative impact is still useful, but only as a supporting signal. High-impact cards deserve a serious look; low-impact cards need a concrete deck/job reason.
 - Act pick-rate trends matter: a card picked mostly in Act 1 may be survival frontload, while a card picked in Act 2/3 may be engine completion or boss tech.
 - Once the deck beats standard enemies comfortably, card rewards should be judged against the value of drawing existing premium cards sooner. In Act 3, skip is the default unless the card improves boss scaling, draw/energy consistency, one-card defense, or a specific matchup.
 
 ## Reward Pacing
 
 - Act 1 builds survival through attacks first: prioritize frontloaded Attack cards, especially attacks with draw, Vulnerable, AoE, or strong single-target damage. Draw, energy, powers, and block support that plan but do not replace early damage; still skip filler. Focus more on simple numbers like apporximated damage and attack per energy. 
+- Act 1 exception: against [Waterfall Giant](../enemies/bosses/waterfall_giant.md), value real defense and block upgrades earlier because Steam Eruption and Death Blow require exact block planning.
 - Act 1 transition reminders: prioritize cards with great damage per energy or cards that make starter attacks hit harder. Pommel Strike is the premium attack/draw common; Anger is a good 0-cost Act 1 attack bridge and later Doormaker/Dark Embrace counterplay; Tremble is efficient Vulnerable setup; Taunt is block plus Vulnerable; Shrug It Off keeps the deck cycling while covering attack turns.
 - Act 1 starter removals are balanced and synergy-aware: Perfected Strike/Hellraiser can reward Strike density, and Tighten-style effects can reward Defend density. In Acts 2/3, default to erasing Strikes first unless a live Strike payoff still needs them.
 - Act 2 completes the engine: take cards that add scaling, reliable block, exhaust, energy, or a boss answer. Start skipping cards that only duplicate a solved job. Focus more on cards with great functionality and less on just the numbers. 

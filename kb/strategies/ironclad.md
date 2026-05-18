@@ -11,6 +11,7 @@ Detailed templates: [archetypes.md](archetypes.md). Data-informed card notes: [c
 - Build enough to survive, then protect draw quality.
 - In late Act 2 and Act 3, protect answer density: skip medium-good cards if they delay panic cards, engine setup, or known boss/elite answers.
 - In Act 1, "survive" usually means taking enough actual Attack cards and frontloaded damage before enemies scale up or dangerous patterns take over.
+- Act 1 exception: if the boss is [Waterfall Giant](../enemies/bosses/waterfall_giant.md), also look for real defense and block upgrades; the Steam Eruption explosion can punish a pure attack-only draft.
 - Strong Act 1 transition reminders: Pommel Strike, Anger, Tremble, Shrug It Off, and Taunt are good because they improve damage per energy or let starter attacks deal more. Pommel/Anger supply efficient early attacks, Tremble/Taunt multiply damage with Vulnerable, and Shrug keeps draw quality while covering attack turns.
 - Skipping is good when offered cards do not improve damage, draw, block, energy, scaling, or boss answers.
 - Practical deck-size targets: about 22 cards after Act 1, 27 after Act 2, and 31 final.
@@ -19,7 +20,7 @@ Detailed templates: [archetypes.md](archetypes.md). Data-informed card notes: [c
 
 | Act | Main job | Draft posture |
 |---|---|---|
-| Act 1 | Attack frontload | Prioritize Attack cards and damage first; add useful powers, draw, and energy as support |
+| Act 1 | Attack frontload | Prioritize Attack cards and damage first; add useful powers, draw, and energy as support. If the boss is Waterfall Giant, add real defense/block upgrades too. |
 | Act 2 | Engine completion | Add scaling, exhaust, reliable block, energy, or boss-specific answers |
 | Act 3 | Refinement | Prefer removals, upgrades, potions, relics, and only premium/boss-solving cards |
 

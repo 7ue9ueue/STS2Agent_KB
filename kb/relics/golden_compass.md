@@ -57,3 +57,4 @@ The name of this relic might be a reference to the 1995 novel The Golden Compass
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
 - Strong when current HP and deck quality can handle the two forced late Act 2 elites: the fixed path gives four rest sites, two treasures, and a merchant before the elite pair.
+- Pick only with a concrete forced-elite plan, especially for Decimillipede. The merchant/rest density is valuable, but the path still demands AoE/burst, potion support, and enough HP to survive one bad elite draw.

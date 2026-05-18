@@ -6,6 +6,7 @@ Fast lookup for agent self-correction during runs. Canonical long-form notes liv
 
 - If a fight, event, shop, rest-site, or path decision reveals a strategic issue, stop and name the failed assumption before taking more actions.
 - If the room can be restarted with `save_and_quit` plus `continue`, reload and replay with a materially different plan that prevents the same mistake.
+- In each battle, use save/load at least once when possible to test a materially different line before accepting the outcome; branch before lethal or the reward screen if HP loss, potion use, or lethal timing might improve.
 - Use save/load proactively when an early combat line would cause major preventable HP loss, or when an event's alternate branches could materially change HP, potions, deck quality, relics, gold, or path equity.
 - Treat "won, but barely" as a retry signal when the line spends too many potions, exits at dangerously low HP, or damages future pathing; a win that consumes all resources may still be strategically bad.
 - Record reusable lessons immediately: named-entity lessons go in that entity's KB Strategy Notes; cross-cutting lessons go in `kb/strategies/` or `GUIDE.md`; exact retry lines and run context go in `history/run<N>.md`.

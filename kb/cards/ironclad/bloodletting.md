@@ -70,3 +70,4 @@ wiki_stub: false
 - Upgrade is especially valuable when the deck has several strong turn-one energy sinks or start-of-combat energy relics.
 - Infinity/fast-cycle template: Bloodletting is the common energy-positive piece that lets draw cards convert into repeated plays; spend HP only when the energy is used.
 - With Rupture, Bloodletting turns HP loss into Strength; spend the HP when it funds lethal, full block, or a phase skip rather than as routine setup.
+- Before final bosses, upgrading a second Bloodletting is lower priority than resting if a forced hallway remains and the deck already has heavy self-damage. Count the upgrade against expected hallway HP loss.

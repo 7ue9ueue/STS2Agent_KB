@@ -50,6 +50,7 @@ If those answers are weak, take the safer path.
 - Before taking a low-HP survival line, check whether the path has forced combats before the next rest; if it does, spend resources earlier or reroute.
 - In Act 2, a forced hallway at ~25 current HP can be lethal even without an elite. Keep a defensive potion, route to recovery, or avoid spending the last survival resource in the previous fight.
 - After any costly Act 2 hallway, immediately inspect the next node before treating the fight as "survived." Leaving at 20–25 HP with no potion can still be a losing state if the next room is a forced hallway before the rest site.
+- Treat multiple forced Act 2 hallways before a rest plus a later forced elite as an elite chain. At sub-60% HP, prioritize survival potion/healing or a different route over removal/value buys.
 
 ## Campfire Defaults
 
@@ -96,3 +97,4 @@ From the 161 A10 win corpus, smith share by act:
 - For final-boss access, add a mandatory safety gate: if the next sequence gives only one prep rest and no defensive potion/Buffer preserved, avoid optional Act 3 elites that move you below a defended Queen Beam floor.
 - Entering the Act 3 two-boss gauntlet below ~70% HP with no defensive potion is an emergency state. Prefer Rest or safer routing earlier; do not plan to make up the deficit with exact self-damage scaling lines.
 - When both branches reach the same rest site, prefer Shop over Monster if gold can buy a boss-specific potion, block card, or removal. Avoiding the hallway can preserve more HP than Burning Blood can refund.
+- If a forced Act 3 hallway remains before the final rest, mid-HP campfires need hallway-plus-boss math. Self-damage decks can turn a 60-70% HP smith into a low-HP boss entry even when the final rest is visible.

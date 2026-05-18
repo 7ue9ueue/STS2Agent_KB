@@ -51,3 +51,4 @@ _None._
 - In live A10 combat, Ravenous showed amount 5: each surviving Corpse Slug gained 5 Strength and was Stunned after another Slug died.
 - At A10, after Ravenous +5 Strength, live survivor intents showed Whip Slap as 8x2 and Glomp as 14; kill quickly or preserve real block.
 - AoE potion damage can put one Slug into single-card lethal range; killing it on turn 1 triggers the survivor's Stun and can prevent the staggered attack/debuff entirely.
+- If one Slug is killable on turn 1, prioritize that line over partial blocking; the survivor's Stun can prevent all initial incoming damage.

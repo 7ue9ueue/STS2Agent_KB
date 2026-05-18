@@ -95,3 +95,6 @@ The Doormaker uses Dramatic Open on its first turn, then follows a repeating cyc
 - Dark Embrace plus Anger can loop on Hunger turns when the live deck is thin: Anger is 0-cost, creates a copy, then Hunger exhausts the played copy and Dark Embrace draws. Scrutiny blocks this draw, and Grasp's energy tax can break card-spam lines.
 - Dark Embrace plus Feel No Pain is a premier counterpackage because Hunger makes played Attacks/Skills exhaust, converting the boss tax into draw and block.
 - Enter with a real damage-per-round engine, not only defensive cards. Strong plans include Vicious/Vulnerable burst, Barricade/Unmovable/Body Slam, Dark Embrace exhaust, or HP-safe Rupture/self-damage scaling.
+- With Beetle Juice plus Stone Armor/Plating, delaying the potion until the second Hunger cycle can outperform using it on round 2, but only if the first Hunger is already covered.
+- At low HP, plan the exact Scrutiny hand before ending Hunger. Scrutiny blocking draw means Shrug/Cascade/Dark Embrace cannot rescue a hand that lacks natural block, Weak, Mangle, or lethal.
+- HP-cost cards such as Blood Wall, Bloodletting, Offering, and Inferno can make otherwise correct block lines fail by 1-3 HP; Doormaker entry HP needs to include the self-damage budget, not only incoming attack damage.

@@ -52,3 +52,5 @@ _No relic list in source record._
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Rejection is strong when HP/potions can cover the 10 HP loss and the deck has a premium upgrade target such as Unmovable, True Grit, Whirlwind, or Armaments.
+- Let It In is mainly for low-HP recovery or decks that want random free Attacks; Metamorphosis can dilute answer density in setup/block decks.

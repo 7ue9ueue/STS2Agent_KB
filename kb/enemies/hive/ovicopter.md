@@ -71,3 +71,4 @@ _None._
      Wiki facts live above the divider. -->
 - With Barricade/retained block online, focus Ovicopter; hatchlings are Minions and abandon combat when the leader dies.
 - Early AoE or random damage can control eggs/hatchlings, but overcommitting attacks to minions lets Ovicopter scale with repeated summons and Strength.
+- Vulnerable plus full-energy Whirlwind can clear a hatchling wave while racing the leader; compare this against lower-damage block lines before the second summon cycle.

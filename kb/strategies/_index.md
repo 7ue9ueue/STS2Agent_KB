@@ -22,6 +22,7 @@ For the top-level routing table, see [`GUIDE.md`](../../GUIDE.md).
 |---|---|
 | Ironclad draft shape and act plan | [ironclad.md](ironclad.md) |
 | Ironclad archetype templates | [archetypes.md](archetypes.md) |
+| Current card win-rate table | [card_winrates.md](card_winrates.md) |
 | Data-informed card impressions | [card_impressions.md](card_impressions.md) |
 
 ## Where else things live

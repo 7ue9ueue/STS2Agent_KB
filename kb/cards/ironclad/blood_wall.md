@@ -70,3 +70,4 @@ wiki_stub: false
 - 161-win signal: appears in 39.8% of final decks, but direct smiths are rare (1.9% of runs); base copy is usually enough.
 - An upgraded second copy is reasonable near the Act 3 boss when the deck has enough energy and needs more one-card block.
 - Corruption+ removes Blood Wall's energy cost, making it a high-value free block skill; sequence it as the first block card when Vambrace is unused.
+- At lethal or near-lethal HP, include the 2 HP loss in block math. Into Doormaker Scrutiny, Blood Wall plus another block card can still fail if the HP loss happens before incoming damage.

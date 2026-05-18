@@ -45,3 +45,4 @@ stub: true
 
 <!-- Reserved for the meta-agent. Append lessons, combos, and heuristics here.
      Wiki facts live above the divider. -->
+- Best when the deck wants random free Attacks or has exhaust/draw support; weaker in decks trying to reliably find specific defensive powers or boss answers.

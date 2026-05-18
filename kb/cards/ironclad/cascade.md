@@ -69,3 +69,5 @@ wiki_stub: false
 - Do not rely on Cascade-played attacks to trigger Ornamental Fan for exact lethal block math unless the current state confirms the block was gained.
 - If Cascade plays a draw card, that draw can change the next cards Cascade resolves; do not assume the initial draw-pile preview remains the full Cascade sequence.
 - 0-energy Cascade is not automatically safe at lethal HP; it can still trigger draw/exhaust chains and selection prompts, so only play it when every likely follow-up selection is acceptable.
+- In multi-enemy fights, avoid exact target-dependent Cascade lines; attack targeting and visible draw-pile order can differ from the plan.
+- Draw-pile previews can still be stale in status-clog fights; a small Cascade may hit a Dazed/status even when the visible preview suggests a useful card, so prefer known live draws when exact output matters.

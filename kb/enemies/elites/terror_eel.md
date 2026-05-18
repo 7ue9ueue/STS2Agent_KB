@@ -58,3 +58,4 @@ Terror Eel's name and Terror skill are a reference to the card Terror from Slay 
 
 - Kill within 2 turns after Screech. The free Stun turn is your burst window; turn 3+ with Vigor-stacked Thrash (×1.5 incoming from Terror) is nearly unsurvivable at normal HP.
 - Enter at 60+ HP. Use potions here — the permanent Vulnerable is run-threatening if the fight drags.
+- 60+ HP without potions is only a survival floor, not a good-resource entry. Expect severe HP loss unless the deck can cross Shriek before the 24-damage Crash and kill during the stun/Terror window.

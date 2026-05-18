@@ -17,3 +17,4 @@ stub: true
 ## Strategy Notes
 
 - Strong boss survival potion when the fight has repeated heavy attacks; use early enough for the 4-turn attack reduction to cover the scripted danger turn.
+- Against Doormaker, delaying until the second Hunger cycle can be stronger than round-2 use if Stone Armor/Plating covers the first Hunger; the delayed window can cover Hunger/Scrutiny/Grasp together.

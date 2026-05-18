@@ -32,6 +32,7 @@ Use `save_and_quit()` or POST `{"action":"save_and_quit"}` to save the current s
 
 ### Save and Load Strategy
 - Use `save_and_quit` + main-menu `continue` as a current-room restart tool, not just in combat. It can reset combat turns, reward choices, events, shops, rest sites, and other room decisions back to the saved room start; mid-room changes are not persisted.
+- In each battle, use save/load at least once when possible to test a materially different line before accepting the outcome. Compare HP saved, potion retention, lethal timing, and future path equity; do not settle for "won, but barely" if a better branch is available.
 - RNG is deterministic: the same action sequence gives the same draws, generated cards, targets, and results. Retry only materially different lines that change the sequence before the random event.
 - After `continue`, poll until state stabilizes; a brief `state_type: unknown` can appear during reload.
 - Limit retries to a few distinct lines, usually 3-5. If none meet the survival/lethal/resource target, stop retrying, record that it is not achievable, and play the best available line or accept the loss.
@@ -130,6 +131,9 @@ rg 'stub: true' kb/
 # Keywords / mechanics reference
 view kb/mechanics/keywords.md
 view kb/mechanics/buffs.md
+
+# Card win-rate table
+view kb/strategies/card_winrates.md
 ```
 
 ### Reading KB Files Before Decisions
@@ -145,6 +149,7 @@ Before every run:
   - `kb/strategies/archetypes.md`
   - `kb/strategies/bosses.md`
   - `kb/strategies/card_impressions.md`
+  - `kb/strategies/card_winrates.md`
   - `kb/strategies/combat.md`
   - `kb/strategies/deck_size.md`
   - `kb/strategies/elites.md`
@@ -182,6 +187,7 @@ Before editing deck:
 - Read `GUIDE.md`
 - Read `kb/strategies/archetypes.md`
 - Read `kb/strategies/card_impressions.md`
+- Read `kb/strategies/card_winrates.md`
 - Read `kb/strategies/ironclad.md`
 - Read `kb/strategies/deck_size.md`
 - Read `kb/strategies/reward_choice.md`
@@ -197,6 +203,7 @@ For every major decision, explicitly write in `history/run<N>.md`:
 Before each significant encounter or choice, look up the relevant file:
 - **Enemy encounters**: Read `kb/enemies/<act>/<enemy>.md` before elite and boss fights and during fights. Check Attacks, Pattern, and Strategy Notes.
 - **Card rewards**: Check `kb/cards/<class>/<card>.md` for unfamiliar cards before taking or skipping.
+- **Card win rates**: Function, synergy, act needs, boss/elite answers, deck size, and answer density decide card picks. Use `kb/strategies/card_winrates.md` only as a small secondary signal for close picks/skips.
 - **Relic picks**: Check `kb/relics/<relic>.md` to understand what you're choosing between.
 - **Events**: Check `kb/events/<event>.md` to evaluate options before committing.
 - **Mechanics / keywords**: Unfamiliar keyword or buff/debuff → check `kb/mechanics/`.
@@ -348,6 +355,20 @@ python3 scripts/build_kb_wiki.py --dry-run
 
 Path: /Users/tonywu/Library/Application Support/Steam/userdata/1407082853/2868840/remote/modded/profile1/saves
 After each combat, read the markdown notes in the history folder, and find the corresponding run log in the path above. Analyse choicing and append the analysis to the end of the markdown note, GUIDE.md, and kb. Consider what improvements could be made and what are some mistakes that could be prevented. Also note what went well. Also record the harnessing and gameplay that is worth noting. 
+
+### Analyze Post Game Play Using Log
+
+After a run ends, perform a detailed post-game analysis using the newest matching Steam `.run` log and, when available, the local MCP transcript at `history/tool_logs/run<N>.jsonl`. This is a careful line-by-line review, not only a summary.
+
+For each meaningful log line or action block:
+- Reconstruct the game state before the action: floor, HP, deck/relic/potion context, enemies, hand, draw/discard pile when visible, map or reward options, and relevant status effects.
+- Record what the agent chose and why that choice was reasonable or risky using the information available at that moment.
+- Identify what was done well: correct target order, efficient lethal setup, good potion timing, strong card/relic/pathing choice, useful save/load retry, or correct respect for a known threat.
+- Identify what could have been better: missed lethal, avoidable HP loss, overblocking or underblocking, poor card sequencing, bad target priority, potion greed, weak reward evaluation, pathing risk, delayed deck refinement, missed KB lookup, or harness misuse.
+- Compare the action against the relevant `GUIDE.md`, `history/run<N>_strategy.md`, `kb/strategies/`, and entity KB guidance. Call out mismatches explicitly.
+- When a better line exists, describe the concrete alternative sequence and expected benefit. If no clearly better line exists, say so and explain the constraint.
+
+Append the detailed analysis to `history/run<N>.md` under a `## Post-Game Log Analysis` heading. Keep reusable lessons separate from run narrative: promote general strategic rules to `GUIDE.md`, named card/relic/enemy/event lessons to the relevant KB `## Strategy Notes`, and harness/tooling lessons to `AGENTS.md` only when they will affect future runs.
 
 After a run ends, inspect the newest `.run` file under the Steam save `history/` directory and record whether it has `win: true`, `was_abandoned`, and any `killed_by_*` fields. Add a short post-run reflection to the local `history/run<N>.md` that answers:
 - What worked well enough to repeat?

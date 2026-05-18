@@ -126,6 +126,9 @@ combat, route, reward, event, rest, shop, and boss decisions.
 For the full MCP tool list and transcript logging configuration, see
 [`mcp/README.md`](mcp/README.md).
 
+For a proposed supervised combat-subagent workflow, see
+[`docs/combat-subagent-design.md`](docs/combat-subagent-design.md).
+
 ## For Developers
 
 ### Build & Install

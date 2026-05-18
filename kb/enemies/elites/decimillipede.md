@@ -61,3 +61,4 @@ When a segment is killed, it uses Reattach to revive with 25 HP if at least one 
 - Heart of Iron plus Unmovable/Second Wind can still fail from roughly 33/80 HP if the deck lacks enough burst/AoE to kill a segment before repeated 34+ incoming turns.
 - Prefer entering with either a large HP buffer, strong AoE/frontload, or multiple defensive resources; one Plating potion is not a complete answer to the offset multi-attack cycle.
 - Bloodletting+ into Whirlwind+ can kill all A10 segments together on turn 1 if X reaches 7; this avoids Reattach entirely and is worth 3 HP.
+- If the route forces Decimillipede after several Hive hallways, buy/hold the elite answer before the hallway chain; reaching the rest at single-digit HP usually leaves too little buffer even after healing.
